@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>端砚 · Science Discovery</title>
+<meta name="description" content="上海人工智能实验室的桌面科研工作台。把研究问题、数据、方法、计算和证据放进同一个本机工作空间。">
+<link rel="icon" href="mark.svg" type="image/svg+xml">
+<style>
+  :root {
+    --canvas: #fdfcf8;
+    --sunken: #f7f4ec;
+    --surface: #ffffff;
+    --ink: #1a2332;
+    --ink2: #3a4556;
+    --ink3: #687181;
+    --line: #e8e4d9;
+    --hair: #efece3;
+    --accent: #365f45;
+    --accent-soft: #4a7d5b;
+    --wash: #edf3ef;
+    --run: #1661ab;
+    --warn: #a8864b;
+    --serif: "Iowan Old Style", "Songti SC", "STSong", "Source Han Serif SC", Georgia, serif;
+    --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", sans-serif;
+    --mono: "SFMono-Regular", "SF Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background:
+      linear-gradient(90deg, rgba(54,95,69,.08) 0 1px, transparent 1px) 0 0 / 100% 100% no-repeat,
+      var(--canvas);
+    background-position: 28px 0;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+  .skip {
+    position: absolute; left: 12px; top: -40px; background: var(--ink); color: var(--canvas);
+    padding: 8px 12px; z-index: 5;
+  }
+  .skip:focus { top: 12px; }
+  header, main, footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+  header {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 22px 0 18px; border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
+  .brand img { width: 36px; height: 36px; }
+  .brand strong { display: block; font-family: var(--serif); font-size: 18px; font-weight: 600; letter-spacing: .01em; }
+  .brand span { display: block; color: var(--ink3); font-size: 12px; letter-spacing: .08em; }
+  nav { display: flex; gap: 18px; font-size: 14px; }
+  nav a { color: var(--ink2); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+  .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; padding: 64px 0 28px; }
+  .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--ink3); font-size: 13px; letter-spacing: .04em; }
+  .eyebrow img { height: 22px; width: auto; }
+  h1 {
+    margin: 18px 0 8px; font-family: var(--serif); font-weight: 560; font-size: clamp(46px, 6vw, 76px);
+    line-height: .95; letter-spacing: -.03em;
+  }
+  h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
+  .tagline { margin: 0 0 16px; font-family: var(--serif); font-size: 26px; line-height: 1.35; }
+  .lead { margin: 0; max-width: 62ch; color: var(--ink2); }
+  .downloads { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px;
+    border-radius: 999px; text-decoration: none; font-size: 14px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--ink);
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fdfcf8; }
+  .btn.primary:hover { background: #2b4d38; color: #fff; }
+  .btn:hover { border-color: var(--accent-soft); }
+  .fine { color: var(--ink3); font-size: 13px; }
+  .fine code { font-family: var(--mono); font-size: 12px; }
+  .notebook {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    box-shadow: 0 24px 50px -36px rgba(26,35,50,.45); padding: 18px 18px 8px 0; position: relative;
+  }
+  .notebook::before {
+    content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 1px; background: #d7c7a2;
+    box-shadow: 14px 0 0 #f3ecdf;
+  }
+  .notebook h2 { margin: 4px 0 12px 36px; font-size: 15px; letter-spacing: .08em; font-weight: 600; }
+  .steps { display: flex; flex-direction: column; }
+  .steps button {
+    text-align: left; background: transparent; border: 0; border-top: 1px solid var(--hair);
+    padding: 12px 16px 12px 36px; font: inherit; color: var(--ink2); cursor: pointer;
+  }
+  .steps button[aria-pressed="true"] { background: var(--wash); color: var(--ink); }
+  .steps button:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: -2px; }
+  .steps small { display: block; color: var(--ink3); font-family: var(--mono); font-size: 11px; letter-spacing: .06em; }
+  .step-body { margin: 0 16px 16px 36px; color: var(--ink2); min-height: 7.5em; }
+  section { padding: 42px 0; border-top: 1px solid var(--line); }
+  h2 { font-family: var(--serif); font-size: 32px; line-height: 1.2; font-weight: 560; margin: 0 0 8px; }
+  .section-kicker { color: var(--accent); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 8px; }
+  .diff { display: grid; grid-template-columns: 88px 1fr; gap: 8px 20px; margin-top: 28px; }
+  .diff b { font-family: var(--serif); font-size: 28px; color: var(--accent-soft); font-weight: 500; }
+  .diff h3 { margin: 0; font-size: 18px; }
+  .diff p { margin: 4px 0 18px; color: var(--ink2); }
+  .domains { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-top: 22px; }
+  .domains article { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; padding: 14px 0; border-top: 1px solid var(--hair); }
+  .domains h3 { margin: 0; font-size: 16px; }
+  .domains p { grid-column: 1 / -1; margin: 0; color: var(--ink2); font-size: 14px; }
+  .domains code { color: var(--ink3); font-family: var(--mono); font-size: 12px; }
+  .facts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 22px; }
+  .facts article { background: var(--sunken); border-radius: 14px; padding: 16px 16px 14px; }
+  .facts h3 { margin: 0 0 6px; font-size: 16px; }
+  .facts p { margin: 0; color: var(--ink2); font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+  th { color: var(--ink3); font-weight: 500; font-size: 12px; letter-spacing: .06em; }
+  footer { display: flex; justify-content: space-between; gap: 18px; padding: 28px 0 48px; color: var(--ink3); font-size: 13px; border-top: 1px solid var(--line); }
+  footer a { color: var(--ink2); }
+  @media (max-width: 860px) {
+    body { background-position: 12px 0; }
+    header, main, footer { width: min(1120px, calc(100% - 28px)); }
+    header { align-items: flex-start; flex-direction: column; }
+    .hero, .facts, .domains { grid-template-columns: 1fr; }
+    .diff { grid-template-columns: 56px 1fr; }
+    footer { flex-direction: column; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header>
+  <a class="brand" href="#top">
+    <img src="mark.svg" alt="">
+    <span><strong>端砚</strong><span>SCIENCE DISCOVERY</span></span>
+  </a>
+  <nav aria-label="页内">
+    <a href="#path">怎么工作</a>
+    <a href="#domains">领域</a>
+    <a href="#install">安装</a>
+    <a href="https://github.com/A3S-Lab/duanyan-releases/releases">发布页</a>
+  </nav>
+</header>
+<main id="main">
+  <div class="hero" id="top">
+    <div>
+      <p class="eyebrow"><img src="lab.png" alt="上海人工智能实验室">桌面科研工作台 · v1.1.8</p>
+      <h1>端砚<em>·</em><br>Science Discovery</h1>
+      <p class="tagline">探索研究问题，推进科学发现。</p>
+      <p class="lead">把研究问题、数据、方法、计算和证据放进同一个工作空间。你描述目标，它做定向探索、给出计划、调用真实工具跑出结果，并把每个结论连回产生它的那次执行。数据默认全部留在本机。</p>
+      <div class="downloads" id="downloads">
+        <a class="btn primary" id="primary-download" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe">下载 Windows 安装版</a>
+        <a class="btn" href="#install">其他平台</a>
+      </div>
+      <p class="fine">安装版支持应用内更新。当前版本 1.1.8，2026-10-16。不需要先装终端、前端或后端。</p>
+    </div>
+    <div class="notebook" id="path">
+      <h2>一次研究怎么走完</h2>
+      <div class="steps" role="group" aria-label="研究路径">
+        <button type="button" aria-pressed="true" data-step="0"><small>01</small>写下目标</button>
+        <button type="button" aria-pressed="false" data-step="1"><small>02</small>放进资料</button>
+        <button type="button" aria-pressed="false" data-step="2"><small>03</small>给出计划</button>
+        <button type="button" aria-pressed="false" data-step="3"><small>04</small>真实执行</button>
+        <button type="button" aria-pressed="false" data-step="4"><small>05</small>核对证据</button>
+      </div>
+      <p class="step-body" id="step-body" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <section>
+    <p class="section-kicker">和聊天框的差别</p>
+    <h2>结果要能回到那一次执行。</h2>
+    <div class="diff">
+      <b>01</b>
+      <div>
+        <h3>结果来自真实执行，不是模型口述。</h3>
+        <p>PLINK2、GCTA、HIBLUP、Beagle 这些工具是真的被调用的。产物落在磁盘上，带着输入摘要、命令、版本和参数。智能体跑命令用应用自带的 Python 3.13，不碰你自己的 Python 环境。</p>
+      </div>
+      <b>02</b>
+      <div>
+        <h3>领域是数据，不是代码。</h3>
+        <p>一门科学通过科学包接入，带上自己的能力、方法、数据源和确定性检查器，内核一行不改。没选中的包，智能体只知道它已安装，不带上它的能力清单。</p>
+      </div>
+      <b>03</b>
+      <div>
+        <h3>证据可回溯。</h3>
+        <p>Claim、Citation、Execution、Artifact 是一等对象。交付前会说清查过什么、还有什么没能查。四个容易猜错的参数必须显式声明：矩阵行列方向、基因组坐标系、参考基因组版本、遗传密码表。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="domains">
+    <p class="section-kicker">科学包</p>
+    <h2>领域换成一份声明，不改内核。</h2>
+    <p class="lead">1.1.8 的技能是完整版，共 278 个，标题为中文。科学包页分成通用工作包、科学发现包和自定义包。下面是当前随包的领域，不是客户名单，也不是“对应软件已经装好”的承诺。没有类型化能力的包只提供方法说明、知识库或连接器目录。</p>
+    <div class="domains">
+      <article><h3>生物育种</h3><code>breeding</code><p>质控、LD pruning、PCA、ROH、MLMA-LOCO、多性状评估、GBLUP、基因型填充。</p></article>
+      <article><h3>生物信息学</h3><code>bioinformatics</code><p>序列摘要、VCF 变异摘要、阅读框与 ORF、区间与坐标系审计、读段质量剖面。</p></article>
+      <article><h3>化学信息学</h3><code>chemistry-informatics</code><p>SMILES 清点、分子式精确质量、成药性规则、反应式原子与电荷守恒。</p></article>
+      <article><h3>临床研究</h3><code>clinical-research</code><p>队列表格、Kaplan-Meier 与 log-rank、诊断准确性、基线特征表。研究工具，不提供诊疗建议。</p></article>
+      <article><h3>多组学</h3><code>multi-omics</code><p>样本连接审计、表达矩阵质控、差异丰度、批次混杂、通路过表征。</p></article>
+      <article><h3>科研方法论</h3><code>research-methodology</code><p>研究设计完整性、统计效能与样本量、多重比较、报告规范条目。</p></article>
+      <article><h3>通用统计</h3><code>statistics</code><p>描述统计、组间假设检验与前提诊断、相关分析与多重比较校正。</p></article>
+      <article><h3>地球科学</h3><code>earth-science</code><p>再分析、站点观测和格点场各自能支持什么。带阅读笔记，不含数据集本体。</p></article>
+      <article><h3>神经科学</h3><code>neuroscience</code><p>记录、成像和脑区主张各自需要什么证据。不含图谱文件。</p></article>
+      <article><h3>材料科学</h3><code>materials-science</code><p>区分结构、计算性质和测量性质。不含晶体数据库。</p></article>
+      <article><h3>物理 / 数学</h3><code>physics · mathematics</code><p>单位、模型假设、有效数字；证明、符号结果和浮点计算各自能支持的主张。</p></article>
+      <article><h3>飞书与实验台</h3><code>feishu · lab-automation</code><p>飞书随包内置。自主实验台目前接的是 LabMCP 仿真器，工具面与真机一致，不是已经连上实验室仪器。</p></article>
+    </div>
+  </section>
+
+  <section id="install">
+    <p class="section-kicker">下载与安装</p>
+    <h2>选一个双击。升级由应用自己完成。</h2>
+    <div class="facts">
+      <article><h3>模型要自己接</h3><p>桌面默认使用本机 Codex 登录，不会把登录状态复制进安装包。没有的话，在「设置 · 模型」里添加第三方服务商。</p></article>
+      <article><h3>知识库不随包</h3><p>安装包只带几份领域阅读笔记。专业语料在「知识库」页导入，存在用户数据目录，升级不会覆盖。</p></article>
+      <article><h3>工具按需下载</h3><p>PLINK、GCTA，以及 Linux 上的 HIBLUP 和智能体运行时，用到时在界面里下载，不把所有平台的工具都打进每一个安装包。</p></article>
+    </div>
+    <table>
+      <thead><tr><th>平台</th><th>文件</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>Windows</td><td><a href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe">安装版</a> · <a href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.8-x64.exe">便携版</a></td><td>安装版可在应用内替换并重启。便携版不能替换自己，更新时改为下载安装包。</td></tr>
+        <tr><td>Linux x86_64</td><td><a href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-x86_64.AppImage">AppImage</a> · <a href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-amd64.deb">deb</a></td><td>AppImage 需 <code>chmod +x</code>。安装后的升级走同一个公开更新源，支持断点续传和 sha512 校验。</td></tr>
+        <tr><td>macOS 13+ Apple Silicon</td><td><a href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.dmg">dmg</a></td><td>拖进「应用程序」。当前未签名未公证，首次打开需在「系统设置 → 隐私与安全性」中放行。</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">全部文件也在 <a href="https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.8">GitHub v1.1.8</a>。中心更新源不需要内网。数据目录：macOS <code>~/Library/Application Support/DuanyanScienceDiscovery/</code>，Linux <code>~/.config/DuanyanScienceDiscovery/</code>，Windows <code>%APPDATA%\DuanyanScienceDiscovery\</code>。</p>
+  </section>
+</main>
+<footer>
+  <div>上海人工智能实验室 · 书生·端砚<br>本页介绍桌面应用，不代替应用里的用户手册。</div>
+  <div><a href="https://github.com/A3S-Lab/duanyan-releases/releases">发布页</a></div>
+</footer>
+<script>
+  const steps = [
+    "打开后直接说明研究目标，不会先弹一个选择框。Workspace 显示在对话框上方；不指定就落到默认托管空间。任务建好之后，Workspace 就定了，之后只能切 Git 分支。",
+    "拖入或上传 CSV、Excel、Parquet、JSON、SQLite、图片、PDF。中途缺资料时，会具体说明缺什么、要几份、什么格式，而不是笼统地再问一遍。",
+    "定向探索之后给出任务 DAG，可以用自然语言修订。侧栏按 Workspace 分组列出项目和任务；挂了定时、监视或长程目标的任务，标题下多一行状态。",
+    "执行发生在应用自带的运行时里，也可以派到你自己的 SSH 主机。远端写操作先弹确认卡，密钥不经过本应用。容器执行使用固定 digest 镜像、禁网、只读输入和非 root。",
+    "在「依据」和「文件」里核对。每个结论都能回到产出它的那次执行。文献检索并行查 PubMed、Crossref、arXiv、OpenAlex 和生命科学预印本，回答里的 DOI、arXiv 编号和 PMID 可以直接点开。"
+  ];
+  const body = document.getElementById("step-body");
+  const buttons = [...document.querySelectorAll(".steps button")];
+  function show(index) {
+    buttons.forEach((button, i) => button.setAttribute("aria-pressed", String(i === index)));
+    body.textContent = steps[index];
+  }
+  buttons.forEach((button) => button.addEventListener("click", () => show(Number(button.dataset.step))));
+  show(0);
+  const primary = document.getElementById("primary-download");
+  const ua = navigator.userAgent || "";
+  if (/Mac/i.test(ua)) {
+    primary.href = "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.dmg";
+    primary.textContent = "下载 macOS 安装包";
+  } else if (/Linux/i.test(ua) && !/Android/i.test(ua)) {
+    primary.href = "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-x86_64.AppImage";
+    primary.textContent = "下载 Linux AppImage";
+  }
+</script>
+</body>
+</html>
