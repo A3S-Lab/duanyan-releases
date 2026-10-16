@@ -1,266 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>端砚 · Science Discovery</title>
-<meta name="description" content="上海人工智能实验室的桌面科研工作台。探索研究问题，推进科学发现。">
-<link rel="icon" href="mark.svg" type="image/svg+xml">
-<style>
-  :root {
-    --desk: #e7e1d4;
-    --paper: #fdfcf8;
-    --sunken: #f6f1e6;
-    --ink: #1a2332;
-    --ink2: #3a4556;
-    --ink3: #687181;
-    --line: #e4dece;
-    --green: #2f6a49;
-    --green-deep: #234e36;
-    --wash: #e7f0ea;
-    --blue: #1661ab;
-    --serif: "Iowan Old Style", "Songti SC", "STSong", "Source Han Serif SC", Georgia, serif;
-    --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", sans-serif;
-    --mono: "SFMono-Regular", "SF Mono", Consolas, ui-monospace, monospace;
-  }
-  * { box-sizing: border-box; }
-  html { background: var(--desk); }
-  body {
-    margin: 0;
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 15px;
-    line-height: 1.65;
-    background:
-      radial-gradient(900px 420px at 10% -10%, rgba(47,106,73,.08), transparent 60%),
-      var(--desk);
-  }
-  a { color: inherit; }
-  .skip { position: absolute; left: 12px; top: -40px; background: var(--ink); color: var(--paper); padding: 8px 12px; }
-  .skip:focus { top: 12px; z-index: 5; }
-  .sheet {
-    width: min(1040px, calc(100% - 28px));
-    margin: 18px auto 28px;
-    background: var(--paper);
-    border: 1px solid rgba(26,35,50,.08);
-    border-radius: 22px;
-    box-shadow: 0 30px 70px -46px rgba(26,35,50,.55);
-    overflow: hidden;
-  }
-  header {
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    padding: 16px 22px;
-    border-bottom: 1px solid var(--line);
-  }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .brand img { width: 34px; height: 34px; }
-  .brand strong { display: block; font-family: var(--serif); font-size: 17px; font-weight: 600; }
-  .brand span { display: block; color: var(--ink3); font-size: 11px; letter-spacing: .12em; }
-  nav { display: flex; gap: 16px; font-size: 13px; }
-  nav a { color: var(--ink2); text-decoration: none; }
-  nav a:hover { color: var(--green); }
-  .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; padding: 36px 28px 28px; }
-  .kicker { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--ink3); font-size: 12px; }
-  .kicker img { height: 18px; width: auto; }
-  h1 {
-    margin: 14px 0 0;
-    font-family: var(--serif);
-    font-weight: 560;
-    font-size: clamp(42px, 6vw, 68px);
-    line-height: .92;
-    letter-spacing: -.035em;
-  }
-  h1 em { font-style: italic; color: var(--green); font-weight: 500; }
-  .tagline { margin: 16px 0 0; font-family: var(--serif); font-size: 22px; line-height: 1.35; }
-  .lead { margin: 10px 0 0; max-width: 38em; color: var(--ink2); }
-  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-  .btn {
-    display: inline-flex; align-items: center; min-height: 40px; padding: 0 15px;
-    border-radius: 999px; text-decoration: none; font-size: 14px;
-    border: 1px solid var(--line); background: #fff;
-  }
-  .btn.primary { background: var(--green); border-color: var(--green); color: #f7fbf8; }
-  .btn.primary:hover { background: var(--green-deep); }
-  .btn:hover { border-color: #b7c9bc; }
-  .meta { margin: 12px 0 0; color: var(--ink3); font-size: 12px; }
-  .bench {
-    background: var(--sunken);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 10px;
-    min-height: 100%;
-  }
-  .bench-bar { display: flex; align-items: center; gap: 8px; padding: 4px 6px 10px; color: var(--ink3); font-size: 12px; }
-  .dots { display: flex; gap: 5px; }
-  .dots i { width: 7px; height: 7px; border-radius: 50%; background: #c9c2b0; display: block; }
-  .dots i:first-child { background: var(--green); }
-  .panes { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8px; }
-  .pane { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; min-height: 168px; }
-  .pane b, .evidence b { display: block; font-size: 11px; letter-spacing: .12em; color: var(--green); font-weight: 600; }
-  .bubble { margin-top: 12px; background: var(--wash); border-radius: 10px; padding: 8px 10px; color: var(--ink2); font-size: 13px; }
-  .plan { margin: 12px 0 0; padding: 0; list-style: none; }
-  .plan li { display: flex; gap: 8px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 13px; }
-  .plan span { font-family: var(--mono); font-size: 11px; color: var(--ink3); }
-  .evidence { margin-top: 8px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
-  .evidence p { margin: 4px 0 0; color: var(--ink2); font-size: 13px; }
-  .chip { font-size: 12px; color: var(--blue); background: #e9f0f9; border-radius: 999px; padding: 4px 8px; white-space: nowrap; }
-  section { padding: 8px 28px 28px; }
-  .band { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .band article { background: var(--sunken); border-radius: 16px; padding: 16px 16px 14px; }
-  .band small { font-family: var(--serif); color: var(--green); font-size: 20px; }
-  .band h2 { margin: 6px 0; font-size: 17px; font-family: var(--serif); font-weight: 560; }
-  .band p { margin: 0; color: var(--ink2); font-size: 13.5px; }
-  .domains { padding-top: 4px; }
-  .domains h2, .get h2 { margin: 0; font-family: var(--serif); font-size: 28px; font-weight: 560; letter-spacing: -.02em; }
-  .domains > p, .get > p { margin: 6px 0 0; color: var(--ink2); }
-  .names { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-  .names span {
-    background: #fff; border: 1px solid var(--line); border-radius: 999px;
-    padding: 7px 12px; font-size: 13px;
-  }
-  .get { padding-top: 4px; }
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
-  .cards article { border: 1px solid var(--line); border-radius: 16px; padding: 16px; background: #fff; display: flex; flex-direction: column; gap: 8px; }
-  .cards h3 { margin: 0; font-size: 16px; }
-  .cards p { margin: 0; color: var(--ink2); font-size: 13px; flex: 1; }
-  .cards a { align-self: flex-start; }
-  footer {
-    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
-    padding: 16px 28px 20px; border-top: 1px solid var(--line); color: var(--ink3); font-size: 12px;
-  }
-  footer a { color: var(--ink2); }
-  @media (max-width: 860px) {
-    .sheet { width: min(1040px, calc(100% - 16px)); margin: 8px auto 16px; border-radius: 16px; }
-    header, .hero, section, footer { padding-left: 16px; padding-right: 16px; }
-    header { align-items: flex-start; }
-    nav { display: none; }
-    .hero, .band, .cards, .panes { grid-template-columns: 1fr; }
-    .hero { padding-top: 22px; gap: 18px; }
-    h1 { font-size: 46px; }
-    .pane { min-height: 0; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f2">
+  <title>端砚 · Science Discovery — 让研究，向前一步</title>
+  <meta name="description" content="端砚是一个桌面科研工作台。把研究问题、数据、计算与证据放在一起，让每一步探索都有迹可循。支持 Windows、Linux 与 macOS。">
+  <meta property="og:title" content="端砚 · Science Discovery">
+  <meta property="og:description" content="让研究，向前一步。从一个问题出发，走向可回溯的科学发现。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://a3s-lab.github.io/duanyan-releases/">
+  <link rel="canonical" href="https://a3s-lab.github.io/duanyan-releases/">
+  <link rel="icon" href="mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="main.mjs"></script>
 </head>
 <body>
-<a class="skip" href="#main">跳到正文</a>
-<div class="sheet">
-  <header>
-    <a class="brand" href="#top">
-      <img src="mark.svg" alt="">
-      <span><strong>端砚</strong><span>SCIENCE DISCOVERY</span></span>
-    </a>
-    <nav aria-label="页内">
-      <a href="#work">怎么工作</a>
-      <a href="#fields">领域</a>
-      <a href="#get">下载</a>
-      <a href="https://github.com/A3S-Lab/duanyan-releases/releases">全部版本</a>
-    </nav>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h6"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 4H3v13h5l4 4v-4h9V4ZM7 9h10M7 13h6"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="m9 15 6-6m-7 4-2 2a4 4 0 0 0 6 6l4-4a4 4 0 0 0 0-6M8 13a4 4 0 0 1 0-6l4-4a4 4 0 0 1 6 6l-2 2"/></symbol>
+      <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3 5 10 4v7H3V5Zm10-1 8-1v8h-8V4ZM3 14h7v7l-7-1v-6Zm10 0h8v9l-8-1v-8Z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-linux" viewBox="0 0 24 24"><path d="M8 10V7a4 4 0 0 1 8 0v3l3 6-2 3H7l-2-3 3-6Zm1 0 3 2 3-2M7 19l-3 2m13-2 3 2M10 7v1m4-1v1"/></symbol>
+      <symbol id="i-apple" viewBox="0 0 24 24"><path d="M14 6c0-2 1-4 4-4 0 2-1 4-4 4Zm-2 2c-3-2-7 0-7 4 0 4 3 9 5 9l3-1 3 1c2 0 4-3 5-5-4-2-4-6-1-8-2-2-5-1-8 0Z"/></symbol>
+    </defs>
+  </svg>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="端砚首页"><img src="mark.svg" width="40" height="40" alt=""><span>端砚 <span class="brand-divider">/</span> <small>Science Discovery</small></span></a>
+      <nav aria-label="主导航"><a href="#work">工作方式</a><a href="#fields">探索领域</a><a href="#faq">常见问题</a></nav>
+      <a class="button button-small button-dark" href="#get">获取端砚 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
   </header>
   <main id="main">
-    <div class="hero" id="top">
-      <div>
-        <p class="kicker"><img src="lab.png" alt="上海人工智能实验室">桌面科研工作台 · 1.1.8</p>
-        <h1>端砚<br><em>Science Discovery</em></h1>
-        <p class="tagline">探索研究问题，推进科学发现。</p>
-        <p class="lead">一个窗口里同时有对话、计划和证据。你写下目标，它调用真实工具算出结果，并把每个结论连回产生它的那一次计算。数据默认留在你自己的电脑上。</p>
-        <div class="actions">
-          <a class="btn primary" id="primary-download" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe">下载 Windows</a>
-          <a class="btn" href="#get">Linux / macOS</a>
-        </div>
-        <p class="meta">双击安装。装好之后，应用会自己提示新版本。</p>
-      </div>
-      <div class="bench" aria-hidden="true">
-        <div class="bench-bar"><span class="dots"><i></i><i></i><i></i></span>同一个窗口</div>
-        <div class="panes">
-          <div class="pane">
-            <b>对话</b>
-            <div class="bubble">比较这批样本，先看清缺了什么。</div>
+    <section class="hero container" id="top" aria-labelledby="hero-title">
+      <p class="eyebrow hero-eyebrow">端砚 / SCIENCE DISCOVERY</p>
+      <h1 id="hero-title">让研究，<span class="title-accent">向前一步。<svg viewBox="0 0 430 18" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12C120 2 287 1 425 10M70 16c93-8 205-9 305-4"/></svg></span></h1>
+      <p class="hero-description">面向科学发现的 AI 工作台。<br>连接你的数据、专业工具与研究记录，从探索到交付。</p>
+      <div class="hero-actions"><a class="button button-green" id="primary-download" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span id="primary-label">下载 Windows 版</span></a><a class="button button-plain" href="#work">看看它如何工作 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <p class="platform-note"><a href="#get">适用于 Windows、Linux 与 macOS</a></p>
+      <figure class="workspace-figure">
+        <div class="workspace">
+          <div class="window-bar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>端砚 <span class="window-separator">/</span> 我的研究空间</span><span class="local-label"><span class="status-dot"></span> 本机工作台</span></div>
+          <div class="workspace-body">
+            <aside class="workspace-sidebar" aria-label="工作流程示意侧栏">
+              <div class="mini-brand"><img src="mark.svg" alt="" width="27" height="27"> 端砚</div>
+              <div class="sidebar-label">工作空间</div>
+              <div class="sidebar-item active"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> 研究对话</div>
+              <div class="sidebar-item"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg> 数据与文件</div>
+              <div class="sidebar-item"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> 方法与技能</div>
+              <div class="sidebar-rule"></div><div class="sidebar-label">最近的研究</div><div class="sidebar-project"><span class="status-dot"></span> 样本数据探索</div><div class="sidebar-project muted">文献证据梳理</div>
+              <div class="sidebar-bottom"><span class="avatar">研</span><span>我的工作空间<small>从这里，开始发现</small></span></div>
+            </aside>
+            <div class="demo-conversation">
+              <div class="demo-heading"><span><span class="status-dot"></span> 样本数据探索</span><span class="demo-badge">流程示意</span></div>
+              <div class="demo-user"><span class="file-chip"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> samples.csv</span><p>帮我探索这批样本，先检查数据，再选择合适的分析方法。</p></div>
+              <div class="assistant-heading"><img src="mark.svg" width="25" height="25" alt=""><strong>端砚</strong><span>把问题，变成可执行的计划</span></div>
+              <p class="demo-response">先看清数据，再讨论结论。我会保留每一步的方法、参数与输出。</p>
+              <div class="demo-plan"><div><span class="step-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>识别字段，检查缺失与单位</span><span class="step-label">数据</span></div><div><span class="step-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>选择方法，执行真实计算</span><span class="step-label">方法</span></div><div><span class="step-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>整理图表、文件与分析说明</span><span class="step-label">交付</span></div></div>
+              <div class="demo-output"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><span>数据探索报告<small>方法说明 · 图表 · 原始输出</small></span><span class="output-tag">可回溯</span></div>
+              <div class="demo-composer"><span>继续追问，或者带入一个新问题…</span><span class="composer-arrow" aria-hidden="true">↑</span></div>
+            </div>
+            <aside class="evidence-panel" aria-label="证据示意">
+              <div class="panel-heading"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg> 研究线索</div>
+              <p class="panel-caption">不是只有一个答案，<br>还有得到它的过程。</p>
+              <div class="evidence-card"><span class="card-kicker">01 / 数据</span><strong>先认识你的数据</strong><div class="mini-table" aria-hidden="true"><span>sample_id</span><span>group</span><span>value</span><span>S_001</span><span>A</span><span>—</span><span>S_002</span><span>B</span><span>—</span><span>S_003</span><span>A</span><span>—</span></div></div>
+              <div class="evidence-card"><span class="card-kicker">02 / 方法</span><strong>把选择说清楚</strong><p>适用条件、参数与局限，和结果一起保存。</p></div>
+              <div class="evidence-foot"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> 文件与计算，相互对应</div>
+            </aside>
           </div>
-          <div class="pane">
-            <b>计划</b>
-            <ol class="plan">
-              <li><span>01</span>读入表格</li>
-              <li><span>02</span>核对方法</li>
-              <li><span>03</span>跑真正的计算</li>
-            </ol>
-          </div>
         </div>
-        <div class="evidence">
-          <div><b>证据</b><p>结论回到这次计算和对应文件。</p></div>
-          <span class="chip">可回溯</span>
+        <figcaption><span>一个工作空间，连接研究的每一步。</span><span>工作台界面与研究流程示意</span></figcaption>
+      </figure>
+    </section>
+    <div class="principles container"><span><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>本机工作空间</span><i aria-hidden="true"></i><span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>真实工具执行</span><i aria-hidden="true"></i><span><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>研究过程可回溯</span></div>
+    <section class="section container" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><div><p class="eyebrow">FROM QUESTION TO EVIDENCE</p><h2 id="work-title">从研究问题，<br>到有据可循的结果。</h2></div><p>在一个工作空间里，<br>完成资料整理、分析计算与研究交付。</p></div>
+      <div class="workflow-grid">
+        <article class="workflow-card"><div class="workflow-top"><span class="step-number">01</span><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></div><h3>从你的问题开始</h3><p>写下目标，带入数据和专业资料。先厘清研究问题，再把它拆成可以推进的计划。</p><div class="card-foot">问题 <span aria-hidden="true">→</span> 计划</div></article>
+        <article class="workflow-card"><div class="workflow-top"><span class="step-number">02</span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div><h3>让方法真正运行</h3><p>从数据处理到专业分析，把选定的方法交给真实工具，留下可以检查的计算过程。</p><div class="card-foot">数据 <span aria-hidden="true">→</span> 计算</div></article>
+        <article class="workflow-card"><div class="workflow-top"><span class="step-number">03</span><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></div><h3>把证据留在身边</h3><p>连同结论一起保留输出文件、方法与参数。清楚知道做过什么，也知道哪些问题尚待验证。</p><div class="card-foot">结果 <span aria-hidden="true">→</span> 证据</div></article>
+      </div>
+    </section>
+    <section class="fields-section" id="fields" aria-labelledby="fields-title">
+      <div class="container fields-layout">
+        <div class="fields-intro"><p class="eyebrow">EXPLORE YOUR FIELD</p><h2 id="fields-title">专注你的领域，<br>深入你的问题。</h2><p>从生命科学到数理研究，<br>围绕具体问题，组织数据与专业方法。</p></div>
+        <div class="fields-explorer">
+          <div class="field-options" role="group" aria-label="选择研究领域"><button class="field-button" type="button" data-field="breeding" aria-pressed="true">生物育种</button><button class="field-button" type="button" data-field="bioinformatics" aria-pressed="false">生物信息</button><button class="field-button" type="button" data-field="chemistry" aria-pressed="false">化学信息</button><button class="field-button" type="button" data-field="clinical" aria-pressed="false">临床研究</button><button class="field-button" type="button" data-field="omics" aria-pressed="false">多组学</button><button class="field-button" type="button" data-field="methods" aria-pressed="false">科研方法</button></div>
+          <div class="field-example" aria-live="polite" aria-atomic="true"><span class="example-label">研究场景 <span aria-hidden="true">↗</span></span><h3 id="field-question">这批表型数据，适合怎样的遗传评估？</h3><p id="field-description">先核对表型、系谱与基因型的对应关系，再讨论模型选择和验证方法。</p><div class="example-tags" id="field-tags"><span>表型探索</span><span>遗传评估</span><span>模型验证</span></div></div>
+          <p class="more-fields">也关注统计、地球科学、神经科学、材料、物理与数学。</p>
+          <noscript><p>启用 JavaScript 可切换领域示例；下载与其余页面内容不受影响。</p></noscript>
         </div>
       </div>
-    </div>
-
-    <section id="work">
-      <div class="band">
-        <article>
-          <small>01</small>
-          <h2>算出来的，不是说出来的。</h2>
-          <p>育种、序列、统计这些工具会被真正调用。结果写在文件里，带着命令、版本和参数。不碰你自己的 Python。</p>
-        </article>
-        <article>
-          <small>02</small>
-          <h2>做哪门科学，就选哪一门。</h2>
-          <p>生物育种、临床、化学、多组学等方法按任务选用。没选中的，不会一股脑带进这一次工作。</p>
-        </article>
-        <article>
-          <small>03</small>
-          <h2>每个结论都能往回找。</h2>
-          <p>交付前会说清查过什么、还有什么没查到。容易猜错的坐标、版本和遗传密码，必须写明，不能靠默认。</p>
-        </article>
+    </section>
+    <section class="section container downloads-section" id="get" aria-labelledby="get-title">
+      <div class="section-heading"><div><p class="eyebrow">A PLACE FOR YOUR NEXT DISCOVERY</p><h2 id="get-title">下一次发现，<br>从你的桌面开始。</h2></div><div class="download-meta"><span class="version-label"><span class="status-dot"></span> 当前版本 1.1.8</span><p>2026.10.15 发布</p><a class="text-link" href="https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.8">版本说明与全部文件 <span aria-hidden="true">↗</span></a></div></div>
+      <div class="download-grid">
+        <article class="download-card" data-platform="windows"><div class="download-card-top"><svg class="os-icon" aria-hidden="true"><use href="#i-windows"/></svg><span class="recommended-label" hidden>适合当前设备</span></div><h3>Windows</h3><p class="architecture">x64 <span>·</span> 安装版 / 便携版</p><p class="install-note">日常使用推荐安装版。便携版无需安装，下载后直接运行。</p><a class="button button-dark" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe">下载安装版 <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a><a class="secondary-download" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.8-x64.exe">下载便携版 <span aria-hidden="true">↗</span></a></article>
+        <article class="download-card" data-platform="linux"><div class="download-card-top"><svg class="os-icon" aria-hidden="true"><use href="#i-linux"/></svg><span class="recommended-label" hidden>适合当前设备</span></div><h3>Linux</h3><p class="architecture">x86_64 <span>·</span> AppImage / deb</p><p class="install-note">AppImage 添加执行权限后打开。Debian、Ubuntu 也可以使用 deb 包。</p><a class="button button-dark" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-x86_64.AppImage">下载 AppImage <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a><a class="secondary-download" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-amd64.deb">下载 deb 安装包 <span aria-hidden="true">↗</span></a></article>
+        <article class="download-card" data-platform="mac"><div class="download-card-top"><svg class="os-icon" aria-hidden="true"><use href="#i-apple"/></svg><span class="recommended-label" hidden>适合当前设备</span></div><h3>macOS</h3><p class="architecture">Apple Silicon <span>·</span> arm64</p><p class="install-note">下载 DMG 后，将端砚拖入「应用程序」。此版本面向 Apple 芯片的 Mac。</p><a class="button button-dark" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.dmg">下载 DMG <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a><span class="secondary-download download-detail">适用于 M 系列芯片</span></article>
+      </div>
+      <p class="download-help">下载遇到问题？<a href="https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.8">也可以从 GitHub 下载安装包 <span aria-hidden="true">↗</span></a></p>
+    </section>
+    <section class="faq-section container" id="faq" aria-labelledby="faq-title">
+      <div><p class="eyebrow">GOOD TO KNOW</p><h2 id="faq-title">开始之前，<br>你可能想知道。</h2></div>
+      <div class="faq-list">
+        <details><summary>如何开始第一个研究任务？<span class="faq-plus" aria-hidden="true"></span></summary><p>安装端砚，连接你使用的模型服务，选择一个工作文件夹。带入数据或资料，再写下你想解决的问题。</p></details>
+        <details><summary>我的数据会被发送到哪里？<span class="faq-plus" aria-hidden="true"></span></summary><p>工作文件默认保存在本机。使用远程模型、在线检索或外部科研服务时，相关输入可能会发往你配置的服务。处理敏感数据前，请先确认服务设置与所在机构的数据使用要求。</p></details>
+        <details><summary>如何获取后续更新？<span class="faq-plus" aria-hidden="true"></span></summary><p>安装版可在「设置」中检查更新。便携版以及无法自动更新的情况，可以回到此页下载新版；更新前建议备份重要工作文件。</p></details>
       </div>
     </section>
-
-    <section class="domains" id="fields">
-      <h2>已经放进工作台的领域。</h2>
-      <p>1.1.8 带 278 个中文技能。包名不代表对应软件已经装好；用到专业程序时，界面里可以再下载。</p>
-      <div class="names">
-        <span>生物育种</span><span>生物信息</span><span>化学信息</span><span>临床研究</span>
-        <span>多组学</span><span>科研方法</span><span>统计</span><span>地球科学</span>
-        <span>神经科学</span><span>材料</span><span>物理</span><span>数学</span><span>飞书</span>
-      </div>
-    </section>
-
-    <section class="get" id="get">
-      <h2>选一个，双击打开。</h2>
-      <p>模型需要自己接入。专业资料在应用里导入，升级不会盖掉。</p>
-      <div class="cards">
-        <article>
-          <h3>Windows</h3>
-          <p>安装版装好后会自己提示新版本。便携版更新时改为下载新的安装包。</p>
-          <a class="btn primary" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe">安装版</a>
-          <a class="btn" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.8-x64.exe">便携版</a>
-        </article>
-        <article>
-          <h3>Linux</h3>
-          <p>应用镜像下载后允许执行再打开。也可以装 Debian / Ubuntu 包。</p>
-          <a class="btn primary" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-x86_64.AppImage">AppImage</a>
-          <a class="btn" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-amd64.deb">deb 安装包</a>
-        </article>
-        <article>
-          <h3>macOS</h3>
-          <p>Apple Silicon。拖进「应用程序」。首次打开需在系统设置里放行。</p>
-          <a class="btn primary" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.dmg">下载 dmg</a>
-        </article>
-      </div>
-    </section>
+    <div class="closing container"><img src="mark.svg" width="42" height="42" alt=""><p>端砚 <span>· 为科研而设计</span></p><a href="#get" class="text-link">获取桌面应用 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
   </main>
-  <footer>
-    <div>上海人工智能实验室 · 书生·端砚</div>
-    <a href="https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.8">1.1.8 的全部文件</a>
-  </footer>
-</div>
-<script>
-  const primary = document.getElementById("primary-download");
-  const ua = navigator.userAgent || "";
-  if (/Mac/i.test(ua)) {
-    primary.href = "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.dmg";
-    primary.textContent = "下载 macOS";
-  } else if (/Linux/i.test(ua) && !/Android/i.test(ua)) {
-    primary.href = "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-x86_64.AppImage";
-    primary.textContent = "下载 Linux";
-  }
-</script>
+  <footer class="site-footer"><div class="container footer-inner"><div class="footer-brand"><img src="lab.png" alt="上海人工智能实验室" width="48" height="32"><span>上海人工智能实验室 <span class="footer-separator">/</span> 书生·端砚</span></div><div class="footer-links"><span>Science, with a trace.</span><a href="https://github.com/A3S-Lab/duanyan-releases/releases">GitHub 发布页 <span aria-hidden="true">↗</span></a><a href="#top">回到顶部 ↑</a></div></div></footer>
 </body>
 </html>
