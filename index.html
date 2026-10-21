@@ -1,124 +1,489 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f8f2">
-  <title>端砚 · Science Discovery — 让研究，向前一步</title>
-  <meta name="description" content="端砚是一个桌面科研工作台。把研究问题、数据、计算与证据放在一起，让每一步探索都有迹可循。支持 Windows、Linux 与 macOS。">
-  <meta property="og:title" content="端砚 · Science Discovery">
-  <meta property="og:description" content="让研究，向前一步。从一个问题出发，走向可回溯的科学发现。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://a3s-lab.github.io/duanyan-releases/">
-  <link rel="canonical" href="https://a3s-lab.github.io/duanyan-releases/">
-  <link rel="icon" href="mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="main.mjs"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf9f5">
+<title>书生·端砚</title>
+<meta name="description" content="懂科研的 AI 伙伴。从数据分析、文献调研到集群计算和仪器实验，端砚陪你把每个科学问题做到底，每个结论都有据可查。支持 macOS、Windows、Linux。">
+<link rel="canonical" href="https://a3s-lab.github.io/duanyan-releases/">
+<link rel="icon" href="mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">跳到正文</a>
-  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
-      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
-      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h6"/></symbol>
-      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
-      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
-      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 4H3v13h5l4 4v-4h9V4ZM7 9h10M7 13h6"/></symbol>
-      <symbol id="i-link" viewBox="0 0 24 24"><path d="m9 15 6-6m-7 4-2 2a4 4 0 0 0 6 6l4-4a4 4 0 0 0 0-6M8 13a4 4 0 0 1 0-6l4-4a4 4 0 0 1 6 6l-2 2"/></symbol>
-      <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3 5 10 4v7H3V5Zm10-1 8-1v8h-8V4ZM3 14h7v7l-7-1v-6Zm10 0h8v9l-8-1v-8Z" fill="currentColor" stroke="none"/></symbol>
-      <symbol id="i-linux" viewBox="0 0 24 24"><path d="M8 10V7a4 4 0 0 1 8 0v3l3 6-2 3H7l-2-3 3-6Zm1 0 3 2 3-2M7 19l-3 2m13-2 3 2M10 7v1m4-1v1"/></symbol>
-      <symbol id="i-apple" viewBox="0 0 24 24"><path d="M14 6c0-2 1-4 4-4 0 2-1 4-4 4Zm-2 2c-3-2-7 0-7 4 0 4 3 9 5 9l3-1 3 1c2 0 4-3 5-5-4-2-4-6-1-8-2-2-5-1-8 0Z"/></symbol>
-    </defs>
-  </svg>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="端砚首页"><img src="mark.svg" width="40" height="40" alt=""><span>端砚 <span class="brand-divider">/</span> <small>Science Discovery</small></span></a>
-      <nav aria-label="主导航"><a href="#work">工作方式</a><a href="#fields">探索领域</a><a href="#faq">常见问题</a></nav>
-      <a class="button button-small button-dark" href="#get">获取端砚 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+<body class="home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="dl" viewBox="0 0 24 24"><path class="ico" d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></symbol>
+<symbol id="ext" viewBox="0 0 24 24"><path class="ico" d="M14 5h5v5m0-5-8 8M18 14v5H5V6h5"/></symbol>
+<symbol id="up" viewBox="0 0 24 24"><path class="ico" d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+<symbol id="pack" viewBox="0 0 24 24"><rect class="ico" x="4" y="4" width="7" height="7" rx="1.5"/><rect class="ico" x="13" y="13" width="7" height="7" rx="1.5"/><path class="ico" d="M13 7.5h7M4 16.5h7"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path class="ico" d="M5 4v16M9 4v16M13 5l5 15"/></symbol>
+<symbol id="cal" viewBox="0 0 24 24"><rect class="ico" x="4" y="5" width="16" height="15" rx="2"/><path class="ico" d="M4 10h16M9 3v4m6-4v4"/></symbol>
+<symbol id="srv" viewBox="0 0 24 24"><rect class="ico" x="4" y="4" width="16" height="7" rx="1.5"/><rect class="ico" x="4" y="13" width="16" height="7" rx="1.5"/></symbol>
+<symbol id="flask" viewBox="0 0 24 24"><path class="ico" d="M9 3h6m-5 0v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2l-5-10V3"/></symbol>
+<symbol id="apl" viewBox="0 0 24 24"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8s-1.8-.8-3-.8C7 7.3 5.5 8.2 4.7 9.7c-1.7 2.9-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.1.8c1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.9-1.1-2.9-4ZM14.1 5.5c.6-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3Z"/></symbol>
+<symbol id="win" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.1H3V5.5Zm8.5-1.2L21 3v8.5h-9.5V4.3ZM3 12.5h7.5v7.1L3 18.5v-6Zm8.5 0H21V21l-9.5-1.3v-7.2Z"/></symbol>
+<symbol id="tux" viewBox="0 0 24 24"><path class="ico" d="M9 10V7a3 3 0 0 1 6 0v3l3 6-2 4H8l-2-4 3-6Z"/><path class="ico" d="M10 12l2 1.5 2-1.5"/></symbol>
+</defs></svg>
+
+<header class="top"><div class="wrap top-in">
+  <a class="brand" href="./"><img class="wordmark" src="wordmark.svg" alt="书生·端砚"></a>
+  <nav><a href="#connect">功能</a><a href="manual.html" class="keep">用户手册</a><a href="https://github.com/A3S-Lab/duanyan-releases/releases">更新日志</a></nav>
+  <a class="btn btn-ink btn-sm" href="#download">下载</a>
+</div></header>
+
+<main>
+<!-- 首屏 -->
+<section class="wrap hero">
+  <div class="hero-text">
+  <h1 class="h1 h1-logo"><img src="wordmark.svg" alt="书生·端砚"></h1>
+  <p class="lead">懂科研的 AI 伙伴。从数据分析、文献调研，到集群计算和仪器实验，端砚陪你把每个科学问题做到底，每个结论都有据可查。</p>
+  <div class="acts">
+    <a class="btn btn-ink" id="primary" href="#download"><svg><use href="#dl"/></svg><span id="primary-label">下载端砚</span></a>
+    <a class="btn btn-sand" href="manual.html">阅读用户手册</a>
+  </div>
+  <p class="avail">支持 macOS、Windows 和 Linux。<a href="#download">全部下载</a></p>
+  </div>
+
+  <div class="app" id="app" aria-label="端砚界面示意：数据分析、远程算力和自主实验台三段演示">
+    <div class="app-bar"><i></i><i></i><i></i><span>书生·端砚</span></div>
+    <div class="chapters" role="tablist">
+      <button role="tab" data-ch="0" style="--c:var(--local)"><b></b>数据分析</button>
+      <button role="tab" data-ch="1" style="--c:var(--hpc)"><b></b>远程算力</button>
+      <button role="tab" data-ch="2" style="--c:var(--lab)"><b></b>自主实验台</button>
     </div>
-  </header>
-  <main id="main">
-    <section class="hero container" id="top" aria-labelledby="hero-title">
-      <p class="eyebrow hero-eyebrow">端砚 / SCIENCE DISCOVERY</p>
-      <h1 id="hero-title">让研究，<span class="title-accent">向前一步。<svg viewBox="0 0 430 18" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12C120 2 287 1 425 10M70 16c93-8 205-9 305-4"/></svg></span></h1>
-      <p class="hero-description">面向科学发现的 AI 工作台。<br>连接你的数据、专业工具与研究记录，从探索到交付。</p>
-      <div class="hero-actions"><a class="button button-green" id="primary-download" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span id="primary-label">下载 Windows 版</span></a><a class="button button-plain" href="#work">看看它如何工作 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      <p class="platform-note"><a href="#get">适用于 Windows、Linux 与 macOS</a></p>
-      <figure class="workspace-figure">
-        <div class="workspace">
-          <div class="window-bar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>端砚 <span class="window-separator">/</span> 我的研究空间</span><span class="local-label"><span class="status-dot"></span> 本机工作台</span></div>
-          <div class="workspace-body">
-            <aside class="workspace-sidebar" aria-label="工作流程示意侧栏">
-              <div class="mini-brand"><img src="mark.svg" alt="" width="27" height="27"> 端砚</div>
-              <div class="sidebar-label">工作空间</div>
-              <div class="sidebar-item active"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> 研究对话</div>
-              <div class="sidebar-item"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg> 数据与文件</div>
-              <div class="sidebar-item"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> 方法与技能</div>
-              <div class="sidebar-rule"></div><div class="sidebar-label">最近的研究</div><div class="sidebar-project"><span class="status-dot"></span> 样本数据探索</div><div class="sidebar-project muted">文献证据梳理</div>
-              <div class="sidebar-bottom"><span class="avatar">研</span><span>我的工作空间<small>从这里，开始发现</small></span></div>
-            </aside>
-            <div class="demo-conversation">
-              <div class="demo-heading"><span><span class="status-dot"></span> 样本数据探索</span><span class="demo-badge">流程示意</span></div>
-              <div class="demo-user"><span class="file-chip"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> samples.csv</span><p>帮我探索这批样本，先检查数据，再选择合适的分析方法。</p></div>
-              <div class="assistant-heading"><img src="mark.svg" width="25" height="25" alt=""><strong>端砚</strong><span>把问题，变成可执行的计划</span></div>
-              <p class="demo-response">先看清数据，再讨论结论。我会保留每一步的方法、参数与输出。</p>
-              <div class="demo-plan"><div><span class="step-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>识别字段，检查缺失与单位</span><span class="step-label">数据</span></div><div><span class="step-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>选择方法，执行真实计算</span><span class="step-label">方法</span></div><div><span class="step-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>整理图表、文件与分析说明</span><span class="step-label">交付</span></div></div>
-              <div class="demo-output"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><span>数据探索报告<small>方法说明 · 图表 · 原始输出</small></span><span class="output-tag">可回溯</span></div>
-              <div class="demo-composer"><span>继续追问，或者带入一个新问题…</span><span class="composer-arrow" aria-hidden="true">↑</span></div>
+    <div class="app-body">
+      <div class="a-main">
+        <!-- 第一幕：数据分析 -->
+        <div class="scene" data-scene="0">
+          <div class="a-head">株高 GWAS 与基因组预测<em>科学包 · 生物育种</em></div>
+          <div class="a-thread">
+            <div class="u-msg"><div class="att"><span>phenotype.csv</span><span>geno.vcf.gz</span></div>对株高做 GWAS，再用 GBLUP 估计育种值，五折交叉验证。</div>
+            <div class="steps">
+              <div class="st" style="--c:var(--local)">读取 <code>phenotype.csv</code><span class="where">本机</span><span class="s" data-done="1,204 株"></span></div>
+              <div class="st" style="--c:var(--local)">质控 <code>plink2 --maf 0.05</code><span class="where">本机</span><span class="s" data-done="38,912 SNP"></span></div>
+              <div class="st" style="--c:var(--local)">关联分析 <code>gcta --mlma</code><span class="where">本机</span><span class="s" data-done="12.6 s"></span></div>
+              <div class="st" style="--c:var(--local)">基因组预测 <code>hiblup</code><span class="where">本机</span><span class="s" data-done="r = 0.62"></span></div>
             </div>
-            <aside class="evidence-panel" aria-label="证据示意">
-              <div class="panel-heading"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg> 研究线索</div>
-              <p class="panel-caption">不是只有一个答案，<br>还有得到它的过程。</p>
-              <div class="evidence-card"><span class="card-kicker">01 / 数据</span><strong>先认识你的数据</strong><div class="mini-table" aria-hidden="true"><span>sample_id</span><span>group</span><span>value</span><span>S_001</span><span>A</span><span>—</span><span>S_002</span><span>B</span><span>—</span><span>S_003</span><span>A</span><span>—</span></div></div>
-              <div class="evidence-card"><span class="card-kicker">02 / 方法</span><strong>把选择说清楚</strong><p>适用条件、参数与局限，和结果一起保存。</p></div>
-              <div class="evidence-foot"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> 文件与计算，相互对应</div>
-            </aside>
+            <div class="ans">
+              第 1、6 号染色体各有一个显著位点，<b>chr1:38.4 Mb</b> 与已知 sd1 区段重合；GBLUP 五折平均预测精度 <b>r = 0.62</b>。
+              <div class="plot"><h6>曼哈顿图 · plant_height</h6><svg viewBox="0 0 600 120" preserveAspectRatio="none" id="manh"></svg></div>
+            </div>
           </div>
         </div>
-        <figcaption><span>一个工作空间，连接研究的每一步。</span><span>工作台界面与研究流程示意</span></figcaption>
-      </figure>
-    </section>
-    <div class="principles container"><span><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>本机工作空间</span><i aria-hidden="true"></i><span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>真实工具执行</span><i aria-hidden="true"></i><span><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>研究过程可回溯</span></div>
-    <section class="section container" id="work" aria-labelledby="work-title">
-      <div class="section-heading"><div><p class="eyebrow">FROM QUESTION TO EVIDENCE</p><h2 id="work-title">从研究问题，<br>到有据可循的结果。</h2></div><p>在一个工作空间里，<br>完成资料整理、分析计算与研究交付。</p></div>
-      <div class="workflow-grid">
-        <article class="workflow-card"><div class="workflow-top"><span class="step-number">01</span><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></div><h3>从你的问题开始</h3><p>写下目标，带入数据和专业资料。先厘清研究问题，再把它拆成可以推进的计划。</p><div class="card-foot">问题 <span aria-hidden="true">→</span> 计划</div></article>
-        <article class="workflow-card"><div class="workflow-top"><span class="step-number">02</span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div><h3>让方法真正运行</h3><p>从数据处理到专业分析，把选定的方法交给真实工具，留下可以检查的计算过程。</p><div class="card-foot">数据 <span aria-hidden="true">→</span> 计算</div></article>
-        <article class="workflow-card"><div class="workflow-top"><span class="step-number">03</span><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></div><h3>把证据留在身边</h3><p>连同结论一起保留输出文件、方法与参数。清楚知道做过什么，也知道哪些问题尚待验证。</p><div class="card-foot">结果 <span aria-hidden="true">→</span> 证据</div></article>
-      </div>
-    </section>
-    <section class="fields-section" id="fields" aria-labelledby="fields-title">
-      <div class="container fields-layout">
-        <div class="fields-intro"><p class="eyebrow">EXPLORE YOUR FIELD</p><h2 id="fields-title">专注你的领域，<br>深入你的问题。</h2><p>从生命科学到数理研究，<br>围绕具体问题，组织数据与专业方法。</p></div>
-        <div class="fields-explorer">
-          <div class="field-options" role="group" aria-label="选择研究领域"><button class="field-button" type="button" data-field="breeding" aria-pressed="true">生物育种</button><button class="field-button" type="button" data-field="bioinformatics" aria-pressed="false">生物信息</button><button class="field-button" type="button" data-field="chemistry" aria-pressed="false">化学信息</button><button class="field-button" type="button" data-field="clinical" aria-pressed="false">临床研究</button><button class="field-button" type="button" data-field="omics" aria-pressed="false">多组学</button><button class="field-button" type="button" data-field="methods" aria-pressed="false">科研方法</button></div>
-          <div class="field-example" aria-live="polite" aria-atomic="true"><span class="example-label">研究场景 <span aria-hidden="true">↗</span></span><h3 id="field-question">这批表型数据，适合怎样的遗传评估？</h3><p id="field-description">先核对表型、系谱与基因型的对应关系，再讨论模型选择和验证方法。</p><div class="example-tags" id="field-tags"><span>表型探索</span><span>遗传评估</span><span>模型验证</span></div></div>
-          <p class="more-fields">也关注统计、地球科学、神经科学、材料、物理与数学。</p>
-          <noscript><p>启用 JavaScript 可切换领域示例；下载与其余页面内容不受影响。</p></noscript>
+        <!-- 第二幕：远程算力 -->
+        <div class="scene" data-scene="1">
+          <div class="a-head">置换检验 · 1000 次<em>远程主机 · hpc-login</em></div>
+          <div class="a-thread">
+            <div class="u-msg">在集群上用 8 张 A100 跑 1000 次置换检验，跑完把结果拿回来。</div>
+            <div class="steps">
+              <div class="st" style="--c:var(--hpc)">选择主机 <code>hpc-login</code><span class="where">Slurm</span><span class="s" data-done="空闲 8/8 GPU"></span></div>
+              <div class="st" style="--c:var(--hpc)">上传 <code>rice_qc.bed</code><span class="where">1.2 GB</span><span class="s" data-done="28 s"></span></div>
+              <div class="st" style="--c:var(--hpc)">提交作业 <code>sbatch perm.sh</code><span class="where">job 41827</span><span class="s" data-done="完成 · 2 h 14 m"></span></div>
+              <div class="st st-confirm" style="--c:var(--hpc)"><span class="cf">需要你确认</span>清理远端 <code>rm -rf ~/runs/perm_tmp/</code><span class="s" data-done="已批准"></span></div>
+              <div class="st" style="--c:var(--local)">取回 <code>perm_pvals.csv</code><span class="where">本机</span><span class="s" data-done="已同步"></span></div>
+            </div>
+            <div class="ans">1000 次置换后的经验阈值为 <b>p = 2.1×10⁻⁶</b>，chr1 位点依然显著。作业跑完后端砚自动回到这条对话，结果已存到本机工作区。</div>
+          </div>
         </div>
+        <!-- 第三幕：自主实验台 -->
+        <div class="scene" data-scene="2">
+          <div class="a-head">Cu²⁺ 标准曲线<em>自主实验台 · 化学湿实验</em></div>
+          <div class="a-thread">
+            <div class="u-msg">配 5 个浓度梯度的 Cu²⁺ 标准溶液，测 520 nm 吸光度，拟合标准曲线。</div>
+            <div class="steps">
+              <div class="st" style="--c:var(--lab)">称量 <code>balance.weigh</code><span class="where">电子天平</span><span class="s" data-done="0.5012 g"></span></div>
+              <div class="st" style="--c:var(--lab)">配液 <code>pump.dispense ×5</code><span class="where">注射泵</span><span class="s" data-done="5 管"></span></div>
+              <div class="st" style="--c:var(--lab)">分液 <code>handler.transfer</code><span class="where">移液机器人</span><span class="s" data-done="A1→A5"></span></div>
+              <div class="st" style="--c:var(--lab)">测量 <code>spectro.read 520nm</code><span class="where">光谱仪</span><span class="s" data-done="5 个读数"></span></div>
+            </div>
+            <div class="ans">
+              标准曲线 <b>A = 0.182·c + 0.004</b>，<b>R² = 0.998</b>。每次设备调用的参数和读数都已记录。
+              <div class="plot"><h6>标准曲线 · 520 nm</h6><svg viewBox="0 0 600 120" preserveAspectRatio="none">
+                <path d="M40 110H590M40 110V8" stroke="#e8e6dc" stroke-width="1.5"/>
+                <path d="M60 104 L570 16" stroke="#3c74b3" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+                <g fill="#3c74b3"><circle cx="100" cy="97" r="4"/><circle cx="210" cy="79" r="4"/><circle cx="320" cy="58" r="4"/><circle cx="430" cy="41" r="4"/><circle cx="540" cy="21" r="4"/></g>
+              </svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="a-comp">继续追问，@ 指定技能<span class="c">资料</span><span class="c">技能</span><span class="go"><svg width="14" height="14"><use href="#up"/></svg></span></div>
       </div>
-    </section>
-    <section class="section container downloads-section" id="get" aria-labelledby="get-title">
-      <div class="section-heading"><div><p class="eyebrow">A PLACE FOR YOUR NEXT DISCOVERY</p><h2 id="get-title">下一次发现，<br>从你的桌面开始。</h2></div><div class="download-meta"><span class="version-label"><span class="status-dot"></span> 当前版本 1.1.8</span><p>2026.10.15 发布</p><a class="text-link" href="https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.8">版本说明与全部文件 <span aria-hidden="true">↗</span></a></div></div>
-      <div class="download-grid">
-        <article class="download-card" data-platform="windows"><div class="download-card-top"><svg class="os-icon" aria-hidden="true"><use href="#i-windows"/></svg><span class="recommended-label" hidden>适合当前设备</span></div><h3>Windows</h3><p class="architecture">x64 <span>·</span> 安装版 / 便携版</p><p class="install-note">日常使用推荐安装版。便携版无需安装，下载后直接运行。</p><a class="button button-dark" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe">下载安装版 <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a><a class="secondary-download" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.8-x64.exe">下载便携版 <span aria-hidden="true">↗</span></a></article>
-        <article class="download-card" data-platform="linux"><div class="download-card-top"><svg class="os-icon" aria-hidden="true"><use href="#i-linux"/></svg><span class="recommended-label" hidden>适合当前设备</span></div><h3>Linux</h3><p class="architecture">x86_64 <span>·</span> AppImage / deb</p><p class="install-note">AppImage 添加执行权限后打开。Debian、Ubuntu 也可以使用 deb 包。</p><a class="button button-dark" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-x86_64.AppImage">下载 AppImage <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a><a class="secondary-download" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.8-amd64.deb">下载 deb 安装包 <span aria-hidden="true">↗</span></a></article>
-        <article class="download-card" data-platform="mac"><div class="download-card-top"><svg class="os-icon" aria-hidden="true"><use href="#i-apple"/></svg><span class="recommended-label" hidden>适合当前设备</span></div><h3>macOS</h3><p class="architecture">Apple Silicon <span>·</span> arm64</p><p class="install-note">下载 DMG 后，将端砚拖入「应用程序」。此版本面向 Apple 芯片的 Mac。</p><a class="button button-dark" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.dmg">下载 DMG <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a><span class="secondary-download download-detail">适用于 M 系列芯片</span></article>
+      <aside class="a-right">
+        <!-- 右栏 1：流程 -->
+        <div class="rp" data-scene="0">
+          <div class="a-tabs"><span class="on">流程</span><span>依据</span><span>文件</span></div>
+          <div class="flowv">
+            <div class="fn"><span class="d"></span><div><b>读取表型</b><small>表格读取</small></div></div>
+            <div class="fn"><span class="d"></span><div><b>质控过滤</b><small>plink2</small></div></div>
+            <div class="fn"><span class="d"></span><div><b>关联分析</b><small>gcta</small></div></div>
+            <div class="fn"><span class="d"></span><div><b>基因组预测</b><small>hiblup</small></div></div>
+          </div>
+          <div class="evid"><b>预测精度 r = 0.62<span>✓ 已核对</span></b><p>2 份数据 · 4 次运行 · 5 个结果文件</p></div>
+        </div>
+        <!-- 右栏 2：远程主机 -->
+        <div class="rp" data-scene="1">
+          <div class="a-tabs"><span class="on">远程主机</span><span>作业</span></div>
+          <div class="hosts">
+            <div class="hrow on"><b>hpc-login</b><small>Slurm · 8 × A100</small><div class="gpus"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="hrow"><b>gpu-01</b><small>64 核 · 512 GB</small><div class="meter"><i style="width:38%"></i></div></div>
+            <div class="hrow off"><b>lab-ws</b><small>离线</small></div>
+          </div>
+          <div class="jobcard"><b>job 41827<span>RUNNING</span></b><div class="prog"><i></i></div><p>perm.sh · 1000 次置换 · gpu-long</p></div>
+        </div>
+        <!-- 右栏 3：设备 -->
+        <div class="rp" data-scene="2">
+          <div class="a-tabs"><span class="on">设备</span><span>记录</span></div>
+          <div class="devlist">
+            <div class="dv" data-i="0"><b>电子天平</b><code>0.5012 g</code></div>
+            <div class="dv" data-i="1"><b>注射泵</b><code>2.50 mL/min</code></div>
+            <div class="dv" data-i="2"><b>移液机器人</b><code>A3 · 50 µL</code></div>
+            <div class="dv" data-i="3"><b>光谱仪</b><svg viewBox="0 0 120 30" preserveAspectRatio="none"><path class="trace" d="M0 27 C20 26 28 24 36 20 S48 3 56 3 S66 22 76 22 S96 14 104 14 S114 24 120 26"/></svg></div>
+          </div>
+          <p class="protos">SCPI · Modbus · EPICS · SiLA2</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 能接手的事 -->
+<section class="band white"><div class="wrap">
+  <div class="center">
+    <h2 class="h2">与端砚一起<em class="g">做科学发现</em></h2>
+    <p class="lead">从处理数据、查阅文献到跑完几天的计算，说清楚研究问题，端砚先拟计划，拿不准时先问你，然后一直做到交付。</p>
+  </div>
+  <div class="tasks">
+    <div class="task">
+      <div class="pic p-analysis">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <path d="M50 250H370M50 250V40" stroke="#d9d6ca" stroke-width="1.5" fill="none"/>
+          <path d="M50 190H370M50 130H370M50 70H370" stroke="#f0eee6" stroke-width="1"/>
+          <g fill="#4a7d5b">
+            <circle class="dot" cx="80" cy="222" r="5" style="animation-delay:.1s"/><circle class="dot" cx="102" cy="205" r="5" style="animation-delay:.2s"/>
+            <circle class="dot" cx="122" cy="214" r="5" style="animation-delay:.3s"/><circle class="dot" cx="140" cy="186" r="5" style="animation-delay:.4s"/>
+            <circle class="dot" cx="165" cy="176" r="5" style="animation-delay:.5s"/><circle class="dot" cx="186" cy="182" r="5" style="animation-delay:.6s"/>
+            <circle class="dot" cx="206" cy="150" r="5" style="animation-delay:.7s"/><circle class="dot" cx="230" cy="142" r="5" style="animation-delay:.8s"/>
+            <circle class="dot" cx="252" cy="148" r="5" style="animation-delay:.9s"/><circle class="dot" cx="272" cy="118" r="5" style="animation-delay:1s"/>
+            <circle class="dot" cx="296" cy="104" r="5" style="animation-delay:1.1s"/><circle class="dot" cx="318" cy="112" r="5" style="animation-delay:1.2s"/>
+            <circle class="dot" cx="340" cy="82" r="5" style="animation-delay:1.3s"/>
+          </g>
+          <path class="fit" d="M66 228 L352 78" stroke="#c0643f" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <rect x="230" y="210" width="128" height="30" rx="7" fill="#fff" stroke="#e8e6dc"/>
+          <text x="244" y="230" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#141413">r = 0.62 · n=1204</text>
+        </svg>
       </div>
-      <p class="download-help">下载遇到问题？<a href="https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.8">也可以从 GitHub 下载安装包 <span aria-hidden="true">↗</span></a></p>
-    </section>
-    <section class="faq-section container" id="faq" aria-labelledby="faq-title">
-      <div><p class="eyebrow">GOOD TO KNOW</p><h2 id="faq-title">开始之前，<br>你可能想知道。</h2></div>
-      <div class="faq-list">
-        <details><summary>如何开始第一个研究任务？<span class="faq-plus" aria-hidden="true"></span></summary><p>安装端砚，连接你使用的模型服务，选择一个工作文件夹。带入数据或资料，再写下你想解决的问题。</p></details>
-        <details><summary>我的数据会被发送到哪里？<span class="faq-plus" aria-hidden="true"></span></summary><p>工作文件默认保存在本机。使用远程模型、在线检索或外部科研服务时，相关输入可能会发往你配置的服务。处理敏感数据前，请先确认服务设置与所在机构的数据使用要求。</p></details>
-        <details><summary>如何获取后续更新？<span class="faq-plus" aria-hidden="true"></span></summary><p>安装版可在「设置」中检查更新。便携版以及无法自动更新的情况，可以回到此页下载新版；更新前建议备份重要工作文件。</p></details>
+      <h3 class="h3">分析你的数据</h3>
+      <p class="small">上传表型、基因型、序列或表格，端砚调用 PLINK、GCTA、HIBLUP 等软件真正算出来，代码、图表和结果文件都留在工作区。</p>
+    </div>
+    <div class="task">
+      <div class="pic p-lit">
+        <div class="cite"><i>1</i><div><b>Semidwarf (sd-1) gene in rice</b>Spielmeyer W. · PNAS 2002 · <u>DOI ↗</u></div><span class="ok">✓</span></div>
+        <div class="cite"><i>2</i><div><b>GCTA: a tool for genome-wide complex trait analysis</b>Yang J. · AJHG 2011 · <u>PMID ↗</u></div><span class="ok">✓</span></div>
+        <div class="cite"><i>3</i><div><b>Genomic selection in plant breeding</b>Crossa J. · Trends Plant Sci 2017 · <u>DOI ↗</u></div><span class="ok">✓</span></div>
       </div>
-    </section>
-    <div class="closing container"><img src="mark.svg" width="42" height="42" alt=""><p>端砚 <span>· 为科研而设计</span></p><a href="#get" class="text-link">获取桌面应用 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-  </main>
-  <footer class="site-footer"><div class="container footer-inner"><div class="footer-brand"><img src="lab.png" alt="上海人工智能实验室" width="48" height="32"><span>上海人工智能实验室 <span class="footer-separator">/</span> 书生·端砚</span></div><div class="footer-links"><span>Science, with a trace.</span><a href="https://github.com/A3S-Lab/duanyan-releases/releases">GitHub 发布页 <span aria-hidden="true">↗</span></a><a href="#top">回到顶部 ↑</a></div></div></footer>
+      <h3 class="h3">写有出处的综述</h3>
+      <p class="small">Crossref、PubMed、arXiv、bioRxiv、medRxiv、OpenAlex 同时检索，SciVerse 能读全文。每条引用都可以核验，点开就是原文。</p>
+    </div>
+    <div class="task">
+      <div class="pic p-goal">
+        <div class="ring">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="#eeece5" stroke-width="9"/><circle class="arc" cx="50" cy="50" r="40" fill="none" stroke="#4a7d5b" stroke-width="9" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg>
+          <div><b>补齐 9 个目标的证据表</b><span>自动继续 · 第 7 轮</span></div>
+        </div>
+        <div class="rounds"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="log"><em>✓</em> 第 6 轮 · 核对 3 篇文献<br><em>✓</em> 集群作业 41827 已完成，结果已读回<br><em>…</em> 第 7 轮 · 整理证据表</div>
+      </div>
+      <h3 class="h3">跑几天也不用盯着</h3>
+      <p class="small">写下目标和完成标准，端砚一轮接一轮推进直到做完。服务器上的长任务结束或失败时，它会回到原来的对话接着处理。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 贯通 -->
+<section class="band" id="connect"><div class="wrap">
+  <div class="center">
+    <h2 class="h2">本机、集群、实验台，<em class="g">一线贯通</em></h2>
+    <p class="lead">分析在本机，计算上集群，测量交给仪器，结果再回到本机进入下一轮。端砚把整个闭环接进同一个任务，数据和记录一路跟着走。</p>
+  </div>
+  <div class="ills">
+    <svg class="ill-link" aria-hidden="true">
+      <defs><linearGradient id="lg" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f7d5b"/><stop offset=".5" stop-color="#c0643f"/><stop offset="1" stop-color="#3c74b3"/></linearGradient>
+      <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l7 4-7 4" fill="none" stroke="context-stroke" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+      <path class="fw1" stroke="#c0643f" marker-end="url(#ah)"/>
+      <path class="fw2" stroke="#3c74b3" marker-end="url(#ah)"/>
+      <path class="bk" stroke="#2f7d5b" marker-end="url(#ah)"/>
+      <text class="bk-t" text-anchor="middle">测量结果回到本机，进入下一轮分析</text>
+      <circle class="spark2" r="6" fill="#fff"><animateMotion dur="9s" repeatCount="indefinite"/></circle>
+    </svg>
+    <div class="ill" style="--c:var(--local)">
+      <svg viewBox="0 0 360 240" aria-hidden="true">
+        <rect x="52" y="18" width="256" height="168" rx="12" fill="#fff" stroke="#2f7d5b" stroke-width="2.5"/>
+        <rect x="64" y="30" width="232" height="144" rx="5" fill="#f4f8f5"/>
+        <g class="lt-code">
+          <rect x="76" y="46" width="70" height="7" rx="3.5" fill="#2f7d5b"/>
+          <rect x="84" y="62" width="58" height="7" rx="3.5" fill="#9cc2a8"/>
+          <rect x="84" y="78" width="80" height="7" rx="3.5" fill="#9cc2a8"/>
+          <rect x="76" y="94" width="50" height="7" rx="3.5" fill="#2f7d5b"/>
+          <rect x="84" y="110" width="66" height="7" rx="3.5" fill="#9cc2a8"/>
+        </g>
+        <path d="M184 160H284M184 160V48" stroke="#c8d8cc" stroke-width="1.5"/>
+        <rect class="lt-bar" x="194" y="118" width="14" height="42" rx="2" fill="#9cc2a8"/>
+        <rect class="lt-bar" x="214" y="96" width="14" height="64" rx="2" fill="#6fa47f" style="animation-delay:.15s"/>
+        <rect class="lt-bar" x="234" y="74" width="14" height="86" rx="2" fill="#2f7d5b" style="animation-delay:.3s"/>
+        <rect class="lt-bar" x="254" y="104" width="14" height="56" rx="2" fill="#6fa47f" style="animation-delay:.45s"/>
+        <path d="M24 194h312l-22 22H46z" fill="#e4eee6" stroke="#2f7d5b" stroke-width="2.5" stroke-linejoin="round"/>
+        <rect x="150" y="200" width="60" height="6" rx="3" fill="#2f7d5b" opacity=".35"/>
+      </svg>
+      
+      <h3 class="h3">本机</h3>
+      <p class="small">数据、文献和知识库都在自己电脑上。Python、R、PLINK 等软件按需下载，也能放进容器里跑。</p>
+    </div>
+    <div class="ill" style="--c:var(--hpc)">
+      <svg viewBox="0 0 360 240" aria-hidden="true">
+        <g class="job"><rect x="20" y="70" width="74" height="26" rx="6" fill="#fff" stroke="#c0643f" stroke-width="2"/><text x="31" y="88" font-family="ui-monospace,Menlo,monospace" font-size="11.5" fill="#c0643f">job 41827</text></g>
+        <g class="job" style="animation-delay:-2.2s"><rect x="20" y="140" width="74" height="26" rx="6" fill="#fff" stroke="#c0643f" stroke-width="2"/><text x="31" y="158" font-family="ui-monospace,Menlo,monospace" font-size="11.5" fill="#c0643f">job 41828</text></g>
+        <rect x="118" y="14" width="200" height="214" rx="12" fill="#fff" stroke="#c0643f" stroke-width="2.5"/>
+        <g>
+          <rect x="132" y="30" width="172" height="44" rx="6" fill="#f7ece5"/>
+          <circle class="led" cx="148" cy="52" r="4.5" fill="#4a7d5b"/><circle class="led" cx="162" cy="52" r="4.5" fill="#c0643f" style="animation-delay:-.4s"/>
+          <rect x="178" y="48" width="112" height="8" rx="4" fill="#ecdcd1"/><rect class="load" x="178" y="48" width="112" height="8" rx="4" fill="#c0643f"/>
+          <rect x="132" y="86" width="172" height="44" rx="6" fill="#f7ece5"/>
+          <circle class="led" cx="148" cy="108" r="4.5" fill="#4a7d5b" style="animation-delay:-.7s"/><circle class="led" cx="162" cy="108" r="4.5" fill="#c0643f" style="animation-delay:-.2s"/>
+          <rect x="178" y="104" width="112" height="8" rx="4" fill="#ecdcd1"/><rect class="load" x="178" y="104" width="112" height="8" rx="4" fill="#c0643f" style="animation-delay:-1s"/>
+          <rect x="132" y="142" width="172" height="44" rx="6" fill="#f7ece5"/>
+          <circle class="led" cx="148" cy="164" r="4.5" fill="#4a7d5b" style="animation-delay:-.3s"/><circle class="led" cx="162" cy="164" r="4.5" fill="#c0643f" style="animation-delay:-.9s"/>
+          <rect x="178" y="160" width="112" height="8" rx="4" fill="#ecdcd1"/><rect class="load" x="178" y="160" width="112" height="8" rx="4" fill="#c0643f" style="animation-delay:-1.8s"/>
+        </g>
+        <text x="132" y="212" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#8a8982">Slurm · 8 × A100</text>
+      </svg>
+      
+      <h3 class="h3">服务器与集群</h3>
+      <p class="small">读取 SSH 配置，作业交给 Slurm，GPU 和内存占用看得见。跑完或出错，端砚回到对话接着处理。</p>
+    </div>
+    <div class="ill" style="--c:var(--lab)">
+      <svg viewBox="0 0 360 240" aria-hidden="true">
+        <rect x="30" y="20" width="300" height="12" rx="6" fill="#3c74b3"/>
+        <path d="M44 32v170M316 32v170" stroke="#3c74b3" stroke-width="5" stroke-linecap="round"/>
+        <g class="head">
+          <rect x="84" y="32" width="36" height="34" rx="6" fill="#fff" stroke="#3c74b3" stroke-width="2.5"/>
+          <path d="M102 66v26" stroke="#3c74b3" stroke-width="3" stroke-linecap="round"/>
+          <path d="M98 92h8l-4 10z" fill="#3c74b3"/>
+          <circle class="drop" cx="102" cy="110" r="4" fill="#4a86c8"/>
+        </g>
+        <rect x="70" y="140" width="220" height="62" rx="8" fill="#fff" stroke="#3c74b3" stroke-width="2.5"/>
+        <circle class="well w1" cx="102" cy="160" r="9" stroke="#9cb7d6" stroke-width="2"/>
+        <circle class="well w2" cx="146" cy="160" r="9" stroke="#9cb7d6" stroke-width="2"/>
+        <circle class="well w3" cx="190" cy="160" r="9" stroke="#9cb7d6" stroke-width="2"/>
+        <circle class="well w4" cx="234" cy="160" r="9" stroke="#9cb7d6" stroke-width="2"/>
+        <g fill="#fff" stroke="#d3deeb" stroke-width="2"><circle cx="102" cy="184" r="7"/><circle cx="146" cy="184" r="7"/><circle cx="190" cy="184" r="7"/><circle cx="234" cy="184" r="7"/><circle cx="268" cy="160" r="7"/><circle cx="268" cy="184" r="7"/></g>
+        <text x="70" y="226" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#8a8982">移液机器人 · SiLA2</text>
+      </svg>
+      
+      <h3 class="h3">实验仪器</h3>
+      <p class="small">天平、移液机器人、光谱仪等 32 台设备，按计划逐步调用完成配液和测量，每次调用都有记录。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 远程算力 -->
+<section class="band white" style="--c:var(--hpc)"><div class="wrap feat">
+  <div>
+    <div class="kick">算力</div>
+    <h2 class="h2">本地研究，<em class="o">远程计算</em></h2>
+    <p class="lead">数据、文献和对话都留在自己电脑上。需要算力时，把任务交给实验室的服务器或集群，跑完结果回到同一个对话。</p>
+    <div class="facts">
+      <div><b>读取 SSH 配置</b><span>已有的主机直接出现，GPU、CPU、内存和磁盘占用一眼看清</span></div>
+      <div><b>支持 Slurm 集群</b><span>分区、机时账号、walltime 写进主机说明，提交作业时照着来</span></div>
+      <div><b>远端操作先确认</b><span>删文件、结束进程前列出命令和影响范围，等你点头</span></div>
+      <div><b>长任务自动回来</b><span>训练、比对跑完或失败，端砚回到原对话接着处理</span></div>
+    </div>
+  </div>
+  <div class="vis">
+    <div class="ui">
+      <div class="ui-h">远程主机<small>来自 ~/.ssh/config</small></div>
+      <div class="host" style="--c:var(--green)"><div><b>gpu-01</b><small>64 核 · 512 GB · 8 × A100</small></div><div class="meter"><i style="width:82%"></i></div><span class="btn btn-ink">用这台</span></div>
+      <div class="host" style="--c:var(--green)"><div><b>hpc-login</b><small>Slurm · 分区 gpu-long</small></div><div class="meter"><i style="width:46%;animation-delay:-1.2s"></i></div><span class="btn btn-line">用这台</span></div>
+      <div class="host"><div><b>lab-ws</b><small>离线</small></div><div class="meter"><i style="width:0"></i></div><span class="btn btn-line">用这台</span></div>
+      <div class="confirm">
+        <b>在 gpu-01 上执行，需要你确认</b>
+        <code>rm -rf ~/runs/gwas_tmp/</code>
+        <div class="row">将删除 1.8 GB 中间文件<span class="btn btn-line">驳回</span><span class="btn btn-ink">批准</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 自主实验台 -->
+<section class="band" style="--c:var(--lab)"><div class="wrap feat rev">
+  <div class="vis">
+    <div class="ui">
+      <div class="ui-h">自主实验台<small>6 类 · 32 台设备</small></div>
+      <div class="devs">
+        <div class="dev"><b>电子天平</b><small>化学湿实验</small><code>12.4083 g</code></div>
+        <div class="dev"><b>pH 计</b><small>化学湿实验</small><code>pH 7.02</code></div>
+        <div class="dev"><b>注射泵</b><small>化学湿实验</small><code>2.50 mL/min</code></div>
+        <div class="dev"><b>光谱仪</b><small>物理光学</small><svg viewBox="0 0 120 38" preserveAspectRatio="none"><path class="trace" d="M0 34 C20 33 28 30 36 26 S48 4 56 4 S66 28 76 28 S96 18 104 18 S114 30 120 32"/></svg></div>
+        <div class="dev"><b>恒电位仪</b><small>电化学</small><svg viewBox="0 0 120 38" preserveAspectRatio="none"><path class="trace" d="M0 30 C20 30 30 6 50 6 S70 30 90 30 S110 14 120 10" style="animation-delay:-2s"/></svg></div>
+        <div class="dev"><b>移液机器人</b><small>生物</small><code class="sm">A1→B4 50 µL</code></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="kick">自主实验台</div>
+    <h2 class="h2">直接操作<em class="b">实验仪器</em></h2>
+    <p class="lead">把仪器交给对话。端砚按计划逐步调用设备完成称量、配液、滴定和测量，每次调用都有记录，限幅由设备端强制。</p>
+    <div class="big"><div><b>32</b><span>台实验设备</span></div><div><b>412</b><span>个设备工具</span></div><div><b>6</b><span>类实验台</span></div></div>
+    <div class="proto"><span>SCPI</span><span>Modbus</span><span>EPICS</span><span>SiLA2</span></div>
+  </div>
+</div></section>
+
+<!-- 科学包 -->
+<section class="band white"><div class="wrap pair">
+  <div class="logo-marquee" aria-label="已接入的软件与数据库">
+    <div class="lm-row" style="--d:52s"><div class="lm-track"><div class="lg-t"><i style="--c:#2f7d5b">HI</i><span>HIBLUP</span></div><div class="lg-t"><i style="--c:#3c74b3">GC</i><span>GCTA</span></div><div class="lg-t"><i style="--c:#6b4fa8">P2</i><span>PLINK 2</span></div><div class="lg-t"><i style="--c:#c98a2b">Bg</i><span>Beagle</span></div><div class="lg-t wm"><img src="logos/scanpy.svg" alt="Scanpy"></div><div class="lg-t wm"><img src="logos/pydeseq2.svg" alt="PyDESeq2"></div><div class="lg-t wm"><img src="logos/biopython.png" alt="Biopython"></div><div class="lg-t"><img src="logos/scverse.png" alt=""><span>AnnData</span></div><div class="lg-t"><img src="logos/ncbi.png" alt=""><span>BLAST</span></div><div class="lg-t tx"><b>BWA</b></div><div class="lg-t"><img src="logos/cellxgene.png" alt=""><span>CELLxGENE</span></div><div class="lg-t tx"><b>AlphaFold</b></div><div class="lg-t"><img src="logos/esm.png" alt=""><span>ESM</span></div><span class="lm-dup" aria-hidden="true"><div class="lg-t"><i style="--c:#2f7d5b">HI</i><span>HIBLUP</span></div><div class="lg-t"><i style="--c:#3c74b3">GC</i><span>GCTA</span></div><div class="lg-t"><i style="--c:#6b4fa8">P2</i><span>PLINK 2</span></div><div class="lg-t"><i style="--c:#c98a2b">Bg</i><span>Beagle</span></div><div class="lg-t wm"><img src="logos/scanpy.svg" alt="Scanpy"></div><div class="lg-t wm"><img src="logos/pydeseq2.svg" alt="PyDESeq2"></div><div class="lg-t wm"><img src="logos/biopython.png" alt="Biopython"></div><div class="lg-t"><img src="logos/scverse.png" alt=""><span>AnnData</span></div><div class="lg-t"><img src="logos/ncbi.png" alt=""><span>BLAST</span></div><div class="lg-t tx"><b>BWA</b></div><div class="lg-t"><img src="logos/cellxgene.png" alt=""><span>CELLxGENE</span></div><div class="lg-t tx"><b>AlphaFold</b></div><div class="lg-t"><img src="logos/esm.png" alt=""><span>ESM</span></div></span></div></div>
+    <div class="lm-row rev" style="--d:68s"><div class="lm-track"><div class="lg-t"><img src="logos/rdkit.png" alt=""><span>RDKit</span></div><div class="lg-t wm"><img src="logos/pubchem.svg" alt="PubChem"></div><div class="lg-t"><img src="logos/chembl.png" alt=""><span>ChEMBL</span></div><div class="lg-t"><img src="logos/mp.png" alt=""><span>Materials Project</span></div><div class="lg-t"><img src="logos/mp.png" alt=""><span>pymatgen</span></div><div class="lg-t"><img src="logos/ase.png" alt=""><span>ASE</span></div><div class="lg-t"><img src="logos/qiskit.png" alt=""><span>Qiskit</span></div><div class="lg-t"><img src="logos/pennylane.png" alt=""><span>PennyLane</span></div><div class="lg-t wm"><img src="logos/cirq.png" alt="Cirq"></div><div class="lg-t"><img src="logos/qutip.png" alt=""><span>QuTiP</span></div><div class="lg-t"><img src="logos/astropy.png" alt=""><span>Astropy</span></div><div class="lg-t"><img src="logos/sympy.svg" alt=""><span>SymPy</span></div><div class="lg-t"><img src="logos/scipy.svg" alt=""><span>SciPy</span></div><div class="lg-t"><img src="logos/scikitlearn.svg" alt=""><span>scikit-learn</span></div><div class="lg-t wm"><img src="logos/lean.png" alt="Lean"></div><div class="lg-t"><img src="logos/pandas.svg" alt=""><span>pandas</span></div><div class="lg-t"><img src="logos/pytorch.svg" alt=""><span>PyTorch</span></div><span class="lm-dup" aria-hidden="true"><div class="lg-t"><img src="logos/rdkit.png" alt=""><span>RDKit</span></div><div class="lg-t wm"><img src="logos/pubchem.svg" alt="PubChem"></div><div class="lg-t"><img src="logos/chembl.png" alt=""><span>ChEMBL</span></div><div class="lg-t"><img src="logos/mp.png" alt=""><span>Materials Project</span></div><div class="lg-t"><img src="logos/mp.png" alt=""><span>pymatgen</span></div><div class="lg-t"><img src="logos/ase.png" alt=""><span>ASE</span></div><div class="lg-t"><img src="logos/qiskit.png" alt=""><span>Qiskit</span></div><div class="lg-t"><img src="logos/pennylane.png" alt=""><span>PennyLane</span></div><div class="lg-t wm"><img src="logos/cirq.png" alt="Cirq"></div><div class="lg-t"><img src="logos/qutip.png" alt=""><span>QuTiP</span></div><div class="lg-t"><img src="logos/astropy.png" alt=""><span>Astropy</span></div><div class="lg-t"><img src="logos/sympy.svg" alt=""><span>SymPy</span></div><div class="lg-t"><img src="logos/scipy.svg" alt=""><span>SciPy</span></div><div class="lg-t"><img src="logos/scikitlearn.svg" alt=""><span>scikit-learn</span></div><div class="lg-t wm"><img src="logos/lean.png" alt="Lean"></div><div class="lg-t"><img src="logos/pandas.svg" alt=""><span>pandas</span></div><div class="lg-t"><img src="logos/pytorch.svg" alt=""><span>PyTorch</span></div></span></div></div>
+    <div class="lm-row" style="--d:60s"><div class="lm-track"><div class="lg-t"><img src="logos/pubmed.svg" alt=""><span>PubMed</span></div><div class="lg-t"><img src="logos/arxiv.svg" alt=""><span>arXiv</span></div><div class="lg-t"><img src="logos/semanticscholar.svg" alt=""><span>Semantic Scholar</span></div><div class="lg-t"><img src="logos/openalex.png" alt=""><span>OpenAlex</span></div><div class="lg-t wm"><img src="logos/crossref.svg" alt="Crossref"></div><div class="lg-t"><img src="logos/uniprot.png" alt=""><span>UniProt</span></div><div class="lg-t"><img src="logos/ensembl.png" alt=""><span>Ensembl</span></div><div class="lg-t"><img src="logos/kegg.gif" alt=""><span>KEGG</span></div><div class="lg-t"><img src="logos/reactome.png" alt=""><span>Reactome</span></div><div class="lg-t wm"><img src="logos/string.png" alt="STRING"></div><div class="lg-t"><img src="logos/opentargets.png" alt=""><span>Open Targets</span></div><div class="lg-t tx"><b>ClinicalTrials.gov</b></div><div class="lg-t tx"><b>gnomAD</b></div><div class="lg-t"><img src="logos/ncbi.png" alt=""><span>GEO</span></div><div class="lg-t"><img src="logos/biomcp.png" alt=""><span>BioMCP</span></div><span class="lm-dup" aria-hidden="true"><div class="lg-t"><img src="logos/pubmed.svg" alt=""><span>PubMed</span></div><div class="lg-t"><img src="logos/arxiv.svg" alt=""><span>arXiv</span></div><div class="lg-t"><img src="logos/semanticscholar.svg" alt=""><span>Semantic Scholar</span></div><div class="lg-t"><img src="logos/openalex.png" alt=""><span>OpenAlex</span></div><div class="lg-t wm"><img src="logos/crossref.svg" alt="Crossref"></div><div class="lg-t"><img src="logos/uniprot.png" alt=""><span>UniProt</span></div><div class="lg-t"><img src="logos/ensembl.png" alt=""><span>Ensembl</span></div><div class="lg-t"><img src="logos/kegg.gif" alt=""><span>KEGG</span></div><div class="lg-t"><img src="logos/reactome.png" alt=""><span>Reactome</span></div><div class="lg-t wm"><img src="logos/string.png" alt="STRING"></div><div class="lg-t"><img src="logos/opentargets.png" alt=""><span>Open Targets</span></div><div class="lg-t tx"><b>ClinicalTrials.gov</b></div><div class="lg-t tx"><b>gnomAD</b></div><div class="lg-t"><img src="logos/ncbi.png" alt=""><span>GEO</span></div><div class="lg-t"><img src="logos/biomcp.png" alt=""><span>BioMCP</span></div></span></div></div>
+  </div>
+  <div>
+    <div class="kick">科学包</div>
+    <h2 class="h2" style="margin-top:12px">专业科学软件与数据库，<em class="g">开箱即用</em></h2>
+    <p class="small" style="margin-top:16px">按学科整理成科学包。发起任务时勾选要用的包，输入 @ 就能调用具体方法，也可以导入自己写的技能。</p>
+    <div class="stats"><div><b>12</b><span>个领域</span></div><div><b>278</b><span>个技能</span></div><div><b>49</b><span>项分析方法</span></div><div><b>38</b><span>个 MCP 服务</span></div></div>
+    <div class="fields"><span>生物育种</span><span>生物信息</span><span>化学信息</span><span>多组学</span><span>临床研究</span><span>材料科学</span><span>地球科学</span><span>神经科学</span><span>物理</span><span>数学</span><span>统计</span><span>科研方法</span></div>
+  </div>
+</div></section>
+
+<!-- 可查证 -->
+<section class="band"><div class="wrap feat">
+  <div>
+    <div class="kick">依据</div>
+    <h2 class="h2"><em class="g">可信、可溯源</em>的科学发现</h2>
+    <p class="lead">回答里的每个论断都连着出处：知识库里的那一节原文、哪次运行、哪个结果文件。交付前，科学包里的评审专家逐项核对数据和方法，写明哪些已经确认、哪些还要你判断。</p>
+  </div>
+  <div class="vis">
+    <div class="ui trace-ui">
+      <div class="claim">株高主效位点 <mark>chr1:38.4 Mb 与 sd1 区段重合</mark><sup>[1]</sup>，提示半矮秆性状来自同一基因。</div>
+      <div class="arrow"></div>
+      <div class="src"><b>[1] Spielmeyer W. et al. PNAS 2002 · §3</b><p>… the semidwarf phenotype is caused by <mark>a defective GA20-oxidase gene (sd-1) on chromosome 1</mark> …</p></div>
+      <div class="checks">
+        <div><i>✓</i>样本 ID 与基因型一一对应</div>
+        <div><i>✓</i>交叉验证没有数据泄漏</div>
+        <div><i class="w">!</i>群体结构未校正，需要你确认</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 更新 -->
+<section class="band white"><div class="wrap news">
+  <div class="news-top"><h2 class="h2">最近更新</h2><a class="btn btn-sand" href="https://github.com/A3S-Lab/duanyan-releases/releases">查看全部更新 <svg><use href="#ext"/></svg></a></div>
+  <div class="news-list">
+    <article><p><b>1.1.10</b>　第三方模型写文件不再中途停下，同一任务的完成次数从 3/10 提高到 10/10；回答下方显示生成速度、首字等待和总耗时。</p><div class="meta2"><span>macOS</span><span>2026-10-20</span></div></article>
+    <article><p><b>1.1.9</b>　对话里可以附图交给视觉模型；Word、PowerPoint、Excel 在本机直接预览，超过 64 MB 也能打开。</p><div class="meta2"><span>Windows · Linux</span><span>2026-10-19</span></div></article>
+    <article><p><b>1.1.8</b>　科学包分成通用工作包、科学发现包和自定义包，技能换成完整版，共 278 个。</p><div class="meta2"><span>全平台</span><span>2026-10-15</span></div></article>
+  </div>
+</div></section>
+
+<!-- 下载 -->
+<section class="band" id="download"><div class="wrap">
+  <div class="center">
+    <h2 class="h2">和端砚一起，驶向科学的<em class="stars">星辰大海</em></h2>
+    <p class="lead">免费下载 · macOS 1.1.10 · Windows 与 Linux 1.1.9</p>
+  </div>
+  <div class="dls">
+    <div class="os" data-os="mac"><div class="t"><svg><use href="#apl"/></svg><h3>macOS</h3><span class="rl" hidden>当前设备</span></div><p class="ar">Apple 芯片（M 系列）</p>
+      <div class="go"><a class="btn btn-ink" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Breeding-Research-1.1.10-arm64.dmg"><svg><use href="#dl"/></svg>下载 DMG</a></div></div>
+    <div class="os" data-os="windows"><div class="t"><svg><use href="#win"/></svg><h3>Windows</h3><span class="rl" hidden>当前设备</span></div><p class="ar">x64</p>
+      <div class="go"><a class="btn btn-ink" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.9-x64.exe"><svg><use href="#dl"/></svg>下载安装版</a><a class="btn btn-line" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.9-x64.exe">便携版</a></div></div>
+    <div class="os" data-os="linux"><div class="t"><svg><use href="#tux"/></svg><h3>Linux</h3><span class="rl" hidden>当前设备</span></div><p class="ar">x86_64</p>
+      <div class="go"><a class="btn btn-ink" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.9-x86_64.AppImage"><svg><use href="#dl"/></svg>下载 AppImage</a><a class="btn btn-line" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.9-amd64.deb">deb 安装包</a></div></div>
+  </div>
+  <p class="dlnote">下载慢可以去 <a href="https://github.com/A3S-Lab/duanyan-releases/releases">GitHub 发布页</a></p>
+</div></section>
+
+<!-- FAQ -->
+<section class="band white" id="faq"><div class="wrap">
+  <div class="center"><h2 class="h2">常见问题</h2></div>
+  <div class="faq">
+    <details><summary>装好之后怎么开始？</summary><p>在「设置 · 模型」添加一个模型服务，选一个工作文件夹，上传数据后直接描述你的问题。详细步骤见<a href="manual.html">用户手册</a>的「快速开始」。</p></details>
+    <details><summary>能用哪些模型？</summary><p>可以填 DeepSeek、OpenAI、阿里云百炼、智谱、Kimi 等服务商的 API Key，也可以接自己部署的兼容接口；本机已登录的 Codex、Claude Code 可以直接添加，不用填 Key。执行任务的内核可以在 Codex、Claude Code、Pi 之间切换。</p></details>
+    <details><summary>我的数据会传到哪里？</summary><p>工作文件保存在本机。用远程模型、在线检索或外部服务时，相关内容会发给你配置的服务。处理敏感数据前，请先确认单位的要求。</p></details>
+    <details><summary>需要会写代码吗？</summary><p>不需要。用中文描述分析目标即可，端砚会自己写代码并运行；想看或修改代码，工作区里都有。</p></details>
+    <details><summary>怎么更新？</summary><p>安装版在「设置 · 关于」检查更新；便携版回到这里下载新版。</p></details>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot">
+  <img src="lab.png" alt="上海人工智能实验室"><span>上海人工智能实验室 · 书生·端砚</span>
+  <div class="r"><a href="manual.html">用户手册</a><a href="https://github.com/A3S-Lab/duanyan-releases/releases">GitHub</a></div>
+</div></footer>
+
+<script>
+(function(){
+  // 推荐当前设备的安装包
+  var ua=navigator.userAgent,pf=navigator.platform||'',os=null;
+  if(!(/Android|iPhone|iPad|iPod|Mobile/i.test(ua)||(/Mac/i.test(pf)&&navigator.maxTouchPoints>1))){
+    if(/Windows/i.test(ua))os='windows';else if(/Mac/i.test(ua))os='mac';
+    else if(/Linux/i.test(ua)&&/x86_64|amd64/i.test(ua)&&!/CrOS|aarch64|arm/i.test(ua))os='linux';
+  }
+  var names={mac:'下载 macOS 版',windows:'下载 Windows 版',linux:'下载 Linux 版'};
+  if(os){var c=document.querySelector('[data-os="'+os+'"]');c.classList.add('rec');c.querySelector('.rl').hidden=false;
+    document.getElementById('primary').href=c.querySelector('.btn').href;document.getElementById('primary-label').textContent=names[os];}
+
+  // 曼哈顿图
+  var m=document.getElementById('manh'),s='',seed=7;function r(){return (seed=seed*16807%2147483647)/2147483647}
+  for(var c2=0;c2<12;c2++)for(var k=0;k<40;k++){var x=c2*50+k*1.15+3,y=Math.pow(r(),2.2)*4;
+    if((c2===0&&k>14&&k<26)||(c2===5&&k>20&&k<30))y+=Math.max(0,7-Math.abs(k-(c2?25:20))*1.1)*(0.75+r()*0.45);
+    s+='<circle cx="'+x.toFixed(1)+'" cy="'+(114-y*11).toFixed(1)+'" r="1.8" fill="'+(y>6.2?'#c0643f':(c2%2?'#9cbfa6':'#4a7d5b'))+'"/>';}
+  m.innerHTML=s+'<line x1="0" x2="600" y1="46" y2="46" stroke="#c0643f" stroke-dasharray="4 4" stroke-width="1"/>';
+
+  // 首屏窗口：三幕依次播放，章节条可点
+  var app=document.getElementById('app'),scenes=[].slice.call(app.querySelectorAll('.scene')),panes=[].slice.call(app.querySelectorAll('.rp')),
+      chs=[].slice.call(app.querySelectorAll('.chapters button')),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,timers=[],cur=0;
+  function at(ms,fn){timers.push(setTimeout(fn,ms))}
+  function clear(){timers.forEach(clearTimeout);timers=[]}
+  function show(i){
+    clear();cur=i;
+    scenes.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    panes.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    chs.forEach(function(c,k){c.setAttribute('aria-selected',k===i);c.classList.remove('play');void c.offsetWidth;if(k===i&&!reduce)c.classList.add('play')});
+    var sc=scenes[i],pane=panes[i],st=[].slice.call(sc.querySelectorAll('.st')),ans=sc.querySelector('.ans'),
+        fn=[].slice.call(pane.querySelectorAll('.fn')),dv=[].slice.call(pane.querySelectorAll('.dv')),ev=pane.querySelector('.evid'),job=pane.querySelector('.jobcard');
+    st.forEach(function(e){e.classList.remove('show','wait');e.querySelector('.s').innerHTML=''});ans.classList.remove('show');
+    fn.forEach(function(n){n.className='fn'});dv.forEach(function(d){d.classList.remove('live')});if(ev)ev.classList.remove('show');if(job)job.classList.remove('run','done');
+    if(reduce){st.forEach(function(e){e.classList.add('show');e.querySelector('.s').innerHTML=e.querySelector('.s').dataset.done});ans.classList.add('show');fn.forEach(function(n){n.className='fn done'});if(ev)ev.classList.add('show');return}
+    var t=500;
+    st.forEach(function(e,k){
+      var confirm=e.classList.contains('st-confirm'),dur=confirm?1800:(job&&k===2?2200:1100);
+      at(t,function(){e.classList.add('show');e.querySelector('.s').innerHTML=confirm?'<span class="btn-mini">驳回</span><span class="btn-mini ink">批准</span>':'<i class="spin"></i>';
+        if(fn[k])fn[k].className='fn run';if(dv[k])dv[k].classList.add('live');if(job&&k===2)job.classList.add('run')});
+      at(t+dur,function(){e.querySelector('.s').innerHTML=e.querySelector('.s').dataset.done;if(fn[k])fn[k].className='fn done';if(job&&k===2){job.classList.remove('run');job.classList.add('done')}});
+      t+=dur+250;
+    });
+    at(t+200,function(){ans.classList.add('show');if(ev)ev.classList.add('show')});
+    at(t+5200,function(){show((i+1)%scenes.length)});
+    chs[i].style.setProperty('--dur',(t+5200)+'ms');
+  }
+  chs.forEach(function(c,k){c.addEventListener('click',function(){show(k)})});
+  show(0);
+})();
+</script>
+<script>
+(()=>{const box=document.querySelector('.ills'),svg=box.querySelector('.ill-link');
+const d=[...box.querySelectorAll('.ill > svg')],t=d;
+function draw(){if(getComputedStyle(svg).display==='none')return;const o=box.getBoundingClientRect();
+const r=d.map(e=>{const q=e.getBoundingClientRect();return{l:q.left-o.left,r:q.right-o.left,y:q.top-o.top+q.height*.45,cx:q.left-o.left+q.width/2,w:q.width}});
+const bot=Math.max(...t.map(e=>e.getBoundingClientRect().bottom-o.top));
+const x1=r[0].r-r[0].w*.04,x2=r[1].l+r[1].w*.32,x3=r[1].r-r[1].w*.1,x4=r[2].l+r[2].w*.07;
+const by=bot+30,top=bot+2;
+const fw1=`M${x1} ${r[0].y}H${x2-4}`,fw2=`M${x3} ${r[1].y}H${x4-4}`;
+const bk=`M${r[2].cx} ${top}V${by-16}Q${r[2].cx} ${by} ${r[2].cx-16} ${by}H${r[0].cx+16}Q${r[0].cx} ${by} ${r[0].cx} ${by-16}V${top+4}`;
+svg.querySelector('.fw1').setAttribute('d',fw1);svg.querySelector('.fw2').setAttribute('d',fw2);svg.querySelector('.bk').setAttribute('d',bk);
+const tx=svg.querySelector('.bk-t');tx.setAttribute('x',(r[0].cx+r[2].cx)/2);tx.setAttribute('y',by-10);
+svg.querySelector('animateMotion').setAttribute('path',`M${x1} ${r[0].y}H${x2}M${x3} ${r[1].y}H${x4}M${r[2].cx} ${top}`+bk.slice(bk.indexOf('V'))+`M${r[0].cx} ${top}`);
+const g=svg.querySelector('#lg');g.setAttribute('x1',x1);g.setAttribute('x2',x4);}
+draw();addEventListener('resize',draw);document.fonts&&document.fonts.ready.then(draw);})();
+</script>
 </body>
 </html>
