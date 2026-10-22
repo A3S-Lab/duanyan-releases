@@ -429,7 +429,8 @@
   }
   var names={mac:'下载 macOS 版',windows:'下载 Windows 版',linux:'下载 Linux 版'};
   if(os){var c=document.querySelector('[data-os="'+os+'"]');c.classList.add('rec');c.querySelector('.rl').hidden=false;
-    document.getElementById('primary').href=c.querySelector('.btn').href;document.getElementById('primary-label').textContent=names[os];}
+    document.getElementById('primary').href=c.querySelector('.btn').href;var v=(c.querySelector('.btn').href.match(/\d+\.\d+\.\d+/)||[''])[0];
+    document.getElementById('primary-label').textContent=names[os]+(v?' · '+v:'');}
 
   // 曼哈顿图
   var m=document.getElementById('manh'),s='',seed=7;function r(){return (seed=seed*16807%2147483647)/2147483647}
