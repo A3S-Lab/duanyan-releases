@@ -485,3 +485,93 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;font-size:13px;color
 @keyframes lm{to{transform:translateX(calc(-50% - 6px))}}
 @media (prefers-reduced-motion:reduce){.lm-track{animation:none}}
 .ill > svg{margin-top:0}.ill .h3{margin-top:60px}.ills{padding-bottom:0}
+
+/* 自主实验台：连续操作 + 设备走马灯 */
+.lab-run{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);border-bottom:1px solid var(--line)}
+.lab-steps{list-style:none;margin:0;padding:10px 0;border-right:1px solid var(--line)}
+.lab-steps li{display:grid;grid-template-columns:16px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 16px;opacity:.45;transition:opacity .3s,background .3s}
+.lab-steps li i{width:14px;height:14px;border-radius:50%;border:1.5px solid #c9c6ba;box-sizing:border-box}
+.lab-steps b{display:block;font-size:13.5px;font-weight:600}
+.lab-steps code{font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.lab-steps .r{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink)}
+.lab-steps li.on{opacity:1;background:color-mix(in srgb,var(--lab) 6%,#fff)}
+.lab-steps li.on i{border-color:var(--lab);border-right-color:transparent;animation:spin .8s linear infinite}
+.lab-steps li.on code{color:var(--lab)}
+.lab-steps li.done{opacity:1}
+.lab-steps li.done i{background:var(--lab);border-color:var(--lab);box-shadow:inset 0 0 0 3px #fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lab-dev{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px 18px;background:linear-gradient(#fff,#f6f5f0);min-height:270px;overflow:hidden}
+.lab-dev img{position:absolute;left:8%;right:8%;top:46px;width:84%;mix-blend-mode:multiply}
+.lab-dev img.in{animation:devIn .5s ease-out}
+@keyframes devIn{from{opacity:0;transform:translateY(10px) scale(.96)}}
+.lab-read{position:relative;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.lab-read small{flex-basis:100%;font-size:12px;color:var(--ink3)}
+.lab-read b{font-family:var(--mono);font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}
+.lab-read em{font-style:normal;font-family:var(--mono);font-size:13px;color:var(--ink2)}
+.lab-spec{display:none;position:relative;width:100%;height:34px;margin-top:6px}
+.lab-spec path{stroke:var(--lab);fill:none;stroke-width:1.8;vector-effect:non-scaling-stroke;stroke-dasharray:300;stroke-dashoffset:calc(300 - 300 * var(--t,0))}
+.lab-run.spec .lab-spec{display:block}
+.lab-bar{position:relative;height:4px;border-radius:4px;background:#ebe9e1;margin-top:10px;overflow:hidden}
+.lab-bar i{display:block;height:100%;width:0;background:var(--lab)}
+.lab-marquee{overflow:hidden;padding:12px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.lab-marquee .lm-track{gap:8px}
+.lab-marquee .lm-dup{gap:8px}
+.lab-marquee:hover .lm-track{animation-play-state:paused}
+.lm-d{flex:none;width:92px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.lm-d img{width:100%;aspect-ratio:3/2;object-fit:contain;mix-blend-mode:multiply}
+.lm-d span{font-size:11px;color:var(--ink2);white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:640px){
+  .lab-run{grid-template-columns:minmax(0,1fr)}
+  .lab-steps{border-right:0;border-bottom:1px solid var(--line)}
+  .lab-dev{min-height:240px}
+  .lab-dev{min-height:260px}.lab-dev img{width:56%;left:auto;right:4%}
+}
+/* 连续操作：步骤连线、调用回执、各仪器动作 */
+.lab-steps li{position:relative}
+.lab-steps li:not(:last-child)::after{content:"";position:absolute;left:22.5px;top:calc(50% + 9px);height:calc(100% - 18px);width:1.5px;background:#e3e0d6;transform-origin:top}
+.lab-steps li.done:not(:last-child)::after{background:var(--lab);animation:grow .4s ease-out}
+@keyframes grow{from{transform:scaleY(0)}}
+.lab-steps li.done i{animation:pop .35s ease-out}
+@keyframes pop{50%{transform:scale(1.35)}}
+.lab-steps li.done .r{animation:fadeR .4s ease-out}
+@keyframes fadeR{from{opacity:0;transform:translateX(6px)}}
+.lab-call{position:absolute;z-index:3;left:12px;top:12px;max-width:calc(100% - 24px);font-family:var(--mono);font-size:11px;padding:4px 8px;border-radius:6px;background:#1f2a37;color:#dbe7f5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;transform:translateY(-6px);transition:opacity .25s,transform .25s}
+.lab-call.show{opacity:1;transform:none}
+.lab-call span{color:#7fb0e8}
+.lab-call.back{background:color-mix(in srgb,var(--lab) 12%,#fff);color:var(--lab)}
+.lab-call.back span{color:var(--lab)}
+.lab-dev img{z-index:1;transition:filter .3s}
+.lab-run:not(.ok) .lab-dev img{animation:devIn .5s ease-out,work 1.2s .5s ease-in-out infinite}
+@keyframes work{50%{transform:translateY(-2px)}}
+.lab-dev::before{content:"";position:absolute;left:50%;top:52%;width:70%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(color-mix(in srgb,var(--lab) 14%,transparent),transparent 65%);animation:glow 1.6s ease-in-out infinite}
+@keyframes glow{50%{opacity:.4;transform:translate(-50%,-50%) scale(.9)}}
+.lab-ok{position:absolute;z-index:3;right:14px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--lab);color:#fff;font-size:14px;display:grid;place-items:center;opacity:0;transform:scale(.4);transition:opacity .2s,transform .3s cubic-bezier(.3,1.6,.5,1)}
+.lab-run.ok .lab-ok{opacity:1;transform:none}
+.lab-fx{position:absolute;inset:0;z-index:2;pointer-events:none}
+.lab-fx i{position:absolute;display:block;opacity:0}
+.lab-run.ok .lab-fx i{animation:none!important;opacity:0}
+/* 天平：颗粒落到秤盘 */
+[data-fx=balance] .lab-fx i{left:calc(46% + var(--x));top:29%;width:4px;height:4px;border-radius:50%;background:#4a7fbf;animation:fall 1s ease-in infinite}
+@keyframes fall{0%{opacity:0;transform:translateY(0)}15%{opacity:1}90%{opacity:1}100%{opacity:0;transform:translateY(70px)}}
+/* 注射泵：液滴 */
+[data-fx=pump] .lab-fx i{left:88%;top:37%;width:5px;height:7px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:#5aa0e6;animation:drop .9s ease-in infinite}
+@keyframes drop{0%{opacity:0;transform:translateY(0) scale(.4)}20%{opacity:1;transform:scale(1)}100%{opacity:0;transform:translateY(60px)}}
+/* 搅拌台：蒸汽 */
+[data-fx=stirrer] .lab-fx i{left:calc(44% + var(--x));top:41%;width:6px;height:18px;border-radius:6px;background:linear-gradient(transparent,rgba(160,170,185,.55));filter:blur(1.5px);animation:steam 1.6s ease-out infinite}
+@keyframes steam{0%{opacity:0;transform:translateY(10px) scaleY(.6)}30%{opacity:1}100%{opacity:0;transform:translate(6px,-40px) scaleY(1.3)}}
+/* pH：探头波纹 */
+[data-fx=ph] .lab-fx i{left:79%;top:50%;width:30px;height:10px;margin:-5px 0 0 -15px;border-radius:50%;border:1.5px solid #4a7fbf;animation:ripple 1.5s ease-out infinite}
+@keyframes ripple{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(1.8)}}
+/* 光谱仪：扫过的彩色光带 */
+[data-fx=spectrometer] .lab-fx i{top:17%;height:40%;width:16%;left:-20%;background:linear-gradient(90deg,transparent,rgba(120,80,255,.18),rgba(60,160,255,.22),rgba(80,210,120,.2),rgba(255,200,60,.2),rgba(255,90,60,.18),transparent);mix-blend-mode:multiply;animation:sweep 1.4s linear infinite}
+[data-fx=spectrometer] .lab-fx i:nth-child(n+2){display:none}
+@keyframes sweep{0%{opacity:1;left:-20%}100%{opacity:1;left:104%}}
+.lab-fx i:nth-child(1){--x:-14px;animation-delay:0s}
+.lab-fx i:nth-child(2){--x:6px;animation-delay:-.33s}
+.lab-fx i:nth-child(3){--x:-4px;animation-delay:-.66s}
+.lab-fx i:nth-child(4){--x:14px;animation-delay:-.17s}
+.lab-fx i:nth-child(5){--x:-22px;animation-delay:-.5s}
+.lab-fx i:nth-child(6){--x:22px;animation-delay:-.83s}
+[data-fx=ph] .lab-fx i:nth-child(n+4){display:none}
+[data-fx=pump] .lab-fx i:nth-child(n+4){display:none}
+@media (prefers-reduced-motion:reduce){.lab-fx,.lab-dev::before{display:none}.lab-run .lab-dev img{animation:none!important}}
