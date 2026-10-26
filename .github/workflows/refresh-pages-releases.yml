@@ -1,0 +1,46 @@
+name: Refresh Pages release index
+
+on:
+  release:
+    types: [published, edited, released, deleted, unpublished]
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-pages-releases
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check out gh-pages
+        run: |
+          git fetch origin gh-pages
+          git worktree add --detach pages origin/gh-pages
+
+      - name: Refresh release index
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/update-pages-releases.mjs pages/releases-fallback.json
+
+      - name: Commit changed release index
+        run: |
+          cd pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add releases-fallback.json
+          if git diff --cached --quiet; then
+            echo "Release index is already current."
+            exit 0
+          fi
+          git commit -m "chore(pages): refresh latest release index"
+          git push origin HEAD:gh-pages
