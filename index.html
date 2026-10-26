@@ -4,11 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#faf9f5">
-<title>书生·端砚</title>
-<meta name="description" content="懂科研的 AI 伙伴。从数据分析、文献调研到集群计算和仪器实验，端砚陪你把每个科学问题做到底，每个结论都有据可查。支持 macOS、Windows、Linux。">
+<title>端砚 · Science Discovery｜让每个科学发现都有据可查</title>
+<meta name="description" content="端砚是面向科研工作的 AI 伙伴：连接本地数据、远程算力与实验设备，从分析、推理到交付，让每个结论都有依据、每次运行都可复现。支持 macOS、Windows 和 Linux。">
 <link rel="canonical" href="https://a3s-lab.github.io/duanyan-releases/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="端砚 · Science Discovery">
+<meta property="og:description" content="从数据分析、远程算力到仪器实验，端砚陪你把每个科学问题做到底。">
+<meta property="og:url" content="https://a3s-lab.github.io/duanyan-releases/">
+<meta property="og:image" content="https://raw.githubusercontent.com/A3S-Lab/duanyan-releases/main/.github/homepage.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="端砚 · Science Discovery">
+<meta name="twitter:description" content="让每个科学发现都有据可查。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/A3S-Lab/duanyan-releases/main/.github/homepage.png">
 <link rel="icon" href="mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://api.github.com" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"端砚 · Science Discovery","applicationCategory":"ScienceApplication","operatingSystem":"macOS, Windows, Linux","description":"连接本地数据、远程算力与实验设备，让每个科学结论都有据可查。","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"},"url":"https://a3s-lab.github.io/duanyan-releases/"}
+</script>
 </head>
 <body class="home">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -27,21 +41,36 @@
 
 <header class="top"><div class="wrap top-in">
   <a class="brand" href="./"><img class="wordmark" src="wordmark.svg" alt="书生·端砚"></a>
-  <nav><a href="#connect">功能</a><a href="manual.html" class="keep">用户手册</a><a href="https://github.com/A3S-Lab/duanyan-releases/releases">更新日志</a></nav>
-  <a class="btn btn-ink btn-sm" href="#download">下载</a>
+  <nav><a href="#connect">功能</a><a href="#releases">更新</a><a href="manual.html" class="keep">用户手册</a><a href="https://github.com/A3S-Lab/duanyan-releases/releases/latest" rel="noopener">Releases</a></nav>
+  <a class="btn btn-ink btn-sm nav-download" href="#download">下载 <span class="nav-version" id="nav-version">1.1.13</span></a>
 </div></header>
 
 <main>
 <!-- 首屏 -->
 <section class="wrap hero">
   <div class="hero-text">
+  <a class="release-pill" id="release-pill" href="https://github.com/A3S-Lab/duanyan-releases/releases/latest" rel="noopener" aria-live="polite">
+    <span class="release-pulse"></span>
+    <span id="release-pill-text">最新版 v1.1.13</span>
+    <span class="release-arrow">↗</span>
+  </a>
   <h1 class="h1 h1-logo"><img src="wordmark.svg" alt="书生·端砚"></h1>
   <p class="lead">懂科研的 AI 伙伴。从数据分析、文献调研，到集群计算和仪器实验，端砚陪你把每个科学问题做到底，每个结论都有据可查。</p>
   <div class="acts">
     <a class="btn btn-ink" id="primary" href="#download"><svg><use href="#dl"/></svg><span id="primary-label">下载端砚</span></a>
     <a class="btn btn-sand" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/" target="_blank" rel="noopener">在线体验</a>
   </div>
-  <p class="avail">支持 macOS、Windows 和 Linux。<a href="#download">全部下载</a></p>
+  <div class="hero-trust" aria-label="产品特性">
+    <span><i></i>本地数据优先</span>
+    <span><i></i>过程可复现</span>
+    <span><i></i>全平台自动更新</span>
+  </div>
+  <div class="hero-update" aria-live="polite">
+    <div class="hero-update-head"><span>本次更新</span><time id="hero-release-date">2026年10月26日</time></div>
+    <p id="hero-release-summary">智能任务交付大幅优化，审查页重做，工作台默认收起，自主实验台更新为 LabMCP。</p>
+    <a id="hero-release-link" href="https://github.com/A3S-Lab/duanyan-releases/releases/latest" rel="noopener">查看发布详情 <span>↗</span></a>
+  </div>
+  <p class="avail">支持 macOS、Windows 和 Linux。<a href="#download">查看全部安装包</a></p>
   </div>
 
   <div class="app" id="app" aria-label="端砚界面示意：数据分析、远程算力和自主实验台三段演示">
@@ -386,12 +415,46 @@
 </div></section>
 
 <!-- 更新 -->
-<section class="band white"><div class="wrap news">
-  <div class="news-top"><h2 class="h2">最近更新</h2><a class="btn btn-sand" href="https://github.com/A3S-Lab/duanyan-releases/releases">查看全部更新 <svg><use href="#ext"/></svg></a></div>
-  <div class="news-list">
-    <article><p><b>1.1.12</b>　模型设置大幅精简，新增 MiniMax、Grok、墨点等服务商；输入框一键优化提示词；登录统一走 SSO，命令审批移到输入框上方。</p><div class="meta2"><span>macOS</span><span>2026-10-22</span></div></article>
-    <article><p><b>1.1.11</b>　临床研究包新增 ABBA 脑切片图谱配准，一句话在 Fiji 里完成定位、配准与导出；输入框可以先优化提示词再发送。</p><div class="meta2"><span>macOS</span><span>2026-10-22</span></div></article>
-    <article><p><b>1.1.10</b>　第三方模型写文件不再中途停下，同一任务的完成次数从 3/10 提高到 10/10；回答下方显示生成速度、首字等待和总耗时。</p><div class="meta2"><span>全平台</span><span>2026-10-21</span></div></article>
+<section class="band white release-section" id="releases"><div class="wrap">
+  <div class="release-intro">
+    <div>
+      <div class="kick">GitHub Releases · 自动同步</div>
+      <h2 class="h2">每次更新，<em class="g">即刻可见</em></h2>
+      <p class="lead">版本号、发布日期、更新内容和安装包都直接读取最新发布记录。页面加载时自动同步，不再等人手工改链接。</p>
+    </div>
+    <div class="release-actions">
+      <span class="sync-badge" id="release-sync"><i></i>正在同步 Release</span>
+      <a class="btn btn-sand" href="https://github.com/A3S-Lab/duanyan-releases/releases" target="_blank" rel="noopener">全部版本 <svg><use href="#ext"/></svg></a>
+    </div>
+  </div>
+  <div class="release-layout">
+    <article class="latest-card">
+      <div class="latest-head">
+        <span class="latest-label">Latest</span>
+        <strong id="latest-version">v1.1.13</strong>
+        <time id="latest-date" datetime="2026-10-26">2026年10月26日</time>
+      </div>
+      <h3 id="latest-title">端砚 · Science Discovery 1.1.13</h3>
+      <p class="latest-summary" id="latest-summary">智能任务交付大幅优化，审查页重做，工作台默认收起，自主实验台更新为 LabMCP。</p>
+      <ul class="latest-highlights" id="latest-highlights">
+        <li>交付登记约 26 次模型往返降到 1 次</li>
+        <li>审查页关系图内嵌，只列本任务相关判断题</li>
+        <li>工作台改为工作区、产物、审查三页</li>
+        <li>LabMCP 实验台与 32 台设备实拍图上线</li>
+      </ul>
+      <div class="latest-foot">
+        <div class="platform-chips" id="latest-platforms"><span>macOS</span></div>
+        <a id="latest-link" href="https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.13" target="_blank" rel="noopener">完整发布说明 <span>↗</span></a>
+      </div>
+    </article>
+    <div class="release-history-wrap">
+      <div class="history-head"><span>版本轨迹</span><span id="history-count">最近 3 个版本</span></div>
+      <div class="release-history" id="release-history" aria-live="polite">
+        <article><div><b>v1.1.12</b><time>2026.10.22</time></div><p>模型设置精简，提示词一键优化，统一 SSO 登录。</p><span>macOS · Windows · Linux</span></article>
+        <article><div><b>v1.1.11</b><time>2026.10.22</time></div><p>ABBA 脑切片图谱配准接入临床研究包。</p><span>macOS</span></article>
+        <article><div><b>v1.1.10</b><time>2026.10.20</time></div><p>第三方模型写文件和回答性能指标优化。</p><span>macOS · Windows · Linux</span></article>
+      </div>
+    </div>
   </div>
 </div></section>
 
@@ -399,17 +462,23 @@
 <section class="band" id="download"><div class="wrap">
   <div class="center">
     <h2 class="h2">和端砚一起，驶向科学的<em class="stars">星辰大海</em></h2>
-    <p class="lead">免费下载 · macOS 1.1.12 · Windows 与 Linux 1.1.10</p>
+    <p class="lead" id="download-summary">正在获取最新版本 · 免费下载 · 安装版支持应用内更新</p>
   </div>
   <div class="dls">
-    <div class="os" data-os="mac"><div class="t"><svg><use href="#apl"/></svg><h3>macOS</h3><span class="rl" hidden>当前设备</span></div><p class="ar">Apple 芯片（M 系列）</p>
-      <div class="go"><a class="btn btn-ink" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Breeding-Research-1.1.12-arm64.dmg"><svg><use href="#dl"/></svg>下载 DMG</a></div></div>
-    <div class="os" data-os="windows"><div class="t"><svg><use href="#win"/></svg><h3>Windows</h3><span class="rl" hidden>当前设备</span></div><p class="ar">x64</p>
-      <div class="go"><a class="btn btn-ink" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.10-x64.exe"><svg><use href="#dl"/></svg>下载安装版</a><a class="btn btn-line" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.10-x64.exe">便携版</a></div></div>
-    <div class="os" data-os="linux"><div class="t"><svg><use href="#tux"/></svg><h3>Linux</h3><span class="rl" hidden>当前设备</span></div><p class="ar">x86_64</p>
-      <div class="go"><a class="btn btn-ink" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.10-x86_64.AppImage"><svg><use href="#dl"/></svg>下载 AppImage</a><a class="btn btn-line" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.10-amd64.deb">deb 安装包</a></div></div>
+    <article class="os" data-os="mac"><div class="t"><svg><use href="#apl"/></svg><h3>macOS</h3><span class="os-version" id="mac-version">v1.1.13</span><span class="rl" hidden>当前设备</span></div><p class="ar">Apple 芯片（M 系列）</p>
+      <div class="os-badges"><span>DMG 安装包</span><span>应用内更新</span></div>
+      <div class="go"><a class="btn btn-ink os-primary" id="mac-primary" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Breeding-Research-1.1.13-arm64.dmg"><svg><use href="#dl"/></svg>下载 DMG</a></div>
+      <div class="os-foot"><span id="mac-size">495 MB</span><span>Apple Silicon</span></div></article>
+    <article class="os" data-os="windows"><div class="t"><svg><use href="#win"/></svg><h3>Windows</h3><span class="os-version" id="windows-version">v1.1.12</span><span class="rl" hidden>当前设备</span></div><p class="ar">Windows 10 / 11 · x64</p>
+      <div class="os-badges"><span>安装版</span><span>便携版</span><span>应用内更新</span></div>
+      <div class="go"><a class="btn btn-ink os-primary" id="windows-primary" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-Setup-1.1.12-x64.exe"><svg><use href="#dl"/></svg>下载安装版</a><a class="btn btn-line os-secondary" id="windows-secondary" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-Portable-1.1.12-x64.exe">便携版</a></div>
+      <div class="os-foot"><span id="windows-size">安装版</span><span>x64</span></div></article>
+    <article class="os" data-os="linux"><div class="t"><svg><use href="#tux"/></svg><h3>Linux</h3><span class="os-version" id="linux-version">v1.1.12</span><span class="rl" hidden>当前设备</span></div><p class="ar">主流 x86_64 发行版</p>
+      <div class="os-badges"><span>AppImage</span><span>DEB</span><span>应用内更新</span></div>
+      <div class="go"><a class="btn btn-ink os-primary" id="linux-primary" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-1.1.12-x86_64.AppImage"><svg><use href="#dl"/></svg>下载 AppImage</a><a class="btn btn-line os-secondary" id="linux-secondary" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-1.1.12-amd64.deb">deb 安装包</a></div>
+      <div class="os-foot"><span id="linux-size">AppImage</span><span>x86_64</span></div></article>
   </div>
-  <p class="dlnote">下载慢可以去 <a href="https://github.com/A3S-Lab/duanyan-releases/releases">GitHub 发布页</a></p>
+  <p class="dlnote"><span id="download-sync">版本状态正在同步</span> · <a href="https://github.com/A3S-Lab/duanyan-releases/releases" target="_blank" rel="noopener">打开 GitHub 发布页</a></p>
 </div></section>
 
 <!-- FAQ -->
@@ -427,9 +496,10 @@
 
 <footer><div class="wrap foot">
   <img src="lab.png" alt="上海人工智能实验室"><span>上海人工智能实验室 · 书生·端砚</span>
-  <div class="r"><a href="manual.html">用户手册</a><a href="https://github.com/A3S-Lab/duanyan-releases/releases">GitHub</a></div>
+  <div class="r"><a href="manual.html">用户手册</a><a href="https://github.com/A3S-Lab/duanyan-releases/releases">GitHub Releases</a></div>
 </div></footer>
 
+<script src="releases.js"></script>
 <script>
 (function(){
   // 推荐当前设备的安装包
