@@ -1,0 +1,16 @@
+name: Check public download network
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check IPv4 DNS and direct TLS reachability
+        run: |
+          getent ahostsv4 a3s-lab.discovery.intern-ai.org.cn || true
+          for ip in 8.153.97.55 101.132.80.98; do
+            curl -4 --noproxy '*' --resolve "a3s-lab.discovery.intern-ai.org.cn:443:$ip" -sSI --connect-timeout 5 --max-time 12 -w "ip=$ip status=%{http_code} total=%{time_total}\n" https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/latest.yml || true
+          done
+          curl -4 --noproxy '*' -sSI --connect-timeout 5 --max-time 12 -w 'dns status=%{http_code} ip=%{remote_ip} total=%{time_total}\n' https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/latest.yml || true
