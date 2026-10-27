@@ -13,6 +13,11 @@ async function get(name, headers = {}) {
   return response;
 }
 const records = [];
+const verificationName = `release-verification-${version}.json`;
+const verificationText = await (await get(verificationName)).text();
+const verification = JSON.parse(verificationText);
+if (verification.version !== version || !Array.isArray(verification.files)) throw new Error('Invalid center verification report');
+await fs.writeFile(path.join('mirrored', verificationName), verificationText);
 for (const name of ['latest.yml', 'latest-linux.yml']) {
   const text = await (await get(name)).text();
   if (!new RegExp(`^version:\\s*${version.replaceAll('.', '\\.')}\\s*$`, 'm').test(text)) throw new Error(`${name} does not declare ${version}`);
@@ -70,7 +75,15 @@ await Promise.all(records.map(download));
 for (const name of ['release-notes.json', setup.name + '.blockmap']) {
   await fs.writeFile(path.join('mirrored', name), Buffer.from(await (await get(name)).arrayBuffer()));
 }
+for (const expected of verification.files) {
+  const hash = crypto.createHash('sha256');
+  const filename = path.join('mirrored', expected.name);
+  if (!/^[\w.-]+$/.test(expected.name)) throw new Error('Unsafe verification filename');
+  if ((await fs.stat(filename)).size !== expected.size) throw new Error(`Size mismatch: ${expected.name}`);
+  for await (const bytes of (await import('node:fs')).createReadStream(filename)) hash.update(bytes);
+  if (hash.digest('hex') !== expected.sha256) throw new Error(`Source digest mismatch: ${expected.name}`);
+}
 const notes = JSON.parse(await fs.readFile('mirrored/release-notes.json', 'utf8')).versions.find(entry => entry.version === version);
 if (!notes) throw new Error('Missing release notes');
-const text = [notes.summary, ...notes.groups.flatMap(group => [group.title ? `**${group.title}**` : '', ...group.blocks.map(block => block.kind === 'list' ? block.items.map(item => '- ' + item).join('\n') : block.text)]), 'Windows Setup / Portable；Linux AppImage / deb。macOS 保留原始安装包。'].filter(Boolean).join('\n\n');
+const text = [notes.summary, ...notes.groups.flatMap(group => [group.title ? `**${group.title}**` : '', ...group.blocks.map(block => block.kind === 'list' ? block.items.map(item => '- ' + item).join('\n') : block.text)]), 'Windows Setup / Portable；Linux AppImage / deb。macOS 保留原始安装包。', `构建源码：\`${verification.sourceRevision}\`。`].filter(Boolean).join('\n\n');
 await fs.writeFile('mirror-notes.md', text);
