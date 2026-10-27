@@ -1,25 +1,20 @@
 {
-  "generated_at": "2026-10-27T05:09:42.771Z",
+  "generated_at": "2026-10-27T05:29:25.424Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
       "tag_name": "v1.1.13",
-      "name": "端砚· Science Discovery 1.1.13",
+      "name": "端砚· Science Discovery 1.1.13（macOS / Windows / Linux）",
       "published_at": "2026-10-26T10:56:06Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.13",
-      "body": "智能任务交付大幅优化，登记调用约 26 次 → 1 次；审查页重做，关系图内嵌在顶部；工作台改为工作区、产物、审查三页，默认收起。\n\n**任务速度大幅优化**\n\n- 交付登记：约 26 次模型往返 → 1 次（玉米耐旱任务实测）\n- 计划被打回重写：8 次中 3 次 → 0 次（同一任务）\n- 交付前带给模型的会话信息：23 KB → 10.5 KB\n- 耗时计算先估算并单折计时，减少长时间空跑\n\n**审查**\n\n- 关系图内嵌在审查页顶部，去掉列表 / 关系图切换\n- 只列本任务真正涉及的判断题\n- 外部搜索单独成组，与数据并排\n- 点节点后，详情显示在关系图正下方\n- 一个脚本跑出多步产物时不再误报缺少运行记录\n- 问题说明改为大白话，顶部数量与卡片一致\n\n**工作台**\n\n- 页签改为「工作区」「产物」「审查」\n- 宽屏下默认收起，需要时展开\n- 任务资料和产物直接放进工作区\n- 文件图标按类型上色\n- 对话标题栏图标分色并重排\n- 会话的执行引擎在新建时选定，模型菜单只列可用模型\n\n**自主实验台**\n\n- 平台名改为「LabMCP 实验台」\n- 32 台设备换成白底实拍风格照片\n\n**修复**\n\n- 设置页离开确认改为应用内对话框，可直接保存\n- 桌面版支持 Ctrl / ⌘ + 滚轮缩放界面\n\n桌面端 1.1.13。更新源为中心只读分发目录；此处镜像同一份安装包、更新元数据与按需下载资源包。",
+      "body": "智能任务交付大幅优化，登记调用约 26 次 → 1 次；审查页重做，关系图内嵌在顶部；工作台改为工作区、产物、审查三页，默认收起。\n\n**任务速度大幅优化**\n\n- 交付登记：约 26 次模型往返 → 1 次（玉米耐旱任务实测）\n- 计划被打回重写：8 次中 3 次 → 0 次（同一任务）\n- 交付前带给模型的会话信息：23 KB → 10.5 KB\n- 耗时计算先估算并单折计时，减少长时间空跑\n\n**审查**\n\n- 关系图内嵌在审查页顶部，去掉列表 / 关系图切换\n- 只列本任务真正涉及的判断题\n- 外部搜索单独成组，与数据并排\n- 点节点后，详情显示在关系图正下方\n- 一个脚本跑出多步产物时不再误报缺少运行记录\n- 问题说明改为大白话，顶部数量与卡片一致\n\n**工作台**\n\n- 页签改为「工作区」「产物」「审查」\n- 宽屏下默认收起，需要时展开\n- 任务资料和产物直接放进工作区\n- 文件图标按类型上色\n- 对话标题栏图标分色并重排\n- 会话的执行引擎在新建时选定，模型菜单只列可用模型\n\n**自主实验台**\n\n- 平台名改为「LabMCP 实验台」\n- 32 台设备换成白底实拍风格照片\n\n**修复**\n\n- 设置页离开确认改为应用内对话框，可直接保存\n- 桌面版支持 Ctrl / ⌘ + 滚轮缩放界面\n\n**Windows 补充修复**\n\n- 10 月 27 日补齐 Windows / Linux 1.1.13 安装包\n- 升级前先退出本应用的科研引擎，减少等待旧进程的问题\n- 安装占用日志列出进程编号，区分实际占用和检查失败\n- 深层技能目录支持长路径，替换和失败回滚无需修改系统设置\n\nWindows Setup / Portable；Linux AppImage / deb。macOS 保留原始安装包。\n\n构建源码：`ef5877b8834d9bf55686763c7d54721fa08ce2fb`。",
       "draft": false,
       "prerelease": false,
       "assets": [
         {
-          "name": "release-notes.json",
-          "size": 68895,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/release-notes.json"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.13-arm64.zip",
-          "size": 385872899,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Breeding-Research-1.1.13-arm64.zip"
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/agent-runtime-darwin-arm64.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.13-arm64.dmg",
@@ -27,34 +22,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Breeding-Research-1.1.13-arm64.dmg"
         },
         {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/tools-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/agent-runtime-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "runtime-libs-darwin-arm64.tar.gz",
-          "size": 46726390,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/runtime-libs-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "latest-mac.yml",
-          "size": 382,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/latest-mac.yml"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.13-x64.exe",
-          "size": 631934498,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-Portable-1.1.13-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.13-x86_64.AppImage",
-          "size": 705356672,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-1.1.13-x86_64.AppImage"
+          "name": "Duanyan-Breeding-Research-1.1.13-arm64.zip",
+          "size": 385872899,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Breeding-Research-1.1.13-arm64.zip"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.13-amd64.deb",
@@ -62,9 +32,59 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-1.1.13-amd64.deb"
         },
         {
+          "name": "Duanyan-Science-Discovery-1.1.13-x86_64.AppImage",
+          "size": 705356672,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-1.1.13-x86_64.AppImage"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.13-x64.exe",
+          "size": 631934498,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-Portable-1.1.13-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.13-x64.exe",
+          "size": 632390609,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-Setup-1.1.13-x64.exe"
+        },
+        {
           "name": "Duanyan-Science-Discovery-Setup-1.1.13-x64.exe.blockmap",
-          "size": 656005,
+          "size": 656198,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-Setup-1.1.13-x64.exe.blockmap"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 592,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/latest-linux.yml"
+        },
+        {
+          "name": "latest-mac.yml",
+          "size": 382,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/latest-mac.yml"
+        },
+        {
+          "name": "latest.yml",
+          "size": 390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/latest.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 70007,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/release-notes.json"
+        },
+        {
+          "name": "release-verification-1.1.13-r2.json",
+          "size": 1528,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/release-verification-1.1.13-r2.json"
+        },
+        {
+          "name": "runtime-libs-darwin-arm64.tar.gz",
+          "size": 46726390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/runtime-libs-darwin-arm64.tar.gz"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -78,9 +98,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "Duanyan-Breeding-Research-1.1.12-arm64.zip",
-          "size": 426458328,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Breeding-Research-1.1.12-arm64.zip"
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/agent-runtime-darwin-arm64.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.12-arm64.dmg",
@@ -88,49 +108,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Breeding-Research-1.1.12-arm64.dmg"
         },
         {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/tools-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/agent-runtime-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "runtime-libs-darwin-arm64.tar.gz",
-          "size": 46726390,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/runtime-libs-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "latest-mac.yml",
-          "size": 382,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/latest-mac.yml"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.12-x64.exe",
-          "size": 627682678,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-Setup-1.1.12-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.12-x64.exe",
-          "size": 627477060,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-Portable-1.1.12-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.12-x64.exe.blockmap",
-          "size": 652362,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-Setup-1.1.12-x64.exe.blockmap"
-        },
-        {
-          "name": "release-notes.json",
-          "size": 66575,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/release-notes.json"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.12-x86_64.AppImage",
-          "size": 857628884,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-1.1.12-x86_64.AppImage"
+          "name": "Duanyan-Breeding-Research-1.1.12-arm64.zip",
+          "size": 426458328,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Breeding-Research-1.1.12-arm64.zip"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.12-amd64.deb",
@@ -138,14 +118,54 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-1.1.12-amd64.deb"
         },
         {
-          "name": "latest.yml",
-          "size": 390,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/latest.yml"
+          "name": "Duanyan-Science-Discovery-1.1.12-x86_64.AppImage",
+          "size": 857628884,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-1.1.12-x86_64.AppImage"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.12-x64.exe",
+          "size": 627477060,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-Portable-1.1.12-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.12-x64.exe",
+          "size": 627682678,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-Setup-1.1.12-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.12-x64.exe.blockmap",
+          "size": 652362,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/Duanyan-Science-Discovery-Setup-1.1.12-x64.exe.blockmap"
         },
         {
           "name": "latest-linux.yml",
           "size": 592,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/latest-linux.yml"
+        },
+        {
+          "name": "latest-mac.yml",
+          "size": 382,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/latest-mac.yml"
+        },
+        {
+          "name": "latest.yml",
+          "size": 390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/latest.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 66575,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/release-notes.json"
+        },
+        {
+          "name": "runtime-libs-darwin-arm64.tar.gz",
+          "size": 46726390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/runtime-libs-darwin-arm64.tar.gz"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.12/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -159,14 +179,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "release-notes.json",
-          "size": 63717,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/release-notes.json"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.11-arm64.zip",
-          "size": 473149307,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/Duanyan-Breeding-Research-1.1.11-arm64.zip"
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/agent-runtime-darwin-arm64.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.11-arm64.dmg",
@@ -174,19 +189,24 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/Duanyan-Breeding-Research-1.1.11-arm64.dmg"
         },
         {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/tools-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/agent-runtime-darwin-arm64.tar.gz"
+          "name": "Duanyan-Breeding-Research-1.1.11-arm64.zip",
+          "size": 473149307,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/Duanyan-Breeding-Research-1.1.11-arm64.zip"
         },
         {
           "name": "latest-mac.yml",
           "size": 382,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/latest-mac.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 63717,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/release-notes.json"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.11/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -200,9 +220,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "Duanyan-Breeding-Research-1.1.10-arm64.zip",
-          "size": 472987618,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Breeding-Research-1.1.10-arm64.zip"
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/agent-runtime-darwin-arm64.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.10-arm64.dmg",
@@ -210,44 +230,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Breeding-Research-1.1.10-arm64.dmg"
         },
         {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/tools-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/agent-runtime-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "latest-mac.yml",
-          "size": 382,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/latest-mac.yml"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.10-x64.exe",
-          "size": 625853012,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-Setup-1.1.10-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.10-x64.exe",
-          "size": 625648481,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-Portable-1.1.10-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.10-x64.exe.blockmap",
-          "size": 650884,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-Setup-1.1.10-x64.exe.blockmap"
-        },
-        {
-          "name": "release-notes.json",
-          "size": 61208,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/release-notes.json"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.10-x86_64.AppImage",
-          "size": 704910172,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-1.1.10-x86_64.AppImage"
+          "name": "Duanyan-Breeding-Research-1.1.10-arm64.zip",
+          "size": 472987618,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Breeding-Research-1.1.10-arm64.zip"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.10-amd64.deb",
@@ -255,14 +240,49 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-1.1.10-amd64.deb"
         },
         {
-          "name": "latest.yml",
-          "size": 390,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/latest.yml"
+          "name": "Duanyan-Science-Discovery-1.1.10-x86_64.AppImage",
+          "size": 704910172,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-1.1.10-x86_64.AppImage"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.10-x64.exe",
+          "size": 625648481,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-Portable-1.1.10-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.10-x64.exe",
+          "size": 625853012,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-Setup-1.1.10-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.10-x64.exe.blockmap",
+          "size": 650884,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/Duanyan-Science-Discovery-Setup-1.1.10-x64.exe.blockmap"
         },
         {
           "name": "latest-linux.yml",
           "size": 592,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/latest-linux.yml"
+        },
+        {
+          "name": "latest-mac.yml",
+          "size": 382,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/latest-mac.yml"
+        },
+        {
+          "name": "latest.yml",
+          "size": 390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/latest.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 61208,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/release-notes.json"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -276,44 +296,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "release-notes.json",
-          "size": 58777,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/release-notes.json"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.9-x86_64.AppImage",
-          "size": 712070131,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-1.1.9-x86_64.AppImage"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.9-x64.exe",
-          "size": 626872907,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Setup-1.1.9-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.9-x64.exe",
-          "size": 626668378,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Portable-1.1.9-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.9-amd64.deb",
-          "size": 543443892,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-1.1.9-amd64.deb"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.9-x64.exe.blockmap",
-          "size": 651466,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Setup-1.1.9-x64.exe.blockmap"
-        },
-        {
-          "name": "latest.yml",
-          "size": 387,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/latest.yml"
-        },
-        {
-          "name": "latest-linux.yml",
-          "size": 588,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/latest-linux.yml"
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/agent-runtime-darwin-arm64.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.9-arm64.dmg",
@@ -326,19 +311,54 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Breeding-Research-1.1.9-arm64.zip"
         },
         {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/agent-runtime-darwin-arm64.tar.gz"
+          "name": "Duanyan-Science-Discovery-1.1.9-amd64.deb",
+          "size": 543443892,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-1.1.9-amd64.deb"
         },
         {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/tools-darwin-arm64.tar.gz"
+          "name": "Duanyan-Science-Discovery-1.1.9-x86_64.AppImage",
+          "size": 712070131,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-1.1.9-x86_64.AppImage"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.9-x64.exe",
+          "size": 626668378,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Portable-1.1.9-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.9-x64.exe",
+          "size": 626872907,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Setup-1.1.9-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.9-x64.exe.blockmap",
+          "size": 651466,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Setup-1.1.9-x64.exe.blockmap"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 588,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/latest-linux.yml"
         },
         {
           "name": "latest-mac.yml",
           "size": 379,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/latest-mac.yml"
+        },
+        {
+          "name": "latest.yml",
+          "size": 387,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/latest.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 58777,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/release-notes.json"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -352,14 +372,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "release-notes.json",
-          "size": 56729,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/release-notes.json"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.8-arm64.zip",
-          "size": 457696761,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.zip"
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/agent-runtime-darwin-arm64.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.8-arm64.dmg",
@@ -367,39 +382,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.dmg"
         },
         {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/tools-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/agent-runtime-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "latest-mac.yml",
-          "size": 379,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/latest-mac.yml"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.8-x64.exe",
-          "size": 611467493,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.8-x64.exe",
-          "size": 611262969,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-Portable-1.1.8-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.8-x64.exe.blockmap",
-          "size": 635478,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe.blockmap"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.8-x86_64.AppImage",
-          "size": 697699006,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-1.1.8-x86_64.AppImage"
+          "name": "Duanyan-Breeding-Research-1.1.8-arm64.zip",
+          "size": 457696761,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Breeding-Research-1.1.8-arm64.zip"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.8-amd64.deb",
@@ -407,14 +392,49 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-1.1.8-amd64.deb"
         },
         {
-          "name": "latest.yml",
-          "size": 387,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/latest.yml"
+          "name": "Duanyan-Science-Discovery-1.1.8-x86_64.AppImage",
+          "size": 697699006,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-1.1.8-x86_64.AppImage"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.8-x64.exe",
+          "size": 611262969,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-Portable-1.1.8-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.8-x64.exe",
+          "size": 611467493,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.8-x64.exe.blockmap",
+          "size": 635478,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/Duanyan-Science-Discovery-Setup-1.1.8-x64.exe.blockmap"
         },
         {
           "name": "latest-linux.yml",
           "size": 588,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/latest-linux.yml"
+        },
+        {
+          "name": "latest-mac.yml",
+          "size": 379,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/latest-mac.yml"
+        },
+        {
+          "name": "latest.yml",
+          "size": 387,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/latest.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 56729,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/release-notes.json"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.8/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -428,14 +448,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "release-notes.json",
-          "size": 56832,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/release-notes.json"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.7-arm64.zip",
-          "size": 417836586,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Breeding-Research-1.1.7-arm64.zip"
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/agent-runtime-darwin-arm64.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.7-arm64.dmg",
@@ -443,39 +458,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Breeding-Research-1.1.7-arm64.dmg"
         },
         {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/tools-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/agent-runtime-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "latest-mac.yml",
-          "size": 379,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/latest-mac.yml"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.7-x64.exe",
-          "size": 585189020,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-Setup-1.1.7-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.7-x64.exe",
-          "size": 584984491,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-Portable-1.1.7-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.7-x64.exe.blockmap",
-          "size": 608158,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-Setup-1.1.7-x64.exe.blockmap"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.7-x86_64.AppImage",
-          "size": 662805829,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-1.1.7-x86_64.AppImage"
+          "name": "Duanyan-Breeding-Research-1.1.7-arm64.zip",
+          "size": 417836586,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Breeding-Research-1.1.7-arm64.zip"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.7-amd64.deb",
@@ -483,14 +468,49 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-1.1.7-amd64.deb"
         },
         {
-          "name": "latest.yml",
-          "size": 387,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/latest.yml"
+          "name": "Duanyan-Science-Discovery-1.1.7-x86_64.AppImage",
+          "size": 662805829,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-1.1.7-x86_64.AppImage"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.7-x64.exe",
+          "size": 584984491,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-Portable-1.1.7-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.7-x64.exe",
+          "size": 585189020,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-Setup-1.1.7-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.7-x64.exe.blockmap",
+          "size": 608158,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/Duanyan-Science-Discovery-Setup-1.1.7-x64.exe.blockmap"
         },
         {
           "name": "latest-linux.yml",
           "size": 588,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/latest-linux.yml"
+        },
+        {
+          "name": "latest-mac.yml",
+          "size": 379,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/latest-mac.yml"
+        },
+        {
+          "name": "latest.yml",
+          "size": 387,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/latest.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 56832,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/release-notes.json"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.7/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -504,24 +524,14 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "Duanyan-Breeding-Research-1.1.6-arm64.dmg",
-          "size": 513517738,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/Duanyan-Breeding-Research-1.1.6-arm64.dmg"
-        },
-        {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/tools-darwin-arm64.tar.gz"
-        },
-        {
           "name": "agent-runtime-darwin-arm64.tar.gz",
           "size": 87789490,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/agent-runtime-darwin-arm64.tar.gz"
         },
         {
-          "name": "latest-mac.yml",
-          "size": 379,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/latest-mac.yml"
+          "name": "Duanyan-Breeding-Research-1.1.6-arm64.dmg",
+          "size": 513517738,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/Duanyan-Breeding-Research-1.1.6-arm64.dmg"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.6-arm64.zip",
@@ -529,14 +539,14 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/Duanyan-Breeding-Research-1.1.6-arm64.zip"
         },
         {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.6-x64.exe",
-          "size": 636074301,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/Duanyan-Science-Discovery-Setup-1.1.6-x64.exe"
-        },
-        {
           "name": "Duanyan-Science-Discovery-Portable-1.1.6-x64.exe",
           "size": 635869763,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/Duanyan-Science-Discovery-Portable-1.1.6-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.6-x64.exe",
+          "size": 636074301,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/Duanyan-Science-Discovery-Setup-1.1.6-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.6-x64.exe.blockmap",
@@ -544,14 +554,24 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/Duanyan-Science-Discovery-Setup-1.1.6-x64.exe.blockmap"
         },
         {
-          "name": "release-notes.json",
-          "size": 25817,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/release-notes.json"
+          "name": "latest-mac.yml",
+          "size": 379,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/latest-mac.yml"
         },
         {
           "name": "latest.yml",
           "size": 387,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/latest.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 25817,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/release-notes.json"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.6/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -565,24 +585,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.5-x64.exe",
-          "size": 635996320,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-Setup-1.1.5-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.5-x64.exe",
-          "size": 635791795,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-Portable-1.1.5-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.5-x64.exe.blockmap",
-          "size": 659967,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-Setup-1.1.5-x64.exe.blockmap"
-        },
-        {
-          "name": "release-notes.json",
-          "size": 23182,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/release-notes.json"
+          "name": "Duanyan-Science-Discovery-1.1.5-amd64.deb",
+          "size": 505373468,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-1.1.5-amd64.deb"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.5-x86_64.AppImage",
@@ -590,9 +595,24 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-1.1.5-x86_64.AppImage"
         },
         {
-          "name": "Duanyan-Science-Discovery-1.1.5-amd64.deb",
-          "size": 505373468,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-1.1.5-amd64.deb"
+          "name": "Duanyan-Science-Discovery-Portable-1.1.5-x64.exe",
+          "size": 635791795,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-Portable-1.1.5-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.5-x64.exe",
+          "size": 635996320,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-Setup-1.1.5-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.5-x64.exe.blockmap",
+          "size": 659967,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/Duanyan-Science-Discovery-Setup-1.1.5-x64.exe.blockmap"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 588,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/latest-linux.yml"
         },
         {
           "name": "latest.yml",
@@ -600,9 +620,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/latest.yml"
         },
         {
-          "name": "latest-linux.yml",
-          "size": 588,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/latest-linux.yml"
+          "name": "release-notes.json",
+          "size": 23182,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.5/release-notes.json"
         }
       ]
     },
@@ -616,14 +636,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "release-notes.json",
-          "size": 21040,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/release-notes.json"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.4-arm64.zip",
-          "size": 417671307,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/Duanyan-Breeding-Research-1.1.4-arm64.zip"
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/agent-runtime-darwin-arm64.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.4-arm64.dmg",
@@ -631,19 +646,24 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/Duanyan-Breeding-Research-1.1.4-arm64.dmg"
         },
         {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/tools-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/agent-runtime-darwin-arm64.tar.gz"
+          "name": "Duanyan-Breeding-Research-1.1.4-arm64.zip",
+          "size": 417671307,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/Duanyan-Breeding-Research-1.1.4-arm64.zip"
         },
         {
           "name": "latest-mac.yml",
           "size": 379,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/latest-mac.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 21040,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/release-notes.json"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/tools-darwin-arm64.tar.gz"
         }
       ]
     },
@@ -657,24 +677,9 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.3-x64.exe",
-          "size": 589498497,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Setup-1.1.3-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.3-x64.exe",
-          "size": 589293979,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Portable-1.1.3-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.3-x64.exe.blockmap",
-          "size": 609924,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Setup-1.1.3-x64.exe.blockmap"
-        },
-        {
-          "name": "release-notes.json",
-          "size": 19268,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/release-notes.json"
+          "name": "Duanyan-Science-Discovery-1.1.3-amd64.deb",
+          "size": 517951040,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-1.1.3-amd64.deb"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.3-x86_64.AppImage",
@@ -682,9 +687,24 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-1.1.3-x86_64.AppImage"
         },
         {
-          "name": "Duanyan-Science-Discovery-1.1.3-amd64.deb",
-          "size": 517951040,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-1.1.3-amd64.deb"
+          "name": "Duanyan-Science-Discovery-Portable-1.1.3-x64.exe",
+          "size": 589293979,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Portable-1.1.3-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.3-x64.exe",
+          "size": 589498497,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Setup-1.1.3-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.3-x64.exe.blockmap",
+          "size": 609924,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Setup-1.1.3-x64.exe.blockmap"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 588,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/latest-linux.yml"
         },
         {
           "name": "latest.yml",
@@ -692,9 +712,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/latest.yml"
         },
         {
-          "name": "latest-linux.yml",
-          "size": 588,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/latest-linux.yml"
+          "name": "release-notes.json",
+          "size": 19268,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/release-notes.json"
         }
       ]
     },
@@ -708,6 +728,26 @@
       "prerelease": false,
       "assets": [
         {
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 87789490,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/agent-runtime-darwin-arm64.tar.gz"
+        },
+        {
+          "name": "Duanyan-Breeding-Research-1.1.2-arm64.dmg",
+          "size": 513297535,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/Duanyan-Breeding-Research-1.1.2-arm64.dmg"
+        },
+        {
+          "name": "Duanyan-Breeding-Research-1.1.2-arm64.zip",
+          "size": 417620612,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/Duanyan-Breeding-Research-1.1.2-arm64.zip"
+        },
+        {
+          "name": "latest-mac.yml",
+          "size": 379,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/latest-mac.yml"
+        },
+        {
           "name": "release-notes.json",
           "size": 16262,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/release-notes.json"
@@ -716,26 +756,6 @@
           "name": "tools-darwin-arm64.tar.gz",
           "size": 9426285,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/tools-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/agent-runtime-darwin-arm64.tar.gz"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.2-arm64.zip",
-          "size": 417620612,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/Duanyan-Breeding-Research-1.1.2-arm64.zip"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.2-arm64.dmg",
-          "size": 513297535,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/Duanyan-Breeding-Research-1.1.2-arm64.dmg"
-        },
-        {
-          "name": "latest-mac.yml",
-          "size": 379,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.2/latest-mac.yml"
         }
       ]
     }
