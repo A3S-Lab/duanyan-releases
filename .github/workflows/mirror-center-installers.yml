@@ -8,6 +8,7 @@ on:
         default: '1.1.13'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: mirror-center-installers
   cancel-in-progress: false
@@ -32,7 +33,8 @@ jobs:
         run: |
           set -euo pipefail
           gh release view "v$RELEASE_VERSION"
-          gh release upload "v$RELEASE_VERSION" mirrored/* --clobber
+          gh release upload "v$RELEASE_VERSION" mirrored/*.exe mirrored/*.AppImage mirrored/*.deb mirrored/*.blockmap "mirrored/release-verification-$RELEASE_VERSION.json" --clobber
+          gh release upload "v$RELEASE_VERSION" mirrored/release-notes.json mirrored/latest.yml mirrored/latest-linux.yml --clobber
           gh release edit "v$RELEASE_VERSION" --title "端砚· Science Discovery $RELEASE_VERSION（macOS / Windows / Linux）" --notes-file mirror-notes.md
       - name: Refresh Pages index
         env:
