@@ -31,6 +31,7 @@ async function get(name, headers = {}) {
   }
 }
 const records = [];
+const payloadsOnly = process.env.PAYLOADS_ONLY === 'true';
 const verificationName = process.env.VERIFICATION_FILE || `release-verification-${version}.json`;
 const verificationText = await (await get(verificationName)).text();
 const verification = JSON.parse(verificationText);
@@ -47,6 +48,10 @@ for (const name of ['latest.yml', 'latest-linux.yml']) {
 const setup = records.find(record => /-Setup-.*\.exe$/.test(record.name));
 if (!setup) throw new Error('Windows feed is not the Setup installer');
 records.push({ name: `Duanyan-Science-Discovery-Portable-${version}-x64.exe` });
+if (payloadsOnly) {
+  records.splice(records.indexOf(setup), 1);
+  await fs.unlink(path.join('mirrored', verificationName));
+}
 async function download(record) {
   if (!record.size) {
     const probe = await get(record.name, { Range: 'bytes=0-0' });
@@ -94,6 +99,7 @@ for (const name of ['release-notes.json', setup.name + '.blockmap']) {
   await fs.writeFile(path.join('mirrored', name), Buffer.from(await (await get(name)).arrayBuffer()));
 }
 for (const expected of verification.files) {
+  if (payloadsOnly && !records.some(record => record.name === expected.name)) continue;
   const hash = crypto.createHash('sha256');
   const filename = path.join('mirrored', expected.name);
   if (!/^[\w.-]+$/.test(expected.name)) throw new Error('Unsafe verification filename');

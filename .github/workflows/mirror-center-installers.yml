@@ -9,6 +9,10 @@ on:
       verification_file:
         description: Optional versioned verification report filename
         required: false
+      payloads_only:
+        description: Mirror portable and Linux payloads only
+        type: boolean
+        default: false
 permissions:
   contents: write
   actions: write
@@ -28,18 +32,30 @@ jobs:
         env:
           RELEASE_VERSION: ${{ inputs.version }}
           VERIFICATION_FILE: ${{ inputs.verification_file }}
+          PAYLOADS_ONLY: ${{ inputs.payloads_only }}
         run: node scripts/mirror-center-installers.mjs
       - name: Mirror Windows and Linux assets, preserving macOS payloads
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_VERSION: ${{ inputs.version }}
           GH_REPO: ${{ github.repository }}
+          PAYLOADS_ONLY: ${{ inputs.payloads_only }}
         run: |
           set -euo pipefail
           gh release view "v$RELEASE_VERSION"
-          gh release upload "v$RELEASE_VERSION" mirrored/*.exe mirrored/*.AppImage mirrored/*.deb mirrored/*.blockmap mirrored/release-verification-*.json --clobber
-          gh release upload "v$RELEASE_VERSION" mirrored/release-notes.json mirrored/latest.yml mirrored/latest-linux.yml --clobber
-          gh release edit "v$RELEASE_VERSION" --title "端砚· Science Discovery $RELEASE_VERSION（macOS / Windows / Linux）" --notes-file mirror-notes.md
+          gh api "repos/$GH_REPO/releases/tags/v$RELEASE_VERSION" > existing-release.json
+          shopt -s nullglob
+          for file in mirrored/*.exe mirrored/*.AppImage mirrored/*.deb mirrored/*.blockmap mirrored/release-verification-*.json; do
+            name=$(basename "$file")
+            actual="sha256:$(sha256sum "$file" | cut -d ' ' -f 1)"
+            previous=$(jq -r --arg name "$name" '.assets[] | select(.name == $name) | .digest' existing-release.json)
+            if [ "$actual" = "$previous" ]; then echo "Already verified: $name"; continue; fi
+            gh release upload "v$RELEASE_VERSION" "$file" --clobber
+          done
+          if [ "$PAYLOADS_ONLY" != true ]; then
+            gh release upload "v$RELEASE_VERSION" mirrored/release-notes.json mirrored/latest.yml mirrored/latest-linux.yml --clobber
+            gh release edit "v$RELEASE_VERSION" --title "端砚· Science Discovery $RELEASE_VERSION（macOS / Windows / Linux）" --notes-file mirror-notes.md
+          fi
       - name: Refresh Pages index
         env:
           GH_TOKEN: ${{ github.token }}
