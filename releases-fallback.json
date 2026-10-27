@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T05:29:25.424Z",
+  "generated_at": "2026-10-27T09:27:39.911Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -7,7 +7,7 @@
       "name": "端砚· Science Discovery 1.1.13（macOS / Windows / Linux）",
       "published_at": "2026-10-26T10:56:06Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.13",
-      "body": "智能任务交付大幅优化，登记调用约 26 次 → 1 次；审查页重做，关系图内嵌在顶部；工作台改为工作区、产物、审查三页，默认收起。\n\n**任务速度大幅优化**\n\n- 交付登记：约 26 次模型往返 → 1 次（玉米耐旱任务实测）\n- 计划被打回重写：8 次中 3 次 → 0 次（同一任务）\n- 交付前带给模型的会话信息：23 KB → 10.5 KB\n- 耗时计算先估算并单折计时，减少长时间空跑\n\n**审查**\n\n- 关系图内嵌在审查页顶部，去掉列表 / 关系图切换\n- 只列本任务真正涉及的判断题\n- 外部搜索单独成组，与数据并排\n- 点节点后，详情显示在关系图正下方\n- 一个脚本跑出多步产物时不再误报缺少运行记录\n- 问题说明改为大白话，顶部数量与卡片一致\n\n**工作台**\n\n- 页签改为「工作区」「产物」「审查」\n- 宽屏下默认收起，需要时展开\n- 任务资料和产物直接放进工作区\n- 文件图标按类型上色\n- 对话标题栏图标分色并重排\n- 会话的执行引擎在新建时选定，模型菜单只列可用模型\n\n**自主实验台**\n\n- 平台名改为「LabMCP 实验台」\n- 32 台设备换成白底实拍风格照片\n\n**修复**\n\n- 设置页离开确认改为应用内对话框，可直接保存\n- 桌面版支持 Ctrl / ⌘ + 滚轮缩放界面\n\n**Windows 补充修复**\n\n- 10 月 27 日补齐 Windows / Linux 1.1.13 安装包\n- 升级前先退出本应用的科研引擎，减少等待旧进程的问题\n- 安装占用日志列出进程编号，区分实际占用和检查失败\n- 深层技能目录支持长路径，替换和失败回滚无需修改系统设置\n\nWindows Setup / Portable；Linux AppImage / deb。macOS 保留原始安装包。\n\n构建源码：`ef5877b8834d9bf55686763c7d54721fa08ce2fb`。",
+      "body": "智能任务交付大幅优化，登记调用约 26 次 → 1 次；审查页重做，关系图内嵌在顶部；工作台改为工作区、产物、审查三页，默认收起。\n\n**任务速度大幅优化**\n\n- 交付登记：约 26 次模型往返 → 1 次（玉米耐旱任务实测）\n- 计划被打回重写：8 次中 3 次 → 0 次（同一任务）\n- 交付前带给模型的会话信息：23 KB → 10.5 KB\n- 耗时计算先估算并单折计时，减少长时间空跑\n\n**审查**\n\n- 关系图内嵌在审查页顶部，去掉列表 / 关系图切换\n- 只列本任务真正涉及的判断题\n- 外部搜索单独成组，与数据并排\n- 点节点后，详情显示在关系图正下方\n- 一个脚本跑出多步产物时不再误报缺少运行记录\n- 问题说明改为大白话，顶部数量与卡片一致\n\n**工作台**\n\n- 页签改为「工作区」「产物」「审查」\n- 宽屏下默认收起，需要时展开\n- 任务资料和产物直接放进工作区\n- 文件图标按类型上色\n- 对话标题栏图标分色并重排\n- 会话的执行引擎在新建时选定，模型菜单只列可用模型\n\n**自主实验台**\n\n- 平台名改为「LabMCP 实验台」\n- 32 台设备换成白底实拍风格照片\n\n**修复**\n\n- 修复 Windows 模型列表读取时的 HTTP 500\n- 服务商读取失败时明确报错，避免保存后重新进入显示空列表\n- 展开模型详情时保留主页按钮，修正墨点控制台链接\n- 任务运行中可继续发送追问或补充要求，并保留独立的停止按钮\n- Windows 删除任务时兼容深层技能目录，避免删除失败\n- 设置页离开确认改为应用内对话框，可直接保存\n- 桌面版支持 Ctrl / ⌘ + 滚轮缩放界面\n\n**Windows 补充修复**\n\n- 10 月 27 日补齐 Windows / Linux 1.1.13 安装包\n- 升级前先退出本应用的科研引擎，减少等待旧进程的问题\n- 安装占用日志列出进程编号，区分实际占用和检查失败\n- 深层技能目录支持长路径，替换和失败回滚无需修改系统设置\n\nWindows Setup / Portable；Linux AppImage / deb。macOS 保留原始安装包。\n\n构建源码：`1f25addbcbb7aab57b796a5ce36379dff3d32084`。",
       "draft": false,
       "prerelease": false,
       "assets": [
@@ -28,27 +28,27 @@
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.13-amd64.deb",
-          "size": 538625716,
+          "size": 538616868,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-1.1.13-amd64.deb"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.13-x86_64.AppImage",
-          "size": 705356672,
+          "size": 705364999,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-1.1.13-x86_64.AppImage"
         },
         {
           "name": "Duanyan-Science-Discovery-Portable-1.1.13-x64.exe",
-          "size": 631934498,
+          "size": 631856771,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-Portable-1.1.13-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.13-x64.exe",
-          "size": 632390609,
+          "size": 632312899,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-Setup-1.1.13-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.13-x64.exe.blockmap",
-          "size": 656198,
+          "size": 656248,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/Duanyan-Science-Discovery-Setup-1.1.13-x64.exe.blockmap"
         },
         {
@@ -68,13 +68,18 @@
         },
         {
           "name": "release-notes.json",
-          "size": 70007,
+          "size": 70907,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/release-notes.json"
         },
         {
           "name": "release-verification-1.1.13-r2.json",
           "size": 1528,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/release-verification-1.1.13-r2.json"
+        },
+        {
+          "name": "release-verification-1.1.13-r3.json",
+          "size": 1528,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.13/release-verification-1.1.13-r3.json"
         },
         {
           "name": "runtime-libs-darwin-arm64.tar.gz",
