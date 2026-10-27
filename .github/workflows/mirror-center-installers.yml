@@ -1,0 +1,41 @@
+name: Mirror verified center installers
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Existing release version to mirror (without v)
+        required: true
+        default: '1.1.13'
+permissions:
+  contents: write
+concurrency:
+  group: mirror-center-installers
+  cancel-in-progress: false
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Download and verify exact center files
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: node scripts/mirror-center-installers.mjs
+      - name: Mirror Windows and Linux assets, preserving macOS payloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh release view "v$RELEASE_VERSION"
+          gh release upload "v$RELEASE_VERSION" mirrored/* --clobber
+          gh release edit "v$RELEASE_VERSION" --title "端砚· Science Discovery $RELEASE_VERSION（macOS / Windows / Linux）" --notes-file mirror-notes.md
+      - name: Refresh Pages index
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run refresh-pages-releases.yml
