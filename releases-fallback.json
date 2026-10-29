@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T18:00:46.178Z",
+  "generated_at": "2026-10-29T18:01:04.854Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -161,6 +161,11 @@
           "name": "pi-runtime-linux-x86_64-1.1.15.tar.gz.staging-4699c13ad37c",
           "size": 33643643,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/pi-runtime-linux-x86_64-1.1.15.tar.gz.staging-4699c13ad37c"
+        },
+        {
+          "name": "breeding-tools-linux-x86_64-1.1.15.tar.gz.staging-795983410771",
+          "size": 125251661,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/breeding-tools-linux-x86_64-1.1.15.tar.gz.staging-795983410771"
         }
       ]
     },
