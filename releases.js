@@ -5,7 +5,8 @@
   var API_URL = "https://api.github.com/repos/" + REPO + "/releases?per_page=12";
   var FALLBACK_URL = "releases-fallback.json";
   var CENTER_BASE = "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/";
-  var CACHE_KEY = "duanyan-release-page-v2";
+  // A withdrawn release must not survive in a previously cached catalogue.
+  var CACHE_KEY = "duanyan-release-page-v3";
   var CACHE_TTL = 5 * 60 * 1000;
   var state = { releases: [], source: "fallback", checkedAt: null };
 
