@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T15:06:01.690Z",
+  "generated_at": "2026-10-29T15:07:31.952Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -73,6 +73,12 @@
           "size": 33643643,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/pi-runtime-linux-x86_64-1.1.16.tar.gz",
           "digest": "sha256:4699c13ad37c38dcb5982fd753044b382fa4e09af1a1322d8b755aa517a88589"
+        },
+        {
+          "name": "codex-runtime-linux-x86_64-1.1.16.tar.gz",
+          "size": 161191025,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/codex-runtime-linux-x86_64-1.1.16.tar.gz",
+          "digest": "sha256:377e72121f7688f6542cf9e736c8af70cc11844b9bb57dfbb626c055565da7c1"
         },
         {
           "name": "latest-linux.yml",
