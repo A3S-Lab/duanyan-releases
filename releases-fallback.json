@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T19:25:01.315Z",
+  "generated_at": "2026-10-29T19:25:12.479Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -188,11 +188,6 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.staging-e1fd6bfe2c0a"
         },
         {
-          "name": "latest-linux.yml",
-          "size": 592,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest-linux.yml"
-        },
-        {
           "name": "latest-linux.yml.staging-035024e4205d",
           "size": 592,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest-linux.yml.staging-035024e4205d"
@@ -213,11 +208,6 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest.yml"
         },
         {
-          "name": "latest.yml.staging-09ba62d530f0",
-          "size": 390,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest.yml.staging-09ba62d530f0"
-        },
-        {
           "name": "latest.yml.staging-1fe7f18db253",
           "size": 390,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest.yml.staging-1fe7f18db253"
@@ -234,13 +224,8 @@
         },
         {
           "name": "release-notes.json",
-          "size": 79184,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/release-notes.json"
-        },
-        {
-          "name": "release-notes.json.staging-144e95101e4c",
           "size": 77040,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/release-notes.json.staging-144e95101e4c"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/release-notes.json"
         },
         {
           "name": "release-notes.json.staging-835a911a273e",
