@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T19:24:06.626Z",
+  "generated_at": "2026-10-29T19:24:38.890Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -128,14 +128,14 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Breeding-Research-1.1.15-arm64.zip"
         },
         {
+          "name": "Duanyan-Online-Setup-1.1.15.exe",
+          "size": 41793,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Online-Setup-1.1.15.exe"
+        },
+        {
           "name": "Duanyan-Online-Setup-1.1.15.exe.staging-2274e936a62c",
           "size": 41794,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Online-Setup-1.1.15.exe.staging-2274e936a62c"
-        },
-        {
-          "name": "Duanyan-Online-Setup-1.1.15.exe.staging-41591e043a5d",
-          "size": 41793,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Online-Setup-1.1.15.exe.staging-41591e043a5d"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.15-amd64.deb",
@@ -169,7 +169,7 @@
         },
         {
           "name": "Duanyan-Science-Discovery-Portable-1.1.15-x64.exe",
-          "size": 728062686,
+          "size": 379655024,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Portable-1.1.15-x64.exe"
         },
         {
@@ -178,19 +178,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Portable-1.1.15-x64.exe.staging-457a22f4763d"
         },
         {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.15-x64.exe.staging-769b9f960da7",
-          "size": 379655024,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Portable-1.1.15-x64.exe.staging-769b9f960da7"
-        },
-        {
           "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe",
-          "size": 728518810,
+          "size": 380111142,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap",
-          "size": 757029,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap.staging-3facf76c7c85",
@@ -206,11 +196,6 @@
           "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.staging-e1fd6bfe2c0a",
           "size": 511842738,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.staging-e1fd6bfe2c0a"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.staging-f85240965605",
-          "size": 380111142,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.staging-f85240965605"
         },
         {
           "name": "latest-linux.yml",
