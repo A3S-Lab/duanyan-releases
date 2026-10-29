@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-29T15:09:38.442Z",
+  "generated_at": "2026-10-29T15:10:19.447Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
       "tag_name": "v1.1.16",
-      "name": "端砚· Science Discovery 1.1.16（Windows x64）",
+      "name": "端砚· Science Discovery 1.1.16（Windows / Linux x64）",
       "published_at": "2026-10-29T15:04:26Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.16",
-      "body": "保留基础科研环境，执行引擎和育种工具按需补齐；Windows 和 Linux 后续更新可复用已有数据。\n\n**下载与安装**\n\n- 提供小型在线安装器，启动后下载完整安装包\n- 下载中断可续传，并可切换 A3S Lab 与 GitHub 下载源\n- 保留完整安装包和便携版，下载完成后核对文件完整性\n- 育种与基因组工具链按需下载，减少首次安装体积\n- 优先使用本机 Codex、Pi，缺失时可在内核菜单安装\n- 项目主页提供两个下载源，并自动检查最新版本\n\n**科研与任务执行**\n\n- 增加 EPICS 操作和仿真束线调优能力\n- Aster 遇到未确认的工具操作时暂停并提示核对\n- 修复部分模型调用联网搜索时出现的接口错误\n\n**应用内更新**\n\n- Windows 安装版和 Linux AppImage 更新可复用未变数据块\n- 差量下载中断可续传，校验失败时自动回退完整下载\n- 较旧版本首次升级需完整下载一次，之后才可使用增量更新\n\nWindows：Setup 安装版、Portable 便携版和支持断点续传的小型在线安装器。Codex、Pi 和育种工具可按需下载。\n\n源码提交：`c94eff3c3924726db327af5d0028e11c91e5d13a`。",
+      "body": "保留基础科研环境，执行引擎和育种工具按需补齐；Windows 和 Linux 后续更新可复用已有数据。\n\n**下载与安装**\n\n- 提供小型在线安装器，启动后下载完整安装包\n- 下载中断可续传，并可切换 A3S Lab 与 GitHub 下载源\n- 保留完整安装包和便携版，下载完成后核对文件完整性\n- 育种与基因组工具链按需下载，减少首次安装体积\n- 优先使用本机 Codex、Pi，缺失时可在内核菜单安装\n- 项目主页提供两个下载源，并自动检查最新版本\n\n**科研与任务执行**\n\n- 增加 EPICS 操作和仿真束线调优能力\n- Aster 遇到未确认的工具操作时暂停并提示核对\n- 修复部分模型调用联网搜索时出现的接口错误\n\n**应用内更新**\n\n- Windows 安装版和 Linux AppImage 更新可复用未变数据块\n- 差量下载中断可续传，校验失败时自动回退完整下载\n- 较旧版本首次升级需完整下载一次，之后才可使用增量更新\n\nWindows：Setup 安装版、Portable 便携版和支持断点续传的小型在线安装器。Linux：AppImage 和 Debian/Ubuntu 安装包。Codex、Pi 和育种工具可按需下载。\n\n源码提交：`c94eff3c3924726db327af5d0028e11c91e5d13a`。",
       "draft": false,
       "prerelease": false,
       "assets": [
@@ -80,6 +80,12 @@
           "size": 125251661,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/breeding-tools-linux-x86_64-1.1.16.tar.gz",
           "digest": "sha256:795983410771e0e8eca6af83d03dbca5ad3f072c8cbfb8333f1064fa25afac82"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.16-x86_64.AppImage",
+          "size": 576687676,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/Duanyan-Science-Discovery-1.1.16-x86_64.AppImage",
+          "digest": "sha256:ae1bfe10a7272e15dc595eccf3cf460aba39c52306148031dd522f93ca0ea8f4"
         },
         {
           "name": "pi-runtime-linux-x86_64-1.1.16.tar.gz",
