@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T15:07:31.952Z",
+  "generated_at": "2026-10-29T15:07:51.512Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -67,6 +67,12 @@
           "size": 547177,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/Duanyan-Science-Discovery-Setup-1.1.16-x64.exe.blockmap",
           "digest": "sha256:c58dce633db6e005aef0061856f6b6410215c549ca5e79b4d121569908245115"
+        },
+        {
+          "name": "breeding-tools-linux-x86_64-1.1.16.tar.gz",
+          "size": 125251661,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/breeding-tools-linux-x86_64-1.1.16.tar.gz",
+          "digest": "sha256:795983410771e0e8eca6af83d03dbca5ad3f072c8cbfb8333f1064fa25afac82"
         },
         {
           "name": "pi-runtime-linux-x86_64-1.1.16.tar.gz",
