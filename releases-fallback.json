@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T18:00:19.313Z",
+  "generated_at": "2026-10-29T18:00:46.178Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -151,6 +151,11 @@
           "name": "latest-mac.yml",
           "size": 382,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest-mac.yml"
+        },
+        {
+          "name": "pi-runtime-windows-x86_64-1.1.15.tar.gz.staging-b49cd55666e6",
+          "size": 29058600,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/pi-runtime-windows-x86_64-1.1.15.tar.gz.staging-b49cd55666e6"
         },
         {
           "name": "pi-runtime-linux-x86_64-1.1.15.tar.gz.staging-4699c13ad37c",
