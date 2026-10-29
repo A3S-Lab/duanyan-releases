@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T12:20:05.947Z",
+  "generated_at": "2026-10-29T12:20:36.777Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -7,30 +7,10 @@
       "name": "端砚· Science Discovery 1.1.15（Windows / Linux x64）",
       "published_at": "2026-10-29T11:13:50Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.15",
-      "body": "Linux 安装包已包含 Pi 图像修复；Windows 修订包正在生成。\n\n运行中补充消息先排队，可编辑、删除或按条插入当前任务；Windows 桌面版新增指定窗口的电脑操作。\n\n**消息发送**\n\n- 运行中补充消息默认进入等待队列\n- 可编辑、删除排队消息，并按条插入当前任务\n- 接纳失败保留消息，避免误删或重复提交\n- 可继续已暂停队列，后续消息保持顺序\n\n**对象存储**\n\n- 完整对象存储工作台，支持预览、批量传输和任务导入\n- 智能体按连接获得只读或可写权限，修改操作保留确认步骤\n- 支持传输暂停恢复、幂等任务与可选只读挂载\n\n**电脑操作**\n\n- Windows 任务可选择本机软件或浏览器窗口\n- 明确允许窗口后，可截图、点击、输入，并滚动指定页面区域\n- 工具栏可一键停止，长文本输入可中断，删除任务时释放授权\n- 不同任务不能抢占桌面授权，更换窗口前先停止当前操作\n- 每次操作使用新截图，窗口身份或位置改变时要求重新观察\n- 窗口被遮挡或焦点改变时停止输入，要求重新截图\n- 改进 Chrome 等 GPU 窗口的前台截图，避免黑屏\n- 终端、认证、密码和系统安全窗口不可通过此入口操作\n\n**来源与兼容**\n\n- 参考 Codex、DeepSeek Harness 的队列、资源归属和取消机制\n- 随包保留两者的许可证、来源与对应提交记录\n- 延续 Windows 原生育种工具、Java 和科学依赖安装修复\n- Linux 同步消息交互，内置育种工具及 Java，提供 AppImage 和 deb\n\n**执行引擎**\n\n- 支持已安装的 Aster 与 Claude Code 执行引擎\n- Claude Code 可使用端砚中已配置的 API 模型\n- 原有 A3S 会话可迁移至 Aster 继续使用\n\n**运行时兼容**\n\n- 修复 Codex 新会话因动态工具协议格式不一致而启动失败\n- Windows 不再向 Pi 提供无法运行的 Linux 容器工具\n- Pi 对暂不支持的图像工具返回明确提示，避免盲目操作\n\nWindows：Setup 安装版和 Portable 便携版；Linux：AppImage 和 Debian/Ubuntu 安装包。",
+      "body": "运行中补充消息先排队，可编辑、删除或按条插入当前任务；Windows 桌面版新增指定窗口的电脑操作。\n\n**消息发送**\n\n- 运行中补充消息默认进入等待队列\n- 可编辑、删除排队消息，并按条插入当前任务\n- 接纳失败保留消息，避免误删或重复提交\n- 可继续已暂停队列，后续消息保持顺序\n\n**对象存储**\n\n- 完整对象存储工作台，支持预览、批量传输和任务导入\n- 智能体按连接获得只读或可写权限，修改操作保留确认步骤\n- 支持传输暂停恢复、幂等任务与可选只读挂载\n\n**电脑操作**\n\n- Windows 任务可选择本机软件或浏览器窗口\n- 明确允许窗口后，可截图、点击、输入，并滚动指定页面区域\n- 工具栏可一键停止，长文本输入可中断，删除任务时释放授权\n- 不同任务不能抢占桌面授权，更换窗口前先停止当前操作\n- 每次操作使用新截图，窗口身份或位置改变时要求重新观察\n- 窗口被遮挡或焦点改变时停止输入，要求重新截图\n- 改进 Chrome 等 GPU 窗口的前台截图，避免黑屏\n- 终端、认证、密码和系统安全窗口不可通过此入口操作\n\n**来源与兼容**\n\n- 参考 Codex、DeepSeek Harness 的队列、资源归属和取消机制\n- 随包保留两者的许可证、来源与对应提交记录\n- 延续 Windows 原生育种工具、Java 和科学依赖安装修复\n- Linux 同步消息交互，内置育种工具及 Java，提供 AppImage 和 deb\n\n**执行引擎**\n\n- 支持已安装的 Aster 与 Claude Code 执行引擎\n- Claude Code 可使用端砚中已配置的 API 模型\n- 原有 A3S 会话可迁移至 Aster 继续使用\n\n**运行时兼容**\n\n- 修复 Codex 新会话因动态工具协议格式不一致而启动失败\n- Windows 不再向 Pi 提供无法运行的 Linux 容器工具\n- Pi 可向支持图像的模型发送工具截图，记录中不保存图像\n- 修复 Pi 任务完成后进程退出较慢时误报超时\n\nWindows：Setup 安装版和 Portable 便携版；Linux：AppImage 和 Debian/Ubuntu 安装包。",
       "draft": false,
       "prerelease": false,
       "assets": [
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.previous-688278384",
-          "size": 728519618,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.previous-688278384"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.15-x64.exe.previous-688284862",
-          "size": 728063494,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Portable-1.1.15-x64.exe.previous-688284862"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap",
-          "size": 756568,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap"
-        },
-        {
-          "name": "latest.yml",
-          "size": 390,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest.yml"
-        },
         {
           "name": "Duanyan-Science-Discovery-1.1.15-x86_64.AppImage",
           "size": 896533398,
@@ -57,19 +37,19 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe"
         },
         {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.15-x64.exe.next-cc683c7dd6c5",
+          "name": "Duanyan-Science-Discovery-Portable-1.1.15-x64.exe",
           "size": 728062686,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Portable-1.1.15-x64.exe.next-cc683c7dd6c5"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Portable-1.1.15-x64.exe"
         },
         {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap.next-cb3e0f2e9688",
+          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap",
           "size": 757029,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap.next-cb3e0f2e9688"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap"
         },
         {
-          "name": "latest.yml.next-5ce7b4a5c89e",
+          "name": "latest.yml",
           "size": 390,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest.yml.next-5ce7b4a5c89e"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest.yml"
         }
       ]
     },
