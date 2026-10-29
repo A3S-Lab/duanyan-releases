@@ -237,11 +237,6 @@
     state.checkedAt = checkedAt || Date.now();
 
     setText("nav-version", latest.version);
-    setText("release-pill-text", "最新版 v" + latest.version + " · " + formatDate(latest.publishedAt));
-    setLink("release-pill", latest.url);
-    setText("hero-release-date", formatDate(latest.publishedAt));
-    setText("hero-release-summary", summaryFromBody(latest.body));
-    setLink("hero-release-link", latest.url, "查看发布详情 ↗");
 
     setText("latest-version", "v" + latest.version);
     setText("latest-title", latest.name);
@@ -305,20 +300,6 @@
       }
     }
 
-    var timeLabel = new Intl.DateTimeFormat("zh-CN", { hour: "2-digit", minute: "2-digit" }).format(new Date(state.checkedAt));
-    var syncLabel = source === "api"
-      ? "GitHub API · " + timeLabel
-      : source === "pages"
-        ? "发布索引同步 · " + timeLabel
-        : source === "cache"
-          ? "浏览器缓存 · " + timeLabel
-          : "显示最近一次同步结果";
-    var sync = byId("release-sync");
-    if (sync) {
-      sync.classList.toggle("live", source === "api");
-      sync.innerHTML = "<i></i>" + syncLabel;
-    }
-    setText("download-sync", syncLabel);
     document.documentElement.classList.add("release-ready");
   }
 
@@ -385,11 +366,7 @@
         render(releases, "api", Date.now());
         writeCache(releases);
       } catch (_) {
-        if (!state.releases.length) {
-          var sync = byId("release-sync");
-          if (sync) sync.innerHTML = "<i></i>暂时无法连接发布源，请稍后刷新";
-          setText("download-sync", "暂时无法连接发布源");
-        }
+        // keep the static links already in the page
       }
     }
   }
