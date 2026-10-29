@@ -399,7 +399,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;font-size:13px;color
 /* 品牌字标与标题着色 */
 .brand img.wordmark{width:auto;height:30px}
 .h1-logo{line-height:0}
-.h1-logo img{display:block;height:auto;width:min(100%,440px)}
+.h1-logo img{display:block;height:auto;width:100%}
 .h2 em{font-style:normal}
 .h2 em.g{color:var(--green)}
 .h2 em.o{color:var(--hpc)}
@@ -408,7 +408,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;font-size:13px;color
 .h2 em.stars::after{content:"✦";position:absolute;right:-.55em;top:-.35em;font-size:.38em;color:#7a5cc8;animation:twinkle 2.4s ease-in-out infinite}
 @keyframes stars{to{background-position:-220% 0}}
 @keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.1)}}
-@media (max-width:720px){.h1-logo img{width:min(100%,320px)}}
+@media (max-width:720px){.h1-logo{width:min(100% - 40px,320px)}}
 
 /* 首屏三幕 */
 .chapters{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--line);background:#fcfbf8;flex:none}
@@ -605,9 +605,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green)}
   mask-image:linear-gradient(to bottom,transparent,#000 14%,#000 80%,transparent);
 }
 .hero-text{min-width:0}
-.h1-logo{margin-top:22px;display:flex;align-items:flex-start;gap:10px}
-.beta{display:inline-block;padding:3px 9px;border-radius:999px;border:1px solid color-mix(in srgb,var(--green) 40%,transparent);color:var(--green2);font:600 13px/1.2 var(--mono);letter-spacing:.04em;line-height:1.2}
-.brand .beta{padding:1px 6px;font-size:10px;align-self:flex-start}
+.h1-logo{margin-top:22px;position:relative;width:min(100% - 44px,440px)}
+.brand{position:relative}
+.beta{position:absolute;top:-.2em;left:100%;margin-left:-2px;color:var(--green);font:600 10px/1 var(--mono);letter-spacing:.04em}
+.h1-logo .beta{top:2px;margin-left:-4px;font-size:12px;line-height:1}
 .h1-logo img{filter:drop-shadow(0 12px 26px rgba(18,27,22,.07))}
 .hero-trust{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px;color:var(--ink3);font-size:12.5px}
 .hero-trust span{display:inline-flex;align-items:center;gap:6px}
