@@ -102,6 +102,7 @@
           platforms.windows = {
             release: release,
             primary: setup,
+            online: findAsset(release, /^Duanyan-Online-Setup-\d+\.\d+\.\d+\.exe$/i),
             secondary: findAsset(release, /-Portable-.*-x64\.exe$/i)
           };
         }
@@ -131,6 +132,7 @@
 
   function formatSize(bytes) {
     if (!Number.isFinite(bytes) || bytes <= 0) return "";
+    if (bytes < 1024 * 1024) return Math.ceil(bytes / 1024) + " KB";
     if (bytes >= 1024 * 1024 * 1024) return (bytes / (1024 * 1024 * 1024)).toFixed(1) + " GB";
     return Math.round(bytes / (1024 * 1024)) + " MB";
   }
@@ -171,6 +173,8 @@
     var secondary = byId(os + "-secondary");
     var centerPrimary = byId(os + "-center-primary");
     var centerSecondary = byId(os + "-center-secondary");
+    var onlineGithub = byId(os + "-online-github");
+    var onlineCenter = byId(os + "-online-center");
     function centerLink(node, asset) {
       if (!node) return;
       var safe = asset && /^[A-Za-z0-9._-]+$/.test(asset.name) && asset.centerUrl === CENTER_BASE + asset.name;
@@ -187,6 +191,8 @@
       }
       if (secondary) secondary.hidden = true;
       centerLink(centerPrimary, null); centerLink(centerSecondary, null);
+      centerLink(onlineCenter, null);
+      if (onlineGithub) onlineGithub.hidden = true;
       setText(os + "-size", "等待下一次发布");
       return;
     }
@@ -195,7 +201,7 @@
     if (primary) {
       primary.href = data.primary.url;
       primary.innerHTML = '<svg><use href="#dl"/></svg>' +
-        (os === "mac" ? "GitHub · DMG" : os === "windows" ? "GitHub · 安装版" : "GitHub · AppImage");
+        (os === "mac" ? "GitHub · DMG" : os === "windows" ? "GitHub · 完整安装版" : "GitHub · AppImage");
     }
     if (secondary) {
       if (data.secondary) {
@@ -207,6 +213,15 @@
       }
     }
     centerLink(centerPrimary, data.primary); centerLink(centerSecondary, data.secondary);
+    centerLink(onlineCenter, data.online);
+    if (onlineGithub) {
+      onlineGithub.hidden = !data.online;
+      if (data.online) {
+        onlineGithub.href = data.online.url;
+        onlineGithub.textContent = "GitHub · 在线安装器（" + formatSize(data.online.size) + "）";
+      }
+    }
+    if (onlineCenter && data.online && !onlineCenter.hidden) onlineCenter.textContent = "A3S Lab · 在线安装器（" + formatSize(data.online.size) + "）";
     setText(os + "-size", formatSize(data.primary.size) || "安装包");
   }
 
@@ -308,7 +323,9 @@
     var primary = byId("primary");
     if (primary) {
       if (recommendation) {
-        primary.href = recommendation.primary.url;
+        var online = recommendation.online;
+        var safeCenter = online && /^[A-Za-z0-9._-]+$/.test(online.name) && online.centerUrl === CENTER_BASE + online.name;
+        primary.href = online ? (safeCenter ? online.centerUrl : online.url) : recommendation.primary.url;
         setText("primary-label", "下载 " + ({ mac: "macOS", windows: "Windows", linux: "Linux" }[selectedOS]) + " 版 · " + recommendation.release.version);
         var card = document.querySelector('[data-os="' + selectedOS + '"]');
         if (card) {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T15:04:48.816Z",
+  "generated_at": "2026-10-29T15:05:23.139Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -40,7 +40,8 @@
           "name": "Duanyan-Science-Discovery-Portable-1.1.16-x64.exe",
           "size": 526083667,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/Duanyan-Science-Discovery-Portable-1.1.16-x64.exe",
-          "digest": "sha256:e49f841e9a93842f61411ab6b91cab12c6452ad3c3e3ba158ca8a5b062cec109"
+          "digest": "sha256:e49f841e9a93842f61411ab6b91cab12c6452ad3c3e3ba158ca8a5b062cec109",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.16-x64.exe"
         },
         {
           "name": "latest.yml",
@@ -52,7 +53,8 @@
           "name": "Duanyan-Online-Setup-1.1.16.exe",
           "size": 41796,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/Duanyan-Online-Setup-1.1.16.exe",
-          "digest": "sha256:bfa5f2734eb3c1fa29e420229dc4b34ca68d15cbededa04b5e0f9c0971e2f754"
+          "digest": "sha256:bfa5f2734eb3c1fa29e420229dc4b34ca68d15cbededa04b5e0f9c0971e2f754",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Online-Setup-1.1.16.exe"
         },
         {
           "name": "release-notes.json",
@@ -65,6 +67,12 @@
           "size": 547177,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/Duanyan-Science-Discovery-Setup-1.1.16-x64.exe.blockmap",
           "digest": "sha256:c58dce633db6e005aef0061856f6b6410215c549ca5e79b4d121569908245115"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 592,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.16/latest-linux.yml",
+          "digest": "sha256:210874fba3451cd081e05f3ccb23ba9ec2ea657467cbc1a2bbc39a4388d532eb"
         }
       ]
     },
