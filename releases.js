@@ -375,12 +375,9 @@
       }
     } catch (_) {}
 
-    // The release workflow refreshes the same-origin index on every Release.
-    // Use it as the primary source so shared office IPs do not exhaust GitHub's
-    // anonymous API quota. The public API remains available as a fallback and
-    // for an explicit ?refresh=1 verification.
-    var forceApi = new URLSearchParams(location.search).get("refresh") === "1";
-    if (!state.releases.length || forceApi || !fallbackCheckedAt || Date.now() - fallbackCheckedAt > 60 * 60 * 1000) {
+    // Show the same-origin index immediately and check GitHub asynchronously.
+    // If GitHub is blocked or rate-limited, keep the last verified index.
+    {
       try {
         var payload = await fetchJSON(API_URL);
         var releases = normalizeReleases(payload);
