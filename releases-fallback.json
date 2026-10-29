@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T18:01:04.854Z",
+  "generated_at": "2026-10-29T18:01:17.139Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -166,6 +166,11 @@
           "name": "breeding-tools-linux-x86_64-1.1.15.tar.gz.staging-795983410771",
           "size": 125251661,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/breeding-tools-linux-x86_64-1.1.15.tar.gz.staging-795983410771"
+        },
+        {
+          "name": "codex-runtime-windows-x86_64-1.1.15.tar.gz.staging-2177a9ef81b6",
+          "size": 166183631,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/codex-runtime-windows-x86_64-1.1.15.tar.gz.staging-2177a9ef81b6"
         }
       ]
     },
