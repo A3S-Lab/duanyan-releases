@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T12:49:24.382Z",
+  "generated_at": "2026-10-29T12:59:25.274Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -384,7 +384,7 @@
       "name": "端砚· Science Discovery 1.1.10（Windows / Linux / macOS）",
       "published_at": "2026-10-20T09:05:53Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.10",
-      "body": "本机订阅可直接添加 Codex 与 Claude Code 认证；输入框支持优化提示词，Agent 可在任务中提问。第三方模型执行、长回答与 Claude Code 登录和回答保存问题同步修复。\n\n**本机订阅**\n\n- 直接添加 Codex Auth、Claude Code Auth，无需 API Key\n- 在提供商卡片登录或重新认证，模型菜单统一选择订阅与 API\n- 删除提供商后刷新仍保持删除，不再自动补回或静默复用\n\n**提示词与提问**\n\n- 输入框结合对话、附件与所选资源生成可编辑的提示词草稿\n- 可先澄清需求，��根据回答重写提示词\n- Agent 可在任务中提问，运行中也能回答非阻塞问题\n- A3S OS 支持粘贴完整授权回跳地址，连接失败后可重试\n\n**任务执行**\n\n- 第三方模型写文件不再中途停下：同一任务成功 3/10 → 10/10\n- 自建模型长思考被截断后，自动放宽输出上限再写完\n- 换服务商后带上此前的对话，外发前先确认\n- 重启应用或换调研深度后，接着原来的上下文\n\n**Claude Code**\n\n- 已登录的 Claude Code 不再提示未登录\n- 回答不再显示后又消失\n- 换到 Claude Code 时带上没看过的对话\n\n**回复速度**\n\n- 回答下方显示 token/s、首字等待、总耗时与输出用量\n- 遇到上游输出上限时最多继续补全两次，仍截断时说明原因\n\n**界面**\n\n- 内核选择、侧栏任务改用 Codex、Pi、Claude 的 logo\n- 记下的事移到任务顶栏，查文献改为图标按钮\n- 侧栏不再显示时间，顶栏不再显示轮数\n- 输入框提示 @ 指定技能、/ 快捷命令\n\n### 安装包与发布日期\n\n- Windows x64：2026-10-21；Setup 安装版支持应用内更新，Portable 为便携版。\n- Linux x64：2026-10-21；AppImage 便携应用，deb 适用于 Debian/Ubuntu。\n- macOS：保留 2026-10-20 已发布的原安装包，不含本次新增的本机订阅、提示词优化与提问功能。\n\nWindows / Linux 构建源码：`506f057d3ffa67905b9c9598df24874a5d66a432`。Windows 不包含 Linux/macOS 原生育种工具。\n",
+      "body": "本机订阅可直接添加 Codex 与 Claude Code 认证；输入框支持优化提示词，Agent 可在任务中提问。第三方模型执行、长回答与 Claude Code 登录和回答保存问题同步修复。\n\n**本机订阅**\n\n- 直接添加 Codex Auth、Claude Code Auth，无需 API Key\n- 在提供商卡片登录或重新认证，模型菜单统一选择订阅与 API\n- 删除提供商后刷新仍保持删除，不再自动补回或静默复用\n\n**提示词与提问**\n\n- 输入框结合对话、附件与所选资源生成可编辑的提示词草稿\n- 可先澄清需求，再根据回答重写提示词\n- Agent 可在任务中提问，运行中也能回答非阻塞问题\n- A3S OS 支持粘贴完整授权回跳地址，连接失败后可重试\n\n**任务执行**\n\n- 第三方模型写文件不再中途停下：同一任务成功 3/10 → 10/10\n- 自建模型长思考被截断后，自动放宽输出上限再写完\n- 换服务商后带上此前的对话，外发前先确认\n- 重启应用或换调研深度后，接着原来的上下文\n\n**Claude Code**\n\n- 已登录的 Claude Code 不再提示未登录\n- 回答不再显示后又消失\n- 换到 Claude Code 时带上没看过的对话\n\n**回复速度**\n\n- 回答下方显示 token/s、首字等待、总耗时与输出用量\n- 遇到上游输出上限时最多继续补全两次，仍截断时说明原因\n\n**界面**\n\n- 内核选择、侧栏任务改用 Codex、Pi、Claude 的 logo\n- 记下的事移到任务顶栏，查文献改为图标按钮\n- 侧栏不再显示时间，顶栏不再显示轮数\n- 输入框提示 @ 指定技能、/ 快捷命令\n\n### 安装包与发布日期\n\n- Windows x64：2026-10-21；Setup 安装版支持应用内更新，Portable 为便携版。\n- Linux x64：2026-10-21；AppImage 便携应用，deb 适用于 Debian/Ubuntu。\n- macOS：保留 2026-10-20 已发布的原安装包，不含本次新增的本机订阅、提示词优化与提问功能。\n\nWindows / Linux 构建源码：`506f057d3ffa67905b9c9598df24874a5d66a432`。Windows 不包含 Linux/macOS 原生育种工具。\n",
       "draft": false,
       "prerelease": false,
       "assets": [
