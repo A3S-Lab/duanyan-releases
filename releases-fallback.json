@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T19:24:38.890Z",
+  "generated_at": "2026-10-29T19:25:01.315Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -98,24 +98,24 @@
       "prerelease": false,
       "assets": [
         {
-          "name": "breeding-tools-linux-x86_64-1.1.15.tar.gz.staging-795983410771",
+          "name": "breeding-tools-linux-x86_64-1.1.15.tar.gz",
           "size": 125251661,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/breeding-tools-linux-x86_64-1.1.15.tar.gz.staging-795983410771"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/breeding-tools-linux-x86_64-1.1.15.tar.gz"
         },
         {
-          "name": "breeding-tools-windows-x86_64-1.1.15.tar.gz.staging-f7b801b5cc71",
+          "name": "breeding-tools-windows-x86_64-1.1.15.tar.gz",
           "size": 106162724,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/breeding-tools-windows-x86_64-1.1.15.tar.gz.staging-f7b801b5cc71"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/breeding-tools-windows-x86_64-1.1.15.tar.gz"
         },
         {
-          "name": "codex-runtime-linux-x86_64-1.1.15.tar.gz.staging-377e72121f76",
+          "name": "codex-runtime-linux-x86_64-1.1.15.tar.gz",
           "size": 161191025,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/codex-runtime-linux-x86_64-1.1.15.tar.gz.staging-377e72121f76"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/codex-runtime-linux-x86_64-1.1.15.tar.gz"
         },
         {
-          "name": "codex-runtime-windows-x86_64-1.1.15.tar.gz.staging-2177a9ef81b6",
+          "name": "codex-runtime-windows-x86_64-1.1.15.tar.gz",
           "size": 166183631,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/codex-runtime-windows-x86_64-1.1.15.tar.gz.staging-2177a9ef81b6"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/codex-runtime-windows-x86_64-1.1.15.tar.gz"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.15-arm64.dmg",
@@ -139,7 +139,7 @@
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.15-amd64.deb",
-          "size": 711572324,
+          "size": 438277588,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-amd64.deb"
         },
         {
@@ -148,19 +148,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-amd64.deb.staging-1046e8ea780e"
         },
         {
-          "name": "Duanyan-Science-Discovery-1.1.15-amd64.deb.staging-600b535f3e47",
-          "size": 438277588,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-amd64.deb.staging-600b535f3e47"
-        },
-        {
           "name": "Duanyan-Science-Discovery-1.1.15-x86_64.AppImage",
-          "size": 896533398,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-x86_64.AppImage"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.15-x86_64.AppImage.staging-5a766b63a17c",
           "size": 573856972,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-x86_64.AppImage.staging-5a766b63a17c"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-x86_64.AppImage"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.15-x86_64.AppImage.staging-9aa6f813fec4",
@@ -183,9 +173,9 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe"
         },
         {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap.staging-3facf76c7c85",
+          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap",
           "size": 396130,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap.staging-3facf76c7c85"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap.staging-ae8b45edfe37",
@@ -233,14 +223,14 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest.yml.staging-1fe7f18db253"
         },
         {
-          "name": "pi-runtime-linux-x86_64-1.1.15.tar.gz.staging-4699c13ad37c",
+          "name": "pi-runtime-linux-x86_64-1.1.15.tar.gz",
           "size": 33643643,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/pi-runtime-linux-x86_64-1.1.15.tar.gz.staging-4699c13ad37c"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/pi-runtime-linux-x86_64-1.1.15.tar.gz"
         },
         {
-          "name": "pi-runtime-windows-x86_64-1.1.15.tar.gz.staging-b49cd55666e6",
+          "name": "pi-runtime-windows-x86_64-1.1.15.tar.gz",
           "size": 29058600,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/pi-runtime-windows-x86_64-1.1.15.tar.gz.staging-b49cd55666e6"
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/pi-runtime-windows-x86_64-1.1.15.tar.gz"
         },
         {
           "name": "release-notes.json",
