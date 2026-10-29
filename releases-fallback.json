@@ -1,7 +1,43 @@
 {
-  "generated_at": "2026-10-29T02:37:48.877Z",
+  "generated_at": "2026-10-29T11:14:02.721Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
+    {
+      "tag_name": "v1.1.15",
+      "name": "端砚· Science Discovery 1.1.15（Windows x64）",
+      "published_at": "2026-10-29T11:13:50Z",
+      "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.15",
+      "body": "运行中补充消息先排队，可编辑、删除或按条插入当前任务；Windows 桌面版新增指定窗口的电脑操作。\n\n**消息发送**\n\n- 运行中补充消息默认进入等待队列\n- 可编辑、删除排队消息，并按条插入当前任务\n- 接纳失败保留消息，避免误删或重复提交\n- 可继续已暂停队列，后续消息保持顺序\n\n**对象存储**\n\n- 完整对象存储工作台，支持预览、批量传输和任务导入\n- 智能体按连接获得只读或可写权限，修改操作保留确认步骤\n- 支持传输暂停恢复、幂等任务与可选只读挂载\n\n**电脑操作**\n\n- Windows 任务可选择本机软件或浏览器窗口\n- 明确允许窗口后，可截图、点击、输入，并滚动指定页面区域\n- 工具栏可一键停止，长文本输入可中断，删除任务时释放授权\n- 不同任务不能抢占桌面授权，更换窗口前先停止当前操作\n- 每次操作使用新截图，窗口身份或位置改变时要求重新观察\n- 窗口被遮挡或焦点改变时停止输入，要求重新截图\n- 改进 Chrome 等 GPU 窗口的前台截图，避免黑屏\n- 终端、认证、密码和系统安全窗口不可通过此入口操作\n\n**来源与兼容**\n\n- 参考 Codex、DeepSeek Harness 的队列、资源归属和取消机制\n- 随包保留两者的许可证、来源与对应提交记录\n- 延续 Windows 原生育种工具、Java 和科学依赖安装修复\n- Linux 同步消息交互，内置育种工具及 Java，提供 AppImage 和 deb\n\n**执行引擎**\n\n- 支持已安装的 Aster 与 Claude Code 执行引擎\n- Claude Code 可使用端砚中已配置的 API 模型\n- 原有 A3S 会话可迁移至 Aster 继续使用\n\n**运行时兼容**\n\n- 修复 Codex 新会话因动态工具协议格式不一致而启动失败\n- Windows 不再向 Pi 提供无法运行的 Linux 容器工具\n- Pi 对暂不支持的图像工具返回明确提示，避免盲目操作\n\nSetup：Windows 安装版，支持应用内更新。Portable：Windows 便携版。macOS 和 Linux 保留各自已发布安装包。\n\n源码：`a022eb507f18c048e29c3a984e4166ca2d954828`。",
+      "draft": false,
+      "prerelease": false,
+      "assets": [
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.15-x64.exe",
+          "size": 728063494,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Portable-1.1.15-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe",
+          "size": 728519618,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap",
+          "size": 756568,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/latest.yml"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 79022,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/release-notes.json"
+        }
+      ]
+    },
     {
       "tag_name": "v1.1.14",
       "name": "端砚· Science Discovery 1.1.14",
@@ -715,57 +751,6 @@
           "name": "tools-darwin-arm64.tar.gz",
           "size": 9426285,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.4/tools-darwin-arm64.tar.gz"
-        }
-      ]
-    },
-    {
-      "tag_name": "v1.1.3",
-      "name": "端砚· Science Discovery 1.1.3（Windows / Linux x64）",
-      "published_at": "2026-10-11T15:59:38Z",
-      "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.3",
-      "body": "Windows 与 Linux 版随包提供助手、Python 和检索工具。新增聊天命令，修复公司 VPN 环境的实验室登录失败，以及重启后登录状态不能恢复的问题。\n\n**聊天命令**\n\n- 输入 / 打开命令菜单，支持键盘选择和补全\n- 快速使用目标、模型、推理强度、状态与执行权限\n- 首页可直接创建长程目标，保留工作区、资料和推理强度\n- 创建失败后可重试，目标草稿和完成标准继续保留\n- 直达文件、证据、技能、知识库、文献和自动化等功能\n- 未配置模型时也可保存执行权限和外部服务设置\n- 兼容模式下账户入口直接提供登录按钮\n\n**Windows 版**\n\n- 安装版支持检查更新、分块下载、校验与重启安装\n- 便携版支持下载经过校验的安装包后手动安装\n- 安装升级等待当前目录里的应用退出，不关闭其他目录的应用\n- 随包提供 Python，支持科学计算、多进程和用户扩展包\n- 修复科学文件换行与二进制读取，以及证据审查启动失败\n- 取消命令时清理其所属进程树，保留其他运行中的任务\n\n**实验室登录**\n\n- 修复公司 VPN 合成 DNS 导致授权码换取失败\n- 修复保存的登录状态在重启时被错误拒绝\n- 认证网络失败显示具体原因，便于重试和排查\n\n**Linux 版**\n\n- 提供 AppImage 和 Debian 安装包\n- 随包提供原生科学 Python 和助手配套运行时\n\n**长程目标**\n\n- 长程目标可标为完成，显示自动继续次数和未完成原因\n- 助手可更新目标、完成标准和进度，保留已继续次数\n- 显示目标修改记录，暂停目标可按任务结果恢复继续\n\nSetup：Windows 安装版；Portable：Windows 便携版；AppImage：Linux 便携应用；deb：Debian/Ubuntu 安装包。\n\nWindows 不包含 Linux/Mac 原生育种工具。",
-      "draft": false,
-      "prerelease": false,
-      "assets": [
-        {
-          "name": "Duanyan-Science-Discovery-1.1.3-amd64.deb",
-          "size": 517951040,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-1.1.3-amd64.deb"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.3-x86_64.AppImage",
-          "size": 685046438,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-1.1.3-x86_64.AppImage"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.3-x64.exe",
-          "size": 589293979,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Portable-1.1.3-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.3-x64.exe",
-          "size": 589498497,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Setup-1.1.3-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.3-x64.exe.blockmap",
-          "size": 609924,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/Duanyan-Science-Discovery-Setup-1.1.3-x64.exe.blockmap"
-        },
-        {
-          "name": "latest-linux.yml",
-          "size": 588,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/latest-linux.yml"
-        },
-        {
-          "name": "latest.yml",
-          "size": 387,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/latest.yml"
-        },
-        {
-          "name": "release-notes.json",
-          "size": 19268,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.3/release-notes.json"
         }
       ]
     }
