@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T19:22:34.718Z",
+  "generated_at": "2026-10-29T19:23:38.711Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -246,6 +246,11 @@
           "name": "Duanyan-Online-Setup-1.1.15.exe.staging-41591e043a5d",
           "size": 41793,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Online-Setup-1.1.15.exe.staging-41591e043a5d"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.15-amd64.deb.staging-600b535f3e47",
+          "size": 438277588,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-amd64.deb.staging-600b535f3e47"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.blockmap.staging-3facf76c7c85",
