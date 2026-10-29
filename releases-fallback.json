@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T18:09:29.977Z",
+  "generated_at": "2026-10-29T18:11:39.417Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -181,6 +181,11 @@
           "name": "codex-runtime-linux-x86_64-1.1.15.tar.gz.staging-377e72121f76",
           "size": 161191025,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/codex-runtime-linux-x86_64-1.1.15.tar.gz.staging-377e72121f76"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.staging-e1fd6bfe2c0a",
+          "size": 511842738,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-Setup-1.1.15-x64.exe.staging-e1fd6bfe2c0a"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.15-amd64.deb.staging-1046e8ea780e",
