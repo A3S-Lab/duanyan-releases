@@ -4,6 +4,7 @@
   var REPO = "A3S-Lab/duanyan-releases";
   var API_URL = "https://api.github.com/repos/" + REPO + "/releases?per_page=12";
   var FALLBACK_URL = "releases-fallback.json";
+  var CENTER_BASE = "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/";
   var CACHE_KEY = "duanyan-release-page-v2";
   var CACHE_TTL = 5 * 60 * 1000;
   var state = { releases: [], source: "fallback", checkedAt: null };
@@ -42,7 +43,9 @@
     return {
       name: String(asset.name || ""),
       size: Number(asset.size || 0),
-      url: String(asset.browser_download_url || asset.url || "")
+      url: String(asset.browser_download_url || asset.url || ""),
+      digest: String(asset.digest || ""),
+      centerUrl: String(asset.center_url || asset.centerUrl || "")
     };
   }
 
@@ -52,7 +55,7 @@
       tag: tag,
       version: tag.replace(/^v/i, ""),
       name: String(release.name || tag),
-      publishedAt: String(release.published_at || release.created_at || ""),
+      publishedAt: String(release.published_at || release.publishedAt || release.created_at || ""),
       url: String(release.html_url || release.url || ""),
       body: String(release.body || ""),
       draft: Boolean(release.draft),
@@ -158,6 +161,15 @@
     if (!card) return;
     var primary = byId(os + "-primary");
     var secondary = byId(os + "-secondary");
+    var centerPrimary = byId(os + "-center-primary");
+    var centerSecondary = byId(os + "-center-secondary");
+    function centerLink(node, asset) {
+      if (!node) return;
+      var safe = asset && /^[A-Za-z0-9._-]+$/.test(asset.name) && asset.centerUrl === CENTER_BASE + asset.name;
+      node.hidden = !safe;
+      if (safe) node.href = asset.centerUrl;
+      else node.removeAttribute("href");
+    }
     if (!data) {
       card.classList.add("unavailable");
       setText(os + "-version", "暂无安装包");
@@ -166,6 +178,7 @@
         primary.textContent = "查看可用版本";
       }
       if (secondary) secondary.hidden = true;
+      centerLink(centerPrimary, null); centerLink(centerSecondary, null);
       setText(os + "-size", "等待下一次发布");
       return;
     }
@@ -174,17 +187,18 @@
     if (primary) {
       primary.href = data.primary.url;
       primary.innerHTML = '<svg><use href="#dl"/></svg>' +
-        (os === "mac" ? "下载 DMG" : os === "windows" ? "下载安装版" : "下载 AppImage");
+        (os === "mac" ? "GitHub · DMG" : os === "windows" ? "GitHub · 安装版" : "GitHub · AppImage");
     }
     if (secondary) {
       if (data.secondary) {
         secondary.hidden = false;
         secondary.href = data.secondary.url;
-        secondary.textContent = os === "windows" ? "便携版" : "deb 安装包";
+        secondary.textContent = os === "windows" ? "GitHub · 便携版" : "GitHub · deb";
       } else {
         secondary.hidden = true;
       }
     }
+    centerLink(centerPrimary, data.primary); centerLink(centerSecondary, data.secondary);
     setText(os + "-size", formatSize(data.primary.size) || "安装包");
   }
 
@@ -358,11 +372,20 @@
     // anonymous API quota. The public API remains available as a fallback and
     // for an explicit ?refresh=1 verification.
     var forceApi = new URLSearchParams(location.search).get("refresh") === "1";
-    if (!state.releases.length || forceApi) {
+    if (!state.releases.length || forceApi || !fallbackCheckedAt || Date.now() - fallbackCheckedAt > 60 * 60 * 1000) {
       try {
         var payload = await fetchJSON(API_URL);
         var releases = normalizeReleases(payload);
         if (!releases.length) throw new Error("No published releases");
+        // Only retain mirror links when the index identifies the same GitHub
+        // asset digest; same-version replacements must not reuse stale links.
+        releases.forEach(function (release) {
+          var indexed = state.releases.find(function (row) { return row.tag === release.tag; });
+          release.assets.forEach(function (asset) {
+            var match = indexed && indexed.assets.find(function (row) { return row.name === asset.name && row.digest && row.digest === asset.digest; });
+            if (match) asset.centerUrl = match.centerUrl;
+          });
+        });
         render(releases, "api", Date.now());
         writeCache(releases);
       } catch (_) {

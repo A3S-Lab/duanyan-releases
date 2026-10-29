@@ -283,6 +283,7 @@ h1,h2,h3,p{margin:0}
 .os .ar{font-size:14px;color:var(--ink2);margin-top:6px}
 .os .go{margin-top:24px;display:flex;flex-direction:column;gap:8px}
 .os .go .btn{width:100%}
+.os .go [hidden]{display:none!important}
 .dlnote{text-align:center;font-size:14px;color:var(--ink2);margin-top:24px}
 .dlnote a{text-decoration:underline;text-underline-offset:3px}
 
