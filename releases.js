@@ -71,6 +71,14 @@
         return release.tag && !release.draft && !release.prerelease;
       })
       .sort(function (a, b) {
+        var av = /^v?(\d+)\.(\d+)\.(\d+)$/i.exec(a.tag);
+        var bv = /^v?(\d+)\.(\d+)\.(\d+)$/i.exec(b.tag);
+        if (av && bv) {
+          for (var i = 1; i <= 3; i++) {
+            var diff = Number(bv[i]) - Number(av[i]);
+            if (diff) return diff;
+          }
+        }
         return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
       });
   }
