@@ -195,20 +195,19 @@
       centerLink(onlineCenter, null);
       if (onlineGithub) onlineGithub.hidden = true;
       setText(os + "-size", "等待下一次发布");
+      hideEmptyRows(card);
       return;
     }
     card.classList.remove("unavailable");
     setText(os + "-version", "v" + data.release.version);
     if (primary) {
       primary.href = data.primary.url;
-      primary.innerHTML = '<svg><use href="#dl"/></svg>' +
-        (os === "mac" ? "GitHub · DMG" : os === "windows" ? "GitHub · 完整安装版" : "GitHub · AppImage");
+      primary.textContent = "GitHub";
     }
     if (secondary) {
       if (data.secondary) {
         secondary.hidden = false;
         secondary.href = data.secondary.url;
-        secondary.textContent = os === "windows" ? "GitHub · 便携版" : "GitHub · deb";
       } else {
         secondary.hidden = true;
       }
@@ -219,50 +218,17 @@
       onlineGithub.hidden = !data.online;
       if (data.online) {
         onlineGithub.href = data.online.url;
-        onlineGithub.textContent = "GitHub · 在线安装器（" + formatSize(data.online.size) + "）";
+        setText(os + "-online-size", formatSize(data.online.size));
       }
     }
-    if (onlineCenter && data.online && !onlineCenter.hidden) onlineCenter.textContent = "A3S Lab · 在线安装器（" + formatSize(data.online.size) + "）";
     setText(os + "-size", formatSize(data.primary.size) || "安装包");
+    hideEmptyRows(card);
   }
 
-  function releasePlatforms(release) {
-    var labels = [];
-    if (findAsset(release, /\.dmg$/i)) labels.push("macOS");
-    if (findAsset(release, /-Setup-.*-x64\.exe$/i)) labels.push("Windows");
-    if (findAsset(release, /-x86_64\.AppImage$/i)) labels.push("Linux");
-    return labels;
-  }
-
-  function renderHistory(releases) {
-    var box = byId("release-history");
-    if (!box) return;
-    box.textContent = "";
-    releases.slice(1, 5).forEach(function (release) {
-      var article = document.createElement("article");
-      var head = document.createElement("div");
-      var version = document.createElement("b");
-      var time = document.createElement("time");
-      var summary = document.createElement("p");
-      var platforms = document.createElement("span");
-      version.textContent = "v" + release.version;
-      time.dateTime = release.publishedAt;
-      time.textContent = formatDate(release.publishedAt, true);
-      summary.textContent = summaryFromBody(release.body);
-      platforms.textContent = releasePlatforms(release).join(" · ") || "查看发布页";
-      head.append(version, time);
-      article.append(head, summary, platforms);
-      article.tabIndex = 0;
-      article.addEventListener("click", function () { window.open(release.url, "_blank", "noopener"); });
-      article.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          window.open(release.url, "_blank", "noopener");
-        }
-      });
-      box.append(article);
+  function hideEmptyRows(card) {
+    Array.prototype.forEach.call(card.querySelectorAll(".dl-row"), function (row) {
+      row.hidden = !row.querySelector("a:not([hidden])");
     });
-    setText("history-count", releases.length > 1 ? "最近 " + Math.min(4, releases.length - 1) + " 个版本" : "等待更多版本");
   }
 
   function render(releases, source, checkedAt) {
@@ -277,38 +243,13 @@
     setText("nav-version", latest.version);
 
     setText("latest-version", "v" + latest.version);
-    setText("latest-title", latest.name);
     setText("latest-date", formatDate(latest.publishedAt));
     var latestDate = byId("latest-date");
     if (latestDate) latestDate.dateTime = latest.publishedAt;
     setText("latest-summary", summaryFromBody(latest.body));
-    setLink("latest-link", latest.url, "完整发布说明 ↗");
+    setLink("latest-link", latest.url, "发布说明 ↗");
 
-    var highlights = byId("latest-highlights");
-    if (highlights) {
-      highlights.textContent = "";
-      var items = bulletsFromBody(latest.body, 4);
-      if (!items.length) items = [summaryFromBody(latest.body)];
-      items.forEach(function (value) {
-        var li = document.createElement("li");
-        li.textContent = value;
-        highlights.append(li);
-      });
-    }
-
-    var platformChips = byId("latest-platforms");
-    if (platformChips) {
-      platformChips.textContent = "";
-      var releaseLabels = releasePlatforms(latest);
-      if (!releaseLabels.length) releaseLabels = ["Release"];
-      releaseLabels.forEach(function (label) {
-        var chip = document.createElement("span");
-        chip.textContent = label;
-        platformChips.append(chip);
-      });
-    }
-
-    renderHistory(releases);
+    if (window.drawMilestones) window.drawMilestones(releases);
     renderPlatform("mac", platforms.mac);
     renderPlatform("windows", platforms.windows);
     renderPlatform("linux", platforms.linux);
