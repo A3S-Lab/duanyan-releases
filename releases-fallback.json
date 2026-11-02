@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T09:22:06.201Z",
+  "generated_at": "2026-11-02T09:22:26.634Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -69,6 +69,12 @@
           "size": 397987,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/Duanyan-Science-Discovery-Setup-1.1.19-x64.exe.blockmap",
           "digest": "sha256:d5c84c4f3120b2c761ccd62957a346c94b6b2c80143036bcf8e2477a882e1487"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 592,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/latest-linux.yml",
+          "digest": "sha256:dd2da97d1e13bf6dcf018e001f0c2e56d291d469882d81cedb7de771d10bdf9d"
         },
         {
           "name": "latest-mac.yml",
