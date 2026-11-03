@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T05:36:31.985Z",
+  "generated_at": "2026-11-03T05:38:44.011Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -16,6 +16,24 @@
           "size": 87789490,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/agent-runtime-darwin-arm64.tar.gz",
           "digest": "sha256:873dfef3f1e5c00d6b98c5a9fc238d95b2e849d512934079a775ed7c129c0f1e"
+        },
+        {
+          "name": "backup-linux-20261103-old-appimage.bin",
+          "size": 563250757,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-appimage.bin",
+          "digest": "sha256:54f913b6c8a0875b3d6871fb9e778700209a3dbdab74245c623f5ea94dfbf6fb"
+        },
+        {
+          "name": "backup-linux-20261103-old-deb.bin",
+          "size": 431878788,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-deb.bin",
+          "digest": "sha256:ae0b3b958ba0b4403e6816d4ab65733cfb0ce0f2726ac99a2bf27a5d2e9eaac4"
+        },
+        {
+          "name": "backup-linux-20261103-old-metadata.bin",
+          "size": 592,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-metadata.bin",
+          "digest": "sha256:dd2da97d1e13bf6dcf018e001f0c2e56d291d469882d81cedb7de771d10bdf9d"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.19-arm64.dmg",
@@ -39,17 +57,16 @@
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.19-amd64.deb",
-          "size": 431878788,
+          "size": 429649672,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/Duanyan-Science-Discovery-1.1.19-amd64.deb",
-          "digest": "sha256:ae0b3b958ba0b4403e6816d4ab65733cfb0ce0f2726ac99a2bf27a5d2e9eaac4",
+          "digest": "sha256:6e4c327f2f26c0f87e3f3e71509a15cffb047e8b53d5bc2ce86abef9a00fbdbc",
           "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.19-amd64.deb"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.19-x86_64.AppImage",
-          "size": 563250757,
+          "size": 563349510,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/Duanyan-Science-Discovery-1.1.19-x86_64.AppImage",
-          "digest": "sha256:54f913b6c8a0875b3d6871fb9e778700209a3dbdab74245c623f5ea94dfbf6fb",
-          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.19-x86_64.AppImage"
+          "digest": "sha256:60983ae1a167cfbfac8ef36347e21cfbf2965281a3812da957cc1947f4c0dea8"
         },
         {
           "name": "Duanyan-Science-Discovery-Portable-1.1.19-x64.exe",
@@ -75,7 +92,7 @@
           "name": "latest-linux.yml",
           "size": 592,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/latest-linux.yml",
-          "digest": "sha256:dd2da97d1e13bf6dcf018e001f0c2e56d291d469882d81cedb7de771d10bdf9d"
+          "digest": "sha256:2a1feb67962707853b9e79160a7a7d2b6c907e89aa2a4a2f402cb73dd16b5f63"
         },
         {
           "name": "latest-mac.yml",
@@ -102,22 +119,10 @@
           "digest": "sha256:b9fccb3a67b561f5b3771d80fdfc5cccd50c80f5e5dd8539b7b2de9c8f67cd4d"
         },
         {
-          "name": "staged-linux-20261103-2a1feb67.yml",
-          "size": 592,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/staged-linux-20261103-2a1feb67.yml",
-          "digest": "sha256:2a1feb67962707853b9e79160a7a7d2b6c907e89aa2a4a2f402cb73dd16b5f63"
-        },
-        {
-          "name": "staged-linux-20261103-60983ae1.AppImage",
-          "size": 563349510,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/staged-linux-20261103-60983ae1.AppImage",
-          "digest": "sha256:60983ae1a167cfbfac8ef36347e21cfbf2965281a3812da957cc1947f4c0dea8"
-        },
-        {
-          "name": "staged-linux-20261103-6e4c327f.deb",
-          "size": 429649672,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/staged-linux-20261103-6e4c327f.deb",
-          "digest": "sha256:6e4c327f2f26c0f87e3f3e71509a15cffb047e8b53d5bc2ce86abef9a00fbdbc"
+          "name": "staged-linux-20261103-af8f6fcd-notes.json",
+          "size": 80082,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/staged-linux-20261103-af8f6fcd-notes.json",
+          "digest": "sha256:af8f6fcdbfb9b34b88615d0908c374a05c67bd076cf734c6a6133c0f2c36cd48"
         },
         {
           "name": "tools-darwin-arm64.tar.gz",
