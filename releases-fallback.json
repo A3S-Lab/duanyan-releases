@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T15:15:10.300Z",
+  "generated_at": "2026-11-03T15:18:36.789Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -22,6 +22,19 @@
           "size": 390986154,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.20/Duanyan-Breeding-Research-1.1.20-arm64.zip",
           "digest": "sha256:48d2d4029c20ec32f798b3c82d75204574d4b48616ed23cf70dabb196baefdc0"
+        },
+        {
+          "name": "Duanyan-Breeding-Research-1.1.20-arm64.dmg",
+          "size": 524165962,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.20/Duanyan-Breeding-Research-1.1.20-arm64.dmg",
+          "digest": "sha256:a142a60abb5388d637ee5652b2a348911e2ca947006138ef122035e19abd9d82",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Breeding-Research-1.1.20-arm64.dmg"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.20/tools-darwin-arm64.tar.gz",
+          "digest": "sha256:949af9543c1932fe94a42e72ec4011af6910b5cc7a4ace1197f01584881fd510"
         }
       ]
     },
