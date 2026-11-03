@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T05:38:44.011Z",
+  "generated_at": "2026-11-03T05:39:05.845Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -7,7 +7,7 @@
       "name": "端砚· Science Discovery 1.1.19",
       "published_at": "2026-11-02T05:11:49Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.19",
-      "body": "任务数量不再设上限；上传的文档自动转为 Markdown 供智能体阅读；登录页可选 SSO 或本机登录；执行引擎 Aster 更名为 a3scode。\n\n**任务与数据**\n\n- 任务数量不再设上限，不再提示会话数量已达上限\n- 证据快照和个人记忆不再限制条数\n- 模型供应商、MCP 服务、技能等可配置数量大幅放宽\n\n**文档**\n\n- 上传 PDF、Word、Excel、PPT 等文档时自动转为 Markdown\n- 智能体可在对话中直接转换工作区里的文档\n\n**登录与界面**\n\n- 登录页可选浦江实验室 SSO 登录或本机登录\n- 执行引擎 Aster 更名为 a3scode\n- 页面顶栏可拖动窗口，双击铺满桌面\n\n**启动与自主实验台**\n\n- 启动时先显示准备进度，减少无响应的等待\n- 科学包目录优先读取预生成索引，减少首次加载时间\n- 自主实验台新增六类实验场景，按任务筛选仿真设备\n- EPICS 与束线调优技能可在网页和桌面发现\n\n**修复**\n\n- 修复首条消息短暂显示错误执行引擎的问题\n- 恢复 Claude 任务时保留原有模型\n- 修复未登录时模型接口反复重试的问题\n- 修复 Agents-A1 网关下联网搜索导致任务失败的问题\n- a3scode 遇到未确认的工具结果时停止本轮，避免反复调用\n\n桌面端 1.1.19。更新源为中心只读分发目录；此处镜像同一份安装包、更新元数据与按需下载资源包。",
+      "body": "任务数量不再设上限；上传的文档自动转为 Markdown 供智能体阅读；登录页可选 SSO 或本机登录；执行引擎 Aster 更名为 a3scode。\n\n**任务与数据**\n\n- 任务数量不再设上限，不再提示会话数量已达上限\n- 证据快照和个人记忆不再限制条数\n- 模型供应商、MCP 服务、技能等可配置数量大幅放宽\n\n**文档**\n\n- 上传 PDF、Word、Excel、PPT 等文档时自动转为 Markdown\n- 智能体可在对话中直接转换工作区里的文档\n\n**登录与界面**\n\n- 登录页可选浦江实验室 SSO 登录或本机登录\n- 执行引擎 Aster 更名为 a3scode\n- 页面顶栏可拖动窗口，双击铺满桌面\n\n**启动与自主实验台**\n\n- 启动时先显示准备进度，减少无响应的等待\n- 科学包目录优先读取预生成索引，减少首次加载时间\n- 自主实验台新增六类实验场景，按任务筛选仿真设备\n- EPICS 与束线调优技能可在网页和桌面发现\n\n**修复**\n\n- 修复首条消息短暂显示错误执行引擎的问题\n- 恢复 Claude 任务时保留原有模型\n- 修复未登录时模型接口反复重试的问题\n- 修复 Agents-A1 网关下联网搜索导致任务失败的问题\n- a3scode 遇到未确认的工具结果时停止本轮，避免反复调用\n- Linux AppImage 更新后保留原有启动路径和快捷方式\n- Debian 安装版可在管理员授权后直接更新并重新启动\n\n桌面端 1.1.19。更新源为中心只读分发目录；此处镜像同一份安装包、更新元数据与按需下载资源包。\n",
       "draft": false,
       "prerelease": false,
       "assets": [
@@ -34,6 +34,12 @@
           "size": 592,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-metadata.bin",
           "digest": "sha256:dd2da97d1e13bf6dcf018e001f0c2e56d291d469882d81cedb7de771d10bdf9d"
+        },
+        {
+          "name": "backup-linux-20261103-old-notes.bin",
+          "size": 79742,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-notes.bin",
+          "digest": "sha256:9ab7ee87ef32979ed82371e81263f3a6bb68eb1e8f9262256ee37956bd681af9"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.19-arm64.dmg",
@@ -66,7 +72,8 @@
           "name": "Duanyan-Science-Discovery-1.1.19-x86_64.AppImage",
           "size": 563349510,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/Duanyan-Science-Discovery-1.1.19-x86_64.AppImage",
-          "digest": "sha256:60983ae1a167cfbfac8ef36347e21cfbf2965281a3812da957cc1947f4c0dea8"
+          "digest": "sha256:60983ae1a167cfbfac8ef36347e21cfbf2965281a3812da957cc1947f4c0dea8",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.19-x86_64.AppImage"
         },
         {
           "name": "Duanyan-Science-Discovery-Portable-1.1.19-x64.exe",
@@ -108,21 +115,15 @@
         },
         {
           "name": "release-notes.json",
-          "size": 79742,
+          "size": 80082,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/release-notes.json",
-          "digest": "sha256:9ab7ee87ef32979ed82371e81263f3a6bb68eb1e8f9262256ee37956bd681af9"
+          "digest": "sha256:af8f6fcdbfb9b34b88615d0908c374a05c67bd076cf734c6a6133c0f2c36cd48"
         },
         {
           "name": "runtime-libs-darwin-arm64.tar.gz",
           "size": 46726390,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/runtime-libs-darwin-arm64.tar.gz",
           "digest": "sha256:b9fccb3a67b561f5b3771d80fdfc5cccd50c80f5e5dd8539b7b2de9c8f67cd4d"
-        },
-        {
-          "name": "staged-linux-20261103-af8f6fcd-notes.json",
-          "size": 80082,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/staged-linux-20261103-af8f6fcd-notes.json",
-          "digest": "sha256:af8f6fcdbfb9b34b88615d0908c374a05c67bd076cf734c6a6133c0f2c36cd48"
         },
         {
           "name": "tools-darwin-arm64.tar.gz",
