@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T05:35:10.636Z",
+  "generated_at": "2026-11-03T05:35:41.630Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -106,6 +106,12 @@
           "size": 592,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/latest-linux.yml",
           "digest": "sha256:dd2da97d1e13bf6dcf018e001f0c2e56d291d469882d81cedb7de771d10bdf9d"
+        },
+        {
+          "name": "staged-linux-20261103-60983ae1.AppImage",
+          "size": 563349510,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/staged-linux-20261103-60983ae1.AppImage",
+          "digest": "sha256:60983ae1a167cfbfac8ef36347e21cfbf2965281a3812da957cc1947f4c0dea8"
         },
         {
           "name": "staged-linux-20261103-2a1feb67.yml",
