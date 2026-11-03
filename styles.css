@@ -694,3 +694,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green)}
 .dl-k small{display:block;margin-top:2px;font:11px var(--mono);color:var(--ink3)}
 .os .go .dl-row .btn{width:auto;flex:none;min-height:0;height:32px;padding:0 12px;font-size:13px;border-radius:8px}
 .os .go{margin-bottom:22px}
+.apt-setup{grid-column:1/-1;padding:18px 24px;background:#fff;border:1px solid var(--line);border-radius:14px;font-size:13px;line-height:1.6;color:var(--ink2);min-width:0}
+.apt-setup summary{cursor:pointer;color:var(--ink);font-weight:600}
+.apt-setup summary span{float:right;font-size:12px;font-weight:400;color:var(--ink3)}
+.apt-setup p{margin:10px 0}
+.apt-setup a{text-decoration:underline;text-underline-offset:3px}
+.apt-setup pre,.apt-fingerprint{display:block;max-width:100%;padding:10px;background:var(--bg);border-radius:8px;font:11px/1.6 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.apt-setup [hidden]{display:none!important}

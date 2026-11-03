@@ -448,6 +448,22 @@
       <div class="os-badges"><span>AppImage</span><span>DEB</span><span>应用内更新</span></div>
       <div class="go"><div class="dl-row"><span class="dl-k">AppImage</span><a class="btn btn-line os-primary" id="linux-primary" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-x86_64.AppImage">GitHub</a><a class="btn btn-ink" id="linux-center-primary" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.15-x86_64.AppImage">A3S Lab</a></div><div class="dl-row"><span class="dl-k">deb</span><a class="btn btn-line os-secondary" id="linux-secondary" href="https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.15/Duanyan-Science-Discovery-1.1.15-amd64.deb">GitHub</a><a class="btn btn-line" id="linux-center-secondary" href="https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.15-amd64.deb">A3S Lab</a></div></div>
       <div class="os-foot"><span id="linux-size">AppImage</span><span>x86_64</span></div></article>
+      <details class="apt-setup" id="linux-apt">
+        <summary>Linux APT 软件源 <span id="linux-apt-status">准备中</span></summary>
+        <p id="linux-apt-pending">签名仓库准备就绪后，这里将提供公钥和安装步骤。</p>
+        <div id="linux-apt-ready" hidden>
+          <p>Debian / Ubuntu amd64 可使用签名软件源。先从可信渠道核对完整公钥指纹：</p>
+          <code class="apt-fingerprint" id="linux-apt-fingerprint"></code>
+          <p><a href="apt/duanyan-archive-keyring.gpg" download>下载 APT 公钥</a></p>
+          <pre><code>curl -fsSL https://a3s-lab.github.io/duanyan-releases/apt/duanyan-archive-keyring.gpg -o /tmp/duanyan-archive-keyring.gpg
+gpg --show-keys --fingerprint /tmp/duanyan-archive-keyring.gpg</code></pre>
+          <p>确认指纹一致后，再添加软件源并安装：</p>
+          <pre><code>sudo install -D -m 0644 /tmp/duanyan-archive-keyring.gpg /etc/apt/keyrings/duanyan-archive-keyring.gpg
+echo 'deb [arch=amd64 signed-by=/etc/apt/keyrings/duanyan-archive-keyring.gpg] https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/apt stable main' | sudo tee /etc/apt/sources.list.d/duanyan.list
+sudo apt-get update
+sudo apt-get install duanyan-science-discovery-desktop</code></pre>
+        </div>
+      </details>
   </div>
   <p class="dlnote"><a href="https://github.com/A3S-Lab/duanyan-releases/releases" target="_blank" rel="noopener">历史版本</a></p>
 </div></section>
@@ -472,6 +488,7 @@
 
 <script src="milestones.js?v=20261030b"></script>
 <script src="releases.js?v=20261030b"></script>
+<script src="apt.js?v=20261103"></script>
 <script>
 (function(){
   // 推荐当前设备的安装包

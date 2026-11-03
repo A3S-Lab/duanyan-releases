@@ -1,0 +1,11 @@
+{
+  "schema": "duanyan-apt-pages/v1",
+  "enabled": true,
+  "fingerprint": "943AA235C15BA12B51DF1C8106DF7885FFDAE205",
+  "sha256": "f9c7d2a41dc6e3eb70965ee793cbbf25d801aaca33f959b2326996b9b0a724d2",
+  "key_file": "duanyan-archive-keyring.gpg",
+  "repository": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/apt",
+  "suite": "stable",
+  "architecture": "amd64",
+  "package": "duanyan-science-discovery-desktop"
+}
