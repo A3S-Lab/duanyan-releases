@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T05:39:05.845Z",
+  "generated_at": "2026-11-03T05:40:05.517Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -16,30 +16,6 @@
           "size": 87789490,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/agent-runtime-darwin-arm64.tar.gz",
           "digest": "sha256:873dfef3f1e5c00d6b98c5a9fc238d95b2e849d512934079a775ed7c129c0f1e"
-        },
-        {
-          "name": "backup-linux-20261103-old-appimage.bin",
-          "size": 563250757,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-appimage.bin",
-          "digest": "sha256:54f913b6c8a0875b3d6871fb9e778700209a3dbdab74245c623f5ea94dfbf6fb"
-        },
-        {
-          "name": "backup-linux-20261103-old-deb.bin",
-          "size": 431878788,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-deb.bin",
-          "digest": "sha256:ae0b3b958ba0b4403e6816d4ab65733cfb0ce0f2726ac99a2bf27a5d2e9eaac4"
-        },
-        {
-          "name": "backup-linux-20261103-old-metadata.bin",
-          "size": 592,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-metadata.bin",
-          "digest": "sha256:dd2da97d1e13bf6dcf018e001f0c2e56d291d469882d81cedb7de771d10bdf9d"
-        },
-        {
-          "name": "backup-linux-20261103-old-notes.bin",
-          "size": 79742,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.19/backup-linux-20261103-old-notes.bin",
-          "digest": "sha256:9ab7ee87ef32979ed82371e81263f3a6bb68eb1e8f9262256ee37956bd681af9"
         },
         {
           "name": "Duanyan-Breeding-Research-1.1.19-arm64.dmg",
