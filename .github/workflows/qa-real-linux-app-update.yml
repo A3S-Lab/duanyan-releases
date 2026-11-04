@@ -19,6 +19,10 @@ jobs:
       - name: Install the verified release and prepare a disposable next version
         run: |
           set -euo pipefail
+          # Hosted runners make /opt world-writable; production Debian normally
+          # uses root-owned 0755 and the updater correctly rejects unsafe paths.
+          sudo chmod 0755 /opt
+          test "$(stat -c '%u:%a' /opt)" = '0:755'
           curl -4 --noproxy '*' -fL --retry 4 --connect-timeout 15 --max-time 900 'https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.20-amd64.deb' -o /tmp/duanyan-1.1.20.deb
           echo '668332cdfb39b529ef461a39d2253bc587cbf58a9ad379e80689b8d226b2d0ba818d9612ecd3d5a64d6bac9fda48d948489c0664ee5af513ff5329255b8dd346  /tmp/duanyan-1.1.20.deb' | sha512sum -c -
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends /tmp/duanyan-1.1.20.deb
