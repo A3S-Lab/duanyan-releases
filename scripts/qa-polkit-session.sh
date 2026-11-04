@@ -22,7 +22,8 @@ done
 [ -n "$window" ] || { echo 'No Polkit authentication window'; cat /tmp/duanyan-polkit-agent.log; exit 1; }
 scrot /tmp/duanyan-polkit-dialog.png || true
 printf '%s\n' REAL_POLKIT_GRAPHICAL_PROMPT_SHOWN
-xdotool windowfocus --sync "$window"
+xdotool windowfocus "$window" || true
+xdotool mousemove --window "$window" 200 185 click 1
 xdotool type --clearmodifiers --delay 1 -- "$(cat /tmp/duanyan-polkit-ci/password)"
 xdotool key Return
 ready=0
@@ -36,4 +37,5 @@ printf '%s\n' REAL_POLKIT_AUTHORIZATION_AND_HELPER_READY
 printf 'GO\n' >/tmp/duanyan-polkit-ci/control
 wait "$worker"
 [ "$(dpkg-query -W -f='${Version} ${db:Status-Status}' duanyan-science-discovery-desktop)" = '1.1.21 installed' ]
+touch /tmp/duanyan-polkit-ci/success
 printf '%s\n' REAL_POLKIT_GUI_AND_DEB_UPDATE_OK

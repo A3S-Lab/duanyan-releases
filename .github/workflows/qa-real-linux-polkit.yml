@@ -37,7 +37,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          printf '%s\n' 'exec dbus-run-session -- bash /tmp/duanyan-polkit-session.sh' | sudo script -qefc 'login -f duanyanqa' /dev/null
+          mkfifo /tmp/duanyan-polkit-login-input
+          exec 3<>/tmp/duanyan-polkit-login-input
+          printf '%s\n' 'exec dbus-run-session -- bash /tmp/duanyan-polkit-session.sh' >&3
+          sudo script -qefc 'login -f duanyanqa' /dev/null <&3
+          exec 3>&-
+          test -f /tmp/duanyan-polkit-ci/success
       - name: Preserve diagnostics
         if: always()
         uses: actions/upload-artifact@v4
