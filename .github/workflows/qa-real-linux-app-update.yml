@@ -63,6 +63,8 @@ jobs:
             /tmp/duanyan-polkit-dialog.png
             /tmp/duanyan-polkit-dialog-after.png
             /tmp/duanyan-polkit-ci/app-update.log
+            /tmp/duanyan-polkit-ci/profile/logs/deb-update.log
+            /tmp/duanyan-polkit-ci/profile/deb-update-result
             /tmp/duanyan-polkit-ci/qa-trace.log
           if-no-files-found: ignore
           retention-days: 2
