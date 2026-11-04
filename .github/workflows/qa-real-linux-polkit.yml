@@ -38,10 +38,10 @@ jobs:
         run: |
           set -euo pipefail
           mkfifo /tmp/duanyan-polkit-login-input
-          exec 3<>/tmp/duanyan-polkit-login-input
-          printf '%s\n' 'exec dbus-run-session -- bash /tmp/duanyan-polkit-session.sh' >&3
-          sudo script -qefc 'login -f duanyanqa' /dev/null <&3
-          exec 3>&-
+          ( printf '%s\n' 'exec dbus-run-session -- bash /tmp/duanyan-polkit-session.sh'; sleep 900 ) > /tmp/duanyan-polkit-login-input &
+          feeder=$!
+          trap 'kill "$feeder" 2>/dev/null || true' EXIT
+          timeout 600 sudo script -qefc 'login -f duanyanqa' /dev/null < /tmp/duanyan-polkit-login-input
           test -f /tmp/duanyan-polkit-ci/success
       - name: Preserve diagnostics
         if: always()
@@ -53,5 +53,6 @@ jobs:
             /tmp/duanyan-polkit-xvfb.log
             /tmp/duanyan-polkit-dialog.png
             /tmp/duanyan-polkit-ci/helper.log
+            /tmp/duanyan-polkit-ci/qa-trace.log
           if-no-files-found: ignore
           retention-days: 2

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
-trap 'rc=$?; echo "QA_ERROR line=$LINENO command=$BASH_COMMAND status=$rc"' ERR
+trap 'rc=$?; echo "QA_ERROR line=$LINENO command=$BASH_COMMAND status=$rc" | tee -a /tmp/duanyan-polkit-ci/qa-trace.log' ERR
+trap 'echo HUP >> /tmp/duanyan-polkit-ci/qa-trace.log' HUP
+trap 'rc=$?; echo "EXIT status=$rc" >> /tmp/duanyan-polkit-ci/qa-trace.log' EXIT
 export DISPLAY=:99
 export LANG=C.UTF-8
 Xvfb :99 -screen 0 1280x900x24 -ac >/tmp/duanyan-polkit-xvfb.log 2>&1 &
