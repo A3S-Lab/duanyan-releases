@@ -333,7 +333,11 @@
       if (fallbackReleases.length) {
         fallbackCheckedAt = Date.parse(fallback.generated_at || "") || 0;
         // A delayed Pages build must not replace a newer API or cached result.
-        if (!state.releases.length || fallbackCheckedAt > (state.checkedAt || 0)) {
+        var current = state.releases[0];
+        var candidate = fallbackReleases[0];
+        var fallbackIsNewer = current && candidate.tag !== current.tag &&
+          normalizeReleases([candidate, current])[0].tag === candidate.tag;
+        if (!current || fallbackIsNewer || fallbackCheckedAt > (state.checkedAt || 0)) {
           render(fallbackReleases, "pages", fallbackCheckedAt);
           writeCache(fallbackReleases);
         }
