@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -Eeuo pipefail
+trap 'rc=$?; echo "QA_ERROR line=$LINENO command=$BASH_COMMAND status=$rc"' ERR
 export DISPLAY=:99
 export LANG=C.UTF-8
 Xvfb :99 -screen 0 1280x900x24 -ac >/tmp/duanyan-polkit-xvfb.log 2>&1 &
@@ -22,10 +23,13 @@ done
 [ -n "$window" ] || { echo 'No Polkit authentication window'; cat /tmp/duanyan-polkit-agent.log; exit 1; }
 scrot /tmp/duanyan-polkit-dialog.png || true
 printf '%s\n' REAL_POLKIT_GRAPHICAL_PROMPT_SHOWN
+echo "AUTH_WINDOW_ID=$window"
 xdotool windowfocus "$window" || true
 xdotool mousemove --window "$window" 200 185 click 1
+echo AUTH_INPUT_FOCUSED
 xdotool type --clearmodifiers --delay 1 -- "$(cat /tmp/duanyan-polkit-ci/password)"
 xdotool key Return
+echo AUTH_SUBMITTED
 ready=0
 for n in $(seq 1 120); do
   if grep -q '^A3S_DEB_READY$' /tmp/duanyan-polkit-ci/helper.log; then ready=1; break; fi
