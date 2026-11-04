@@ -319,18 +319,24 @@
     }
   }
 
-  async function load() {
-    var cached = readCache();
-    if (cached) render(cached.releases, "cache", cached.checkedAt);
+  var loading = false;
+  var REFRESH_INTERVAL = 60 * 1000;
 
+  async function load() {
+    if (loading) return;
+    loading = true;
+    try {
     var fallbackCheckedAt = null;
     try {
       var fallback = await fetchJSON(FALLBACK_URL + "?v=" + Date.now());
       var fallbackReleases = normalizeReleases(fallback.releases || fallback);
       if (fallbackReleases.length) {
-        fallbackCheckedAt = Date.parse(fallback.generated_at || "") || Date.now();
-        render(fallbackReleases, "pages", fallbackCheckedAt);
-        writeCache(fallbackReleases);
+        fallbackCheckedAt = Date.parse(fallback.generated_at || "") || 0;
+        // A delayed Pages build must not replace a newer API or cached result.
+        if (!state.releases.length || fallbackCheckedAt > (state.checkedAt || 0)) {
+          render(fallbackReleases, "pages", fallbackCheckedAt);
+          writeCache(fallbackReleases);
+        }
       }
     } catch (_) {}
 
@@ -356,6 +362,9 @@
         // keep the static links already in the page
       }
     }
+    } finally {
+      loading = false;
+    }
   }
 
   window.DuanyanReleases = {
@@ -365,5 +374,14 @@
     bulletsFromBody: bulletsFromBody
   };
 
+  var cached = readCache();
+  if (cached) render(cached.releases, "cache", cached.checkedAt);
   load();
+  window.setInterval(function () {
+    if (document.visibilityState !== "hidden") load();
+  }, REFRESH_INTERVAL);
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") load();
+  });
+  window.addEventListener("online", load);
 })();
