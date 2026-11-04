@@ -1,0 +1,52 @@
+name: Verify Linux Polkit dialog and package update
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  polkit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install desktop authorization and test dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends xvfb xdotool x11-utils dbus-x11 policykit-1-gnome scrot
+      - name: Install the verified release and prepare a disposable next version
+        run: |
+          set -euo pipefail
+          curl -4 --noproxy '*' -fL --retry 4 --connect-timeout 15 --max-time 900 'https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.20-amd64.deb' -o /tmp/duanyan-1.1.20.deb
+          echo '668332cdfb39b529ef461a39d2253bc587cbf58a9ad379e80689b8d226b2d0ba818d9612ecd3d5a64d6bac9fda48d948489c0664ee5af513ff5329255b8dd346  /tmp/duanyan-1.1.20.deb' | sha512sum -c -
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends /tmp/duanyan-1.1.20.deb
+          mkdir -p /tmp/duanyan-polkit-unpacked /tmp/duanyan-polkit-ci
+          dpkg-deb -R /tmp/duanyan-1.1.20.deb /tmp/duanyan-polkit-unpacked
+          sed -i 's/^Version: 1\.1\.20$/Version: 1.1.21/' /tmp/duanyan-polkit-unpacked/DEBIAN/control
+          grep -qx 'Version: 1.1.21' /tmp/duanyan-polkit-unpacked/DEBIAN/control
+          dpkg-deb -b /tmp/duanyan-polkit-unpacked /tmp/duanyan-polkit-ci/update.deb
+          sudo useradd -m -s /bin/bash -G sudo duanyanqa
+          password="$(openssl rand -hex 16)"
+          echo "::add-mask::$password"
+          printf 'duanyanqa:%s\n' "$password" | sudo chpasswd
+          printf '%s' "$password" > /tmp/duanyan-polkit-ci/password
+          sudo chown -R duanyanqa:duanyanqa /tmp/duanyan-polkit-ci
+          sudo -u duanyanqa mkfifo /tmp/duanyan-polkit-ci/control
+          cp scripts/qa-polkit-session.sh /tmp/duanyan-polkit-session.sh
+          chmod 755 /tmp/duanyan-polkit-session.sh
+      - name: Open real graphical authentication and apply the test update
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' 'exec dbus-run-session -- bash /tmp/duanyan-polkit-session.sh' | sudo script -qefc 'login -f duanyanqa' /dev/null
+      - name: Preserve diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: polkit-qa-diagnostics
+          path: |
+            /tmp/duanyan-polkit-agent.log
+            /tmp/duanyan-polkit-xvfb.log
+            /tmp/duanyan-polkit-dialog.png
+            /tmp/duanyan-polkit-ci/helper.log
+          if-no-files-found: ignore
+          retention-days: 2
