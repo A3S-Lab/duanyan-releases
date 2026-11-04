@@ -59,7 +59,7 @@ jobs:
           set -euo pipefail
           out="$RUNNER_TEMP/duanyan-polkit-diagnostics"
           mkdir -p "$out"
-          for file in /tmp/duanyan-polkit-agent.log /tmp/duanyan-polkit-xvfb.log /tmp/duanyan-polkit-dialog.png /tmp/duanyan-polkit-dialog-after.png /tmp/duanyan-polkit-ci/app-update.log /tmp/duanyan-polkit-ci/app-process.log /tmp/duanyan-polkit-ci/qa-trace.log /tmp/duanyan-polkit-ci/profile/logs/deb-update.log /tmp/duanyan-polkit-ci/profile/deb-update-result; do
+          for file in /tmp/duanyan-polkit-agent.log /tmp/duanyan-polkit-xvfb.log /tmp/duanyan-polkit-dialog.png /tmp/duanyan-polkit-dialog-after.png /tmp/duanyan-polkit-restarted-app.png /tmp/duanyan-polkit-ci/app-update.log /tmp/duanyan-polkit-ci/app-process.log /tmp/duanyan-polkit-ci/qa-trace.log /tmp/duanyan-polkit-ci/profile/logs/deb-update.log /tmp/duanyan-polkit-ci/profile/deb-update-result; do
             if sudo test -f "$file"; then sudo install -m 0644 -o "$(id -u)" -g "$(id -g)" "$file" "$out/$(basename "$file")"; fi
           done
       - name: Preserve diagnostics

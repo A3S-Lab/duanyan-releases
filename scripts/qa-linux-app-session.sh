@@ -39,5 +39,6 @@ ps -o pid,ppid,stat,args -p "$worker" || true
 wait "$worker" || { cat /tmp/duanyan-polkit-ci/app-update.log; exit 1; }
 cat /tmp/duanyan-polkit-ci/app-update.log
 [ -f /tmp/duanyan-polkit-ci/app-success ]
+scrot /tmp/duanyan-polkit-restarted-app.png || true
 touch /tmp/duanyan-polkit-ci/success
 printf '%s\n' REAL_LINUX_APP_FULL_GUI_UPDATE_OK
