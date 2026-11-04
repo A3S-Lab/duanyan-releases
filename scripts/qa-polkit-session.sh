@@ -32,6 +32,12 @@ echo AUTH_INPUT_FOCUSED
 xdotool type --clearmodifiers --delay 1 -- "$(cat /tmp/duanyan-polkit-ci/password)"
 xdotool key Return
 echo AUTH_SUBMITTED
+sleep 3
+scrot /tmp/duanyan-polkit-dialog-after.png || true
+echo HELPER_AFTER_AUTH
+cat /tmp/duanyan-polkit-ci/helper.log
+echo HELPER_PROCESS_STATUS
+ps -o pid,ppid,stat,args -p "$worker" || true
 ready=0
 for n in $(seq 1 120); do
   if grep -q '^A3S_DEB_READY$' /tmp/duanyan-polkit-ci/helper.log; then ready=1; break; fi

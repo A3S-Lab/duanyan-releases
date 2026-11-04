@@ -52,6 +52,7 @@ jobs:
             /tmp/duanyan-polkit-agent.log
             /tmp/duanyan-polkit-xvfb.log
             /tmp/duanyan-polkit-dialog.png
+            /tmp/duanyan-polkit-dialog-after.png
             /tmp/duanyan-polkit-ci/helper.log
             /tmp/duanyan-polkit-ci/qa-trace.log
           if-no-files-found: ignore
