@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T15:19:23.875Z",
+  "generated_at": "2026-11-04T05:03:24.273Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -29,6 +29,12 @@
           "size": 390986154,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.20/Duanyan-Breeding-Research-1.1.20-arm64.zip",
           "digest": "sha256:48d2d4029c20ec32f798b3c82d75204574d4b48616ed23cf70dabb196baefdc0"
+        },
+        {
+          "name": "Duanyan-Online-Setup-1.1.20.exe",
+          "size": 41796,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.20/Duanyan-Online-Setup-1.1.20.exe",
+          "digest": "sha256:c95199b6b23796c61f4b423b5690d5e4ed36fc6405e610985c3c427dc51096f0"
         },
         {
           "name": "latest-mac.yml",
