@@ -4,7 +4,7 @@ on:
   release:
     types: [published, edited, released, deleted, unpublished]
   schedule:
-    - cron: "17,47 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -30,14 +30,17 @@ jobs:
       - name: Refresh release index
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/update-pages-releases.mjs pages/releases-fallback.json
+        run: |
+          node --test scripts/update-pages-html.test.mjs
+          node scripts/update-pages-releases.mjs pages/releases-fallback.json
+          node scripts/update-pages-html.mjs pages/index.html pages/releases-fallback.json
 
       - name: Commit changed release index
         run: |
           cd pages
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add releases-fallback.json
+          git add releases-fallback.json index.html
           if git diff --cached --quiet; then
             echo "Release index is already current."
             exit 0
