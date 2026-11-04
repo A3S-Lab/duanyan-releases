@@ -12,7 +12,7 @@ jobs:
       - name: Install desktop authorization and test dependencies
         run: |
           sudo apt-get update -qq
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends xvfb xdotool x11-utils dbus-x11 policykit-1-gnome scrot
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends xvfb xdotool x11-utils dbus-x11 policykit-1-gnome scrot fonts-noto-cjk
       - name: Install the verified release and prepare a disposable next version
         run: |
           set -euo pipefail
