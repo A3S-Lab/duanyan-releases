@@ -9,8 +9,9 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));let app;
  const env={...process.env,DUANYAN_USER_DATA_DIR:path.join(root,'profile'),APP_AUTH_MODE:'optional',AUTH_LAB_GATEWAY_URL:'',INTELLIGENT_PREWARM:'0',DUANYAN_LAB_BENCH:'0'};
  for(const k of ['ELECTRON_RUN_AS_NODE','DUANYAN_UPDATE_FEED_URL','DUANYAN_DEV_SERVER_URL','DUANYAN_REMOTE_API_URL','DUANYAN_REMOTE_APP_URL'])delete env[k];
  app=await _electron.launch({executablePath:exe,env,timeout:180000});const page=await app.firstWindow();assert.equal(await app.evaluate(({app})=>app.getVersion()),'1.1.19');
- await page.waitForFunction(() => Boolean(window.duanyanDesktop && window.duanyanDesktop.checkForUpdates), null, {timeout:180000});
- console.log('WINDOW_READY',page.url());const oldPid=app.process().pid;
+ await page.waitForURL(url => url.protocol === 'file:' && url.pathname.endsWith('/index.html'), {timeout:180000});
+ await page.waitForFunction(() => Boolean(window.duanyanDesktop && window.duanyanDesktop.checkForUpdates), null, {timeout:30000});
+ console.log('MAIN_WINDOW_READY');const oldPid=app.process().pid;
  const checked=await page.evaluate(()=>window.duanyanDesktop.checkForUpdates());assert.equal(checked.state.status,'available');assert.equal(checked.state.version,'1.1.20');console.log('CHECK_1.1.19_TO_1.1.20_OK');
  const downloaded=await page.evaluate(()=>window.duanyanDesktop.downloadUpdate());assert.equal(downloaded.state.status,'ready');console.log('DOWNLOAD_READY');
  try{await page.evaluate(()=>window.duanyanDesktop.installUpdate())}catch(e){console.log('Old app closed for update:',e.message.slice(0,100))}
