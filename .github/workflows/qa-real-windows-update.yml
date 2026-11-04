@@ -1,0 +1,33 @@
+name: Verify real Windows update and restart
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  update:
+    runs-on: windows-2025
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install automation library
+        shell: pwsh
+        run: |
+          $env:PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD='1'
+          npm install --no-save playwright@1.56.1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Install verified 1.1.19 in disposable runner
+        shell: pwsh
+        run: |
+          $base='https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/'
+          curl.exe -4 --noproxy '*' -fL --retry 4 --connect-timeout 15 --max-time 900 "${base}Duanyan-Science-Discovery-Setup-1.1.19-x64.exe" -o old-setup.exe
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $expected='783bea75c42034741b7b02720a35622d3fa7a3201b10c0ef169ad7dde6c87837'
+          if ((Get-FileHash old-setup.exe -Algorithm SHA256).Hash.ToLowerInvariant() -ne $expected) { throw 'Old installer digest mismatch' }
+          $p=Start-Process -FilePath (Resolve-Path old-setup.exe).Path -ArgumentList '/S' -Wait -PassThru
+          if ($p.ExitCode -ne 0) { throw "Old installer failed: $($p.ExitCode)" }
+      - name: Run the unmodified updater and verify automatic restart
+        shell: pwsh
+        run: node scripts/qa-windows-restart.cjs
