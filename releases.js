@@ -5,6 +5,9 @@
   var API_URL = "https://api.github.com/repos/" + REPO + "/releases?per_page=12";
   var FALLBACK_URL = "releases-fallback.json";
   var CENTER_BASE = "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/";
+  var CENTER_INDEX = "https://a3s-lab.discovery.intern-ai.org.cn/apps/duanyan-release-feed/";
+  var centerReleases = [];
+  var githubReachable = false;
   // A withdrawn release must not survive in a previously cached catalogue.
   var CACHE_KEY = "duanyan-release-page-v3";
   var CACHE_TTL = 5 * 60 * 1000;
@@ -46,7 +49,9 @@
       size: Number(asset.size || 0),
       url: String(asset.browser_download_url || asset.url || ""),
       digest: String(asset.digest || ""),
-      centerUrl: String(asset.center_url || asset.centerUrl || "")
+      centerUrl: String(asset.center_url || asset.centerUrl || ""),
+      centerOnly: Boolean(asset.centerOnly),
+      centerPlatform: String(asset.centerPlatform || "")
     };
   }
 
@@ -61,6 +66,7 @@
       body: String(release.body || ""),
       draft: Boolean(release.draft),
       prerelease: Boolean(release.prerelease),
+      centerOnly: Boolean(release.centerOnly),
       assets: Array.isArray(release.assets) ? release.assets.map(normalizeAsset) : []
     };
   }
@@ -201,25 +207,23 @@
     card.classList.remove("unavailable");
     setText(os + "-version", "v" + data.release.version);
     if (primary) {
-      primary.href = data.primary.url;
+      primary.hidden = !data.primary.url;
+      if (data.primary.url) primary.href = data.primary.url;
+      else primary.removeAttribute("href");
       primary.textContent = "GitHub";
     }
     if (secondary) {
-      if (data.secondary) {
-        secondary.hidden = false;
-        secondary.href = data.secondary.url;
-      } else {
-        secondary.hidden = true;
-      }
+      secondary.hidden = !data.secondary || !data.secondary.url;
+      if (data.secondary && data.secondary.url) secondary.href = data.secondary.url;
+      else secondary.removeAttribute("href");
     }
     centerLink(centerPrimary, data.primary); centerLink(centerSecondary, data.secondary);
     centerLink(onlineCenter, data.online);
     if (onlineGithub) {
-      onlineGithub.hidden = !data.online;
-      if (data.online) {
-        onlineGithub.href = data.online.url;
-        setText(os + "-online-size", formatSize(data.online.size));
-      }
+      onlineGithub.hidden = !data.online || !data.online.url;
+      if (data.online && data.online.url) onlineGithub.href = data.online.url;
+      else onlineGithub.removeAttribute("href");
+      if (data.online) setText(os + "-online-size", formatSize(data.online.size));
     }
     setText(os + "-size", formatSize(data.primary.size) || "安装包");
     hideEmptyRows(card);
@@ -235,6 +239,12 @@
     if (!releases.length) return;
     var latest = releases[0];
     var platforms = pickPlatforms(releases);
+    if (!githubReachable && centerReleases.length) {
+      var centerPlatforms = pickPlatforms(normalizeReleases(centerReleases));
+      ["mac", "windows", "linux"].forEach(function (os) {
+        if (centerPlatforms[os]) platforms[os] = centerPlatforms[os];
+      });
+    }
     var selectedOS = detectOS();
     state.releases = releases;
     state.source = source;
@@ -247,7 +257,7 @@
     var latestDate = byId("latest-date");
     if (latestDate) latestDate.dateTime = latest.publishedAt;
     setText("latest-summary", summaryFromBody(latest.body));
-    setLink("latest-link", latest.url, "发布说明 ↗");
+    setLink("latest-link", latest.url, latest.centerOnly ? "中心更新说明 ↗" : "发布说明 ↗");
 
     if (window.drawMilestones) window.drawMilestones(releases);
     renderPlatform("mac", platforms.mac);
@@ -267,7 +277,10 @@
       if (recommendation) {
         var online = recommendation.online;
         var safeCenter = online && /^[A-Za-z0-9._-]+$/.test(online.name) && online.centerUrl === CENTER_BASE + online.name;
-        primary.href = online ? (safeCenter ? online.centerUrl : online.url) : recommendation.primary.url;
+        var mainAsset = recommendation.primary;
+        var mainCenter = mainAsset && mainAsset.centerUrl === CENTER_BASE + mainAsset.name;
+        primary.href = online ? (safeCenter ? online.centerUrl : online.url || latest.url)
+          : (mainCenter ? mainAsset.centerUrl : mainAsset.url || latest.url);
         setText("primary-label", "下载 " + ({ mac: "macOS", windows: "Windows", linux: "Linux" }[selectedOS]) + " 版 · " + recommendation.release.version);
         var card = document.querySelector('[data-os="' + selectedOS + '"]');
         if (card) {
@@ -319,12 +332,139 @@
     }
   }
 
+  // The independent read-only endpoint follows the desktop feeds directly,
+  // so an unreachable GitHub API does not delay current platform versions.
+  function parseCenterManifest(text) {
+    var version = /^version:\s*["']?(\d+\.\d+\.\d+)["']?\s*$/m.exec(text);
+    if (!version) return null;
+    var date = /^releaseDate:\s*["']?([^"'\r\n]+)["']?\s*$/m.exec(text);
+    var files = [], current = null;
+    String(text).split(/\r?\n/).forEach(function (line) {
+      var match = /^\s*-\s*url:\s*["']?([A-Za-z0-9._-]+)["']?\s*$/.exec(line);
+      if (match) { current = { name: match[1] }; files.push(current); return; }
+      match = /^\s+sha512:\s*["']?([A-Za-z0-9+/=]+)["']?\s*$/.exec(line);
+      if (match && current) current.sha512 = match[1];
+      match = /^\s+size:\s*(\d+)\s*$/.exec(line);
+      if (match && current) current.size = Number(match[1]);
+    });
+    return { version: version[1], date: date ? date[1].trim() : "", files: files };
+  }
+
+  async function centerText(name) {
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, 10000);
+    try {
+      var response = await fetch(CENTER_INDEX + name + "?v=" + Date.now(), { cache: "no-store", signal: controller.signal });
+      if (!response.ok) throw new Error("Center HTTP " + response.status);
+      return await response.text();
+    } finally { clearTimeout(timer); }
+  }
+
+  async function fetchCenterReleases() {
+    var names = ["catalog.json", "latest.yml", "latest-linux.yml", "latest-mac.yml", "release-notes.json"];
+    var responses = await Promise.allSettled(names.map(centerText));
+    if (responses[0].status !== "fulfilled") throw new Error("Center catalog unavailable");
+    var catalog = JSON.parse(responses[0].value), byName = Object.create(null), notes = [];
+    (Array.isArray(catalog.files) ? catalog.files : []).forEach(function (file) {
+      if (file && /^[A-Za-z0-9._-]+$/.test(file.name) && Number.isSafeInteger(file.size) && file.size > 0) byName[file.name] = file.size;
+    });
+    if (responses[4].status === "fulfilled") {
+      try { notes = JSON.parse(responses[4].value).versions || []; } catch (_) {}
+    }
+    var rows = Object.create(null), updated = [];
+    function row(version, date) {
+      if (!rows[version]) {
+        var note = Array.isArray(notes) && notes.find(function (item) { return item.version === version; });
+        rows[version] = { tag: "v" + version, version: version, name: "端砚 " + version,
+          publishedAt: date || (note && note.date) || "", url: CENTER_BASE + "release-notes.json",
+          body: note && note.summary || "查看中心更新源。", centerOnly: true, assets: [] };
+      }
+      return rows[version];
+    }
+    function add(target, filename, expectedSize, platform) {
+      if (!byName[filename] || (expectedSize && byName[filename] !== expectedSize)) return false;
+      target.assets.push({ name: filename, size: byName[filename], url: "", digest: "", centerUrl: CENTER_BASE + filename, centerOnly: true, centerPlatform: platform });
+      return true;
+    }
+    [1, 2, 3].forEach(function (index) {
+      if (responses[index].status !== "fulfilled") return;
+      var manifest = parseCenterManifest(responses[index].value);
+      if (!manifest) return;
+      var version = manifest.version, target = row(version, manifest.date);
+      function verified(filename) {
+        var entry = manifest.files.find(function (item) { return item.name === filename; });
+        return entry && /^[A-Za-z0-9+/]{86}==$/.test(entry.sha512 || "") && entry.size > 0 && byName[filename] === entry.size;
+      }
+      if (index === 1) {
+        var setup = "Duanyan-Science-Discovery-Setup-" + version + "-x64.exe";
+        if (verified(setup)) {
+          updated.push("windows");
+          add(target, setup, byName[setup], "windows");
+          add(target, "Duanyan-Science-Discovery-Portable-" + version + "-x64.exe", null, "windows");
+          add(target, "Duanyan-Online-Setup-" + version + ".exe", null, "windows");
+        }
+      } else if (index === 2) {
+        var image = "Duanyan-Science-Discovery-" + version + "-x86_64.AppImage";
+        var deb = "Duanyan-Science-Discovery-" + version + "-amd64.deb";
+        if (verified(image)) {
+          updated.push("linux");
+          add(target, image, byName[image], "linux");
+          if (verified(deb)) add(target, deb, byName[deb], "linux");
+        }
+      } else {
+        var zip = "Duanyan-Breeding-Research-" + version + "-arm64.zip";
+        var dmg = "Duanyan-Breeding-Research-" + version + "-arm64.dmg";
+        if (verified(zip) && byName[dmg]) { updated.push("mac"); add(target, dmg, null, "mac"); }
+      }
+    });
+    var result = Object.keys(rows).map(function (key) { return rows[key]; }).filter(function (item) { return item.assets.length; });
+    if (!result.length) throw new Error("No valid center platform manifests");
+    return { rows: result, updated: updated };
+  }
+
+  function mergePartialCenter(previous, incoming) {
+    var rows = Object.create(null);
+    function collect(releases, keep) {
+      releases.forEach(function (item) {
+        var assets = item.assets.filter(keep);
+        if (!assets.length) return;
+        var target = rows[item.tag];
+        if (!target) { target = Object.assign({}, item, { assets: [] }); rows[item.tag] = target; }
+        target.assets = target.assets.concat(assets);
+      });
+    }
+    collect(previous, function (asset) { return incoming.updated.indexOf(asset.centerPlatform) < 0; });
+    collect(incoming.rows, function () { return true; });
+    return Object.keys(rows).map(function (key) { return rows[key]; });
+  }
+
+  function mergeCenterReleases(base, extra) {
+    var merged = normalizeReleases(base).filter(function (item) { return !item.centerOnly; });
+    merged.forEach(function (item) { item.assets = item.assets.filter(function (asset) { return !asset.centerOnly; }); });
+    extra.forEach(function (item) {
+      var target = merged.find(function (existing) { return existing.tag === item.tag; });
+      if (!target) { merged.push(item); return; }
+      item.assets.forEach(function (asset) {
+        var known = target.assets.find(function (existing) { return existing.name === asset.name; });
+        if (known && known.size === asset.size) known.centerUrl = asset.centerUrl;
+        else if (known) target.assets[target.assets.indexOf(known)] = asset;
+        else target.assets.push(asset);
+      });
+    });
+    return normalizeReleases(merged);
+  }
+
   var loading = false;
   var REFRESH_INTERVAL = 60 * 1000;
 
   async function load() {
     if (loading) return;
     loading = true;
+    var centerRequest = fetchCenterReleases().then(function (result) {
+      centerReleases = mergePartialCenter(centerReleases, result);
+      var merged = mergeCenterReleases(state.releases, centerReleases);
+      if (merged.length) { render(merged, "center", Date.now()); writeCache(merged); }
+    }).catch(function () {});
     try {
     var fallbackCheckedAt = null;
     try {
@@ -337,9 +477,10 @@
         var candidate = fallbackReleases[0];
         var fallbackIsNewer = current && candidate.tag !== current.tag &&
           normalizeReleases([candidate, current])[0].tag === candidate.tag;
-        if (!current || fallbackIsNewer || fallbackCheckedAt > (state.checkedAt || 0)) {
-          render(fallbackReleases, "pages", fallbackCheckedAt);
-          writeCache(fallbackReleases);
+        if (!current || current.centerOnly || fallbackIsNewer || fallbackCheckedAt > (state.checkedAt || 0)) {
+          var fromPages = mergeCenterReleases(fallbackReleases, centerReleases);
+          render(fromPages, "pages", fallbackCheckedAt);
+          writeCache(fromPages);
         }
       }
     } catch (_) {}
@@ -360,13 +501,17 @@
             if (match) asset.centerUrl = match.centerUrl;
           });
         });
-        render(releases, "api", Date.now());
-        writeCache(releases);
+        githubReachable = true;
+        var fromApi = mergeCenterReleases(releases, centerReleases);
+        render(fromApi, "api", Date.now());
+        writeCache(fromApi);
       } catch (_) {
-        // keep the static links already in the page
+        githubReachable = false;
+        if (centerReleases.length) render(mergeCenterReleases(state.releases, centerReleases), "center", Date.now());
       }
     }
     } finally {
+      await centerRequest;
       loading = false;
     }
   }
@@ -375,7 +520,9 @@
     normalizeReleases: normalizeReleases,
     pickPlatforms: pickPlatforms,
     summaryFromBody: summaryFromBody,
-    bulletsFromBody: bulletsFromBody
+    bulletsFromBody: bulletsFromBody,
+    parseCenterManifest: parseCenterManifest,
+    mergeCenterReleases: mergeCenterReleases
   };
 
   var cached = readCache();
