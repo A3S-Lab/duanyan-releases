@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T11:23:55.256Z",
+  "generated_at": "2026-11-06T11:28:04.140Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -35,7 +35,8 @@
           "name": "Duanyan-Science-Discovery-1.1.21-x86_64.AppImage",
           "size": 612194813,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-1.1.21-x86_64.AppImage",
-          "digest": "sha256:e7a3feff4f89bc3168d519c3de9c67b4d8b67fbbd04ee291901e0ca43d0aaec8"
+          "digest": "sha256:e7a3feff4f89bc3168d519c3de9c67b4d8b67fbbd04ee291901e0ca43d0aaec8",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.21-x86_64.AppImage"
         },
         {
           "name": "Duanyan-Science-Discovery-Portable-1.1.21-x64.exe",
@@ -48,7 +49,8 @@
           "name": "Duanyan-Science-Discovery-Setup-1.1.21-x64.exe",
           "size": 382962680,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe",
-          "digest": "sha256:4f1e3b686dd28493aa19c64065ac9538854a7ac19771b40d6a6a0b68f1afe099"
+          "digest": "sha256:4f1e3b686dd28493aa19c64065ac9538854a7ac19771b40d6a6a0b68f1afe099",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.21-x64.exe.blockmap",
