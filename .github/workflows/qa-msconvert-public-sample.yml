@@ -1,0 +1,44 @@
+name: Verify MSConvert with public Thermo RAW
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  linux-msconvert:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Obtain verified public sample
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/msconvert-qa/input" "$RUNNER_TEMP/msconvert-qa/profile" "$RUNNER_TEMP/msconvert-qa/centroid"
+          curl -4 --noproxy '*' -fL --retry 3 --connect-timeout 15 --max-time 120 https://raw.githubusercontent.com/mobiusklein/mzdata/main/test/data/small.RAW -o "$RUNNER_TEMP/msconvert-qa/input/small.RAW"
+          echo '071f845dec57b5fe3a6023326acba6b179d03eae4a8e86dba416b8b50ec42e63  '"$RUNNER_TEMP/msconvert-qa/input/small.RAW" | sha256sum -c -
+      - name: Convert through pinned vendor-enabled MSConvert
+        shell: bash
+        run: |
+          set -euo pipefail
+          image='proteowizard/pwiz-skyline-i-agree-to-the-vendor-licenses@sha256:8556d8c771c06f803f2fb54c280a293581a4a24a6acae8830d6147a6028323f3'
+          docker pull --platform linux/amd64 "$image"
+          docker run --rm --platform linux/amd64 --network none -e WINEDEBUG=-all -v "$RUNNER_TEMP/msconvert-qa:/data" "$image" wine msconvert /data/input/small.RAW --mzML --zlib -o /data/profile
+          docker run --rm --platform linux/amd64 --network none -e WINEDEBUG=-all -v "$RUNNER_TEMP/msconvert-qa:/data" "$image" wine msconvert /data/input/small.RAW --mzML --zlib -o /data/centroid --filter 'peakPicking vendor msLevel=1-'
+      - name: Verify spectra and requested modes
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import glob, os, xml.etree.ElementTree as ET
+          base=os.path.join(os.environ['RUNNER_TEMP'],'msconvert-qa')
+          for mode, required in [('profile','MS:1000128'),('centroid','MS:1000127')]:
+              paths=glob.glob(os.path.join(base,mode,'*.mzML'))
+              assert len(paths)==1, (mode,paths)
+              count=matching=0
+              for event,elem in ET.iterparse(paths[0],events=('end',)):
+                  if elem.tag.endswith('}spectrum'):
+                      count+=1
+                      if any(x.attrib.get('accession')==required for x in elem.iter()):matching+=1
+                      elem.clear()
+              assert count==48,(mode,count)
+              assert matching>0,(mode,matching)
+              print('REAL_MSCONVERT_THERMO_OK',mode,'spectra',count,'matching',matching)
+          PY
