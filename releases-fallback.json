@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-06T02:21:39.129Z",
+  "generated_at": "2026-11-06T11:23:55.256Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
       "tag_name": "v1.1.21",
-      "name": "端砚· Science Discovery 1.1.21",
+      "name": "端砚· Science Discovery 1.1.21（macOS / Windows / Linux）",
       "published_at": "2026-11-06T02:13:57Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.21",
-      "body": "新增质谱科学包：Thermo 原始文件可直接分析，HDX-MS 氘摄取结果能映射到三维蛋白结构、在应用里旋转查看；工作区文件支持右键复制路径。\n\n**质谱分析**\n\n- 新增质谱科学包，可直接读取 Thermo .raw 文件\n- 运行质控、离子色谱提取与出峰判定\n- HDX-MS：候选肽段、氘摄取与状态差异分析\n\n**三维结构**\n\n- HDX 结果按残基着色，映射到三维蛋白结构\n- 结构可旋转，切换时间点，悬停查看数值\n- 结构可按 PDB 号或 AlphaFold 模型获取\n\n**工作区与产物**\n\n- 文件树右键：复制路径、在 Finder 中显示\n- 产物卡片可直接打开能力运行的结果文件\n- 一次可交给智能体的资料由 12 个增至 64 个\n\n桌面端 1.1.21。更新源为中心只读分发目录；此处镜像同一份安装包、更新元数据与按需下载资源包。",
+      "body": "新增质谱科学包：Thermo 原始文件可直接分析，HDX-MS 氘摄取结果能映射到三维蛋白结构、在应用里旋转查看；工作区文件支持右键复制路径。\n\n**质谱分析**\n\n- 新增质谱科学包，可直接读取 Thermo .raw 文件\n- Windows 和 Linux 可通过 MSConvert 将 Thermo RAW 转为 mzML\n- 运行质控、离子色谱提取与出峰判定\n- HDX-MS：候选肽段、氘摄取与状态差异分析\n\n**三维结构**\n\n- HDX 结果按残基着色，映射到三维蛋白结构\n- 结构可旋转，切换时间点，悬停查看数值\n- 结构可按 PDB 号或 AlphaFold 模型获取\n\n**工作区与产物**\n\n- 文件树右键：复制路径、在 Finder 中显示\n- 产物卡片可直接打开能力运行的结果文件\n- 一次可交给智能体的资料由 12 个增至 64 个\n\nWindows Setup / Portable；Linux AppImage / deb。macOS 保留原始安装包。\n\n构建源码：`08e3683bb18f328188f724c8a714e44739fd641a`。",
       "draft": false,
       "prerelease": false,
       "assets": [
@@ -25,16 +25,66 @@
           "digest": "sha256:36d6660747123ffb9cc9515c488ea165b2876f9b1533ee4a58a5643d1b0dee46"
         },
         {
+          "name": "Duanyan-Science-Discovery-1.1.21-amd64.deb",
+          "size": 470194568,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-1.1.21-amd64.deb",
+          "digest": "sha256:795b10d20673f83d1dcfcb586e70d790fde2e9d1b98d085c225fd96c724d27b4",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.21-amd64.deb"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.21-x86_64.AppImage",
+          "size": 612194813,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-1.1.21-x86_64.AppImage",
+          "digest": "sha256:e7a3feff4f89bc3168d519c3de9c67b4d8b67fbbd04ee291901e0ca43d0aaec8"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.21-x64.exe",
+          "size": 382506550,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Portable-1.1.21-x64.exe",
+          "digest": "sha256:50cd07e9e826f3d6b469b9e241db6217bab2ddd4de79dab22f43ed27edaca0e7",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.21-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.21-x64.exe",
+          "size": 382962680,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe",
+          "digest": "sha256:4f1e3b686dd28493aa19c64065ac9538854a7ac19771b40d6a6a0b68f1afe099"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.21-x64.exe.blockmap",
+          "size": 398004,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe.blockmap",
+          "digest": "sha256:deffd3516050ffac5692113476871316b0e6e8ade64f01d8cbcd1ffa32516ead"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 592,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/latest-linux.yml",
+          "digest": "sha256:4b31f5d6a88c6055333e647ddba1efa02fb67b35a6ae03d54a47ba7056ea03fc"
+        },
+        {
           "name": "latest-mac.yml",
           "size": 382,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/latest-mac.yml",
           "digest": "sha256:6af7fc91aa69c70e7a6151a5868a996512b737364b55ac35c2cd486ca3bfe08b"
         },
         {
+          "name": "latest.yml",
+          "size": 390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/latest.yml",
+          "digest": "sha256:d24d151e0926ed732fdeffb9d58bdec4452febc82026774dd340712d8e4b6aef"
+        },
+        {
           "name": "release-notes.json",
-          "size": 82701,
+          "size": 82869,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/release-notes.json",
-          "digest": "sha256:5c0712cea5d3140a77a1b1f3052887a7ebe5444965123cf222b631f62b527e62"
+          "digest": "sha256:1c7a2bf5829fd10d11a6457390068e9f7959c5b146acd68b8b15f0333961fae0"
+        },
+        {
+          "name": "release-verification-1.1.21-core.json",
+          "size": 1528,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/release-verification-1.1.21-core.json",
+          "digest": "sha256:38f76f0bcefe0665128c33088d59484cfecf28f978184edd39144dfd0873821b"
         }
       ]
     },
