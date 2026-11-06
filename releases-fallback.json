@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T02:14:19.992Z",
+  "generated_at": "2026-11-06T02:17:19.470Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -16,6 +16,12 @@
           "size": 82701,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/release-notes.json",
           "digest": "sha256:5c0712cea5d3140a77a1b1f3052887a7ebe5444965123cf222b631f62b527e62"
+        },
+        {
+          "name": "Duanyan-Breeding-Research-1.1.21-arm64.zip",
+          "size": 425399696,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Breeding-Research-1.1.21-arm64.zip",
+          "digest": "sha256:36d6660747123ffb9cc9515c488ea165b2876f9b1533ee4a58a5643d1b0dee46"
         }
       ]
     },
