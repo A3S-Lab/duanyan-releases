@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T08:27:04.345Z",
+  "generated_at": "2026-11-09T08:28:26.955Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -43,12 +43,6 @@
           "digest": "sha256:795b10d20673f83d1dcfcb586e70d790fde2e9d1b98d085c225fd96c724d27b4"
         },
         {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.21-x64.exe.blockmap",
-          "size": 398004,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe.blockmap",
-          "digest": "sha256:deffd3516050ffac5692113476871316b0e6e8ade64f01d8cbcd1ffa32516ead"
-        },
-        {
           "name": "release-verification-1.1.21-core.json",
           "size": 1528,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/release-verification-1.1.21-core.json",
@@ -85,6 +79,18 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe",
           "digest": "sha256:f1a39e926b6c757dea2f833dc9f5709019c693f6cfe630699a1b36270c4113b0",
           "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.21-x64.exe",
+          "size": 382509902,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Portable-1.1.21-x64.exe",
+          "digest": "sha256:535945b3dbb36f617ba99aa4f2b1eac62508582b81d9cc9f22dfd88ebc84a05c"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.21-x64.exe.blockmap",
+          "size": 398647,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe.blockmap",
+          "digest": "sha256:cc34f1f64f4b46b3fbd5a47312de52242e44b109dfdde64f59e61e9de6930ee8"
         }
       ]
     },
