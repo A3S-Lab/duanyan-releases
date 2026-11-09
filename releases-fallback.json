@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T08:25:51.100Z",
+  "generated_at": "2026-11-09T08:27:04.345Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -29,13 +29,6 @@
           "size": 382,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/latest-mac.yml",
           "digest": "sha256:6af7fc91aa69c70e7a6151a5868a996512b737364b55ac35c2cd486ca3bfe08b"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.21-x64.exe",
-          "size": 382506550,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Portable-1.1.21-x64.exe",
-          "digest": "sha256:50cd07e9e826f3d6b469b9e241db6217bab2ddd4de79dab22f43ed27edaca0e7",
-          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.21-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.21-x86_64.AppImage",
@@ -85,6 +78,13 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Online-Setup-1.1.21.exe",
           "digest": "sha256:316f1a001d649d668175293658c40bb4c04bb6d72ef6ad71be96e35e2dc50a96",
           "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Online-Setup-1.1.21.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.21-x64.exe",
+          "size": 382967201,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe",
+          "digest": "sha256:f1a39e926b6c757dea2f833dc9f5709019c693f6cfe630699a1b36270c4113b0",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.21-x64.exe"
         }
       ]
     },
