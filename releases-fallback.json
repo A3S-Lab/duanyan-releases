@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T08:34:24.275Z",
+  "generated_at": "2026-11-09T08:35:49.511Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -127,9 +127,9 @@
         },
         {
           "name": "release-verification-1.1.21-core.json",
-          "size": 1528,
+          "size": 2768,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.21/release-verification-1.1.21-core.json",
-          "digest": "sha256:38f76f0bcefe0665128c33088d59484cfecf28f978184edd39144dfd0873821b"
+          "digest": "sha256:6c6785fb855265df72bd8bcf7290b0edd121400cecaad337cf6129304078fa16"
         }
       ]
     },
