@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-09T08:35:49.511Z",
+  "generated_at": "2026-11-09T08:37:05.485Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
       "tag_name": "v1.1.21",
-      "name": "端砚· Science Discovery 1.1.21（Windows / Linux x64）",
+      "name": "端砚· Science Discovery 1.1.21（macOS / Windows / Linux）",
       "published_at": "2026-11-06T02:13:57Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.21",
       "body": "新增质谱科学包：Thermo 原始文件可直接分析，HDX-MS 氘摄取结果能映射到三维蛋白结构、在应用里旋转查看；工作区文件支持右键复制路径。\n\n**质谱分析**\n\n- 新增质谱科学包，可直接读取 Thermo .raw 文件\n- Windows 和 Linux 可在「设置 → 运行资源」下载 MSConvert\n- 安装后可直接将 Thermo RAW 转为 mzML\n- 运行质控、离子色谱提取与出峰判定\n- HDX-MS：候选肽段、氘摄取与状态差异分析\n\n**三维结构**\n\n- HDX 结果按残基着色，映射到三维蛋白结构\n- 结构可旋转，切换时间点，悬停查看数值\n- 结构可按 PDB 号或 AlphaFold 模型获取\n\n**工作区与产物**\n\n- 文件树右键：复制路径、在 Finder 中显示\n- 产物卡片可直接打开能力运行的结果文件\n- 一次可交给智能体的资料由 12 个增至 64 个\n\nSetup：Windows 安装版；Portable：Windows 便携版；AppImage：Linux 便携应用；deb：Debian/Ubuntu 安装包。\n\nPython 和 Java 随包提供，Codex、Pi 和育种工具按需下载；科学依赖安装保留证书校验。",
