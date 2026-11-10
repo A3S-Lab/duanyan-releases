@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T14:45:33.372Z",
+  "generated_at": "2026-11-10T14:52:02.261Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -89,19 +89,22 @@
           "name": "Duanyan-Science-Discovery-1.1.24-x86_64.AppImage",
           "size": 612150152,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Science-Discovery-1.1.24-x86_64.AppImage",
-          "digest": "sha256:7e4e638aca09835f13a22bcb8831623633a075c20e3aebcfce967758aeb6a442"
+          "digest": "sha256:7e4e638aca09835f13a22bcb8831623633a075c20e3aebcfce967758aeb6a442",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.24-x86_64.AppImage"
         },
         {
           "name": "Duanyan-Science-Discovery-Portable-1.1.24-x64.exe",
           "size": 382547184,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Science-Discovery-Portable-1.1.24-x64.exe",
-          "digest": "sha256:415937b8159db0ee8fc52aa570951c39b3aa39445ebdae94d80eaf37a587a99a"
+          "digest": "sha256:415937b8159db0ee8fc52aa570951c39b3aa39445ebdae94d80eaf37a587a99a",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.24-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.24-x64.exe",
           "size": 383004460,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Science-Discovery-Setup-1.1.24-x64.exe",
-          "digest": "sha256:3c678c16c33be75edd86fcb49e5fae88acdafe052223a186ed9c219b7031b8b0"
+          "digest": "sha256:3c678c16c33be75edd86fcb49e5fae88acdafe052223a186ed9c219b7031b8b0",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.24-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.24-x64.exe.blockmap",
