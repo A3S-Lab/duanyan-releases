@@ -1,7 +1,146 @@
 {
-  "generated_at": "2026-11-10T08:49:55.594Z",
+  "generated_at": "2026-11-10T14:45:33.372Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
+    {
+      "tag_name": "v1.1.24",
+      "name": "端砚· Science Discovery 1.1.24（Windows / Linux x64）",
+      "published_at": "2026-11-10T14:45:11Z",
+      "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.24",
+      "body": "Windows 和 Linux 补齐三维结构查看、执行引擎与任务过程改进；三端新增第三方模型网关认证方式。\n\n**模型服务**\n\n- 服务商的「高级」里可填 Basic 用户名与密码\n- API Key 可放进自定义请求头，如 X-API-Key\n\n**三维结构查看**\n\n- 结构与序列编号自动核对，标出不匹配或缺失的残基\n- 差异按统计显著性着色，悬停可查看重复数和标准差\n- 点击残基查看对应肽段和氘摄取曲线\n- 支持动态播放、双状态并排比较和保存结构图片\n\n**执行引擎和任务过程**\n\n- 新增 DeepSeek 执行引擎，可在内核菜单按需安装\n- a3scode 和 Claude Code 也可通过内核菜单安装\n- Pi 支持在本机执行命令和修改工作区文件\n- 智能体的过程说明保留在正文，文件改动按类型显示\n\n**修复**\n\n- 修复部分 Linux 环境中文标题和菜单显示方框\n- 修复 Windows 数据路径较长时 a3scode 会话无法保存\n- 修复 Windows 按需安装深层目录的执行引擎失败\n- 本机 Codex 模型菜单与实际使用的模型一致\n\nSetup：Windows 安装版；Portable：Windows 便携版；AppImage：Linux 便携应用；deb：Debian/Ubuntu 安装包。\n\nPython 和 Java 随包提供，Codex、Pi 和育种工具按需下载；科学依赖安装保留证书校验。",
+      "draft": false,
+      "prerelease": false,
+      "assets": [
+        {
+          "name": "aster-runtime-linux-x86_64-9.1.8.tar.gz",
+          "size": 51440726,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/aster-runtime-linux-x86_64-9.1.8.tar.gz",
+          "digest": "sha256:80fc13618065ec9ec91a79557d3dbfeee6ae8a8bc4b2ae4d5d25274b0d735a8c"
+        },
+        {
+          "name": "aster-runtime-windows-x86_64-9.1.8.tar.gz",
+          "size": 50446289,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/aster-runtime-windows-x86_64-9.1.8.tar.gz",
+          "digest": "sha256:6e7ef4d5b46399b8dae761f0fa371ed0225ebfea0d4eae5003a6b45ee12c1800"
+        },
+        {
+          "name": "breeding-tools-linux-x86_64-1.1.15.tar.gz",
+          "size": 125251661,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/breeding-tools-linux-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:795983410771e0e8eca6af83d03dbca5ad3f072c8cbfb8333f1064fa25afac82"
+        },
+        {
+          "name": "breeding-tools-windows-x86_64-1.1.15.tar.gz",
+          "size": 106162724,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/breeding-tools-windows-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:f7b801b5cc719f6e9389d23c5408db1554e312fd89c3dd6292f2b9539cf6b67b"
+        },
+        {
+          "name": "claude-runtime-linux-x86_64-2.1.318.tar.gz",
+          "size": 154919823,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/claude-runtime-linux-x86_64-2.1.318.tar.gz",
+          "digest": "sha256:6a9f4a3d847d0a9849abc53fe77259e210f480ecc7edb9313f7348d8435400ff"
+        },
+        {
+          "name": "claude-runtime-windows-x86_64-2.1.318.tar.gz",
+          "size": 156534612,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/claude-runtime-windows-x86_64-2.1.318.tar.gz",
+          "digest": "sha256:f44f7c18e61cead529a07e9cff43774f78fed4372b297d6d43fa486a7dc70067"
+        },
+        {
+          "name": "codex-runtime-linux-x86_64-1.1.15.tar.gz",
+          "size": 161191025,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/codex-runtime-linux-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:377e72121f7688f6542cf9e736c8af70cc11844b9bb57dfbb626c055565da7c1"
+        },
+        {
+          "name": "codex-runtime-windows-x86_64-1.1.15.tar.gz",
+          "size": 166183631,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/codex-runtime-windows-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:2177a9ef81b68323f27e58235e5676d5bfccb3674eb8413ff0388571b970df10"
+        },
+        {
+          "name": "dsh-runtime-linux-x86_64-0.2.2-rc.1.tar.gz",
+          "size": 119984928,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/dsh-runtime-linux-x86_64-0.2.2-rc.1.tar.gz",
+          "digest": "sha256:214649753cb2c9c507ac774206328d93ed29c744a246f32a7250e5c89b209ea4"
+        },
+        {
+          "name": "dsh-runtime-windows-x86_64-0.2.2-rc.1.tar.gz",
+          "size": 110687074,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/dsh-runtime-windows-x86_64-0.2.2-rc.1.tar.gz",
+          "digest": "sha256:8c61441431fcdb99555676b4a02382e01959f9ff068955336aae12f390beb6cb"
+        },
+        {
+          "name": "Duanyan-Online-Setup-1.1.24.exe",
+          "size": 41793,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Online-Setup-1.1.24.exe",
+          "digest": "sha256:04f1a40d55b7158cf570ff0c5746314f83d93baf0bf665084f753b3c74f67c21",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Online-Setup-1.1.24.exe"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.24-amd64.deb",
+          "size": 470144312,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Science-Discovery-1.1.24-amd64.deb",
+          "digest": "sha256:9ff9432463b299b02b0a3a5dde2d5ec271ef4edd3d0f3ea58b9927b52208eca3",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.24-amd64.deb"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.24-x86_64.AppImage",
+          "size": 612150152,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Science-Discovery-1.1.24-x86_64.AppImage",
+          "digest": "sha256:7e4e638aca09835f13a22bcb8831623633a075c20e3aebcfce967758aeb6a442"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.24-x64.exe",
+          "size": 382547184,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Science-Discovery-Portable-1.1.24-x64.exe",
+          "digest": "sha256:415937b8159db0ee8fc52aa570951c39b3aa39445ebdae94d80eaf37a587a99a"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.24-x64.exe",
+          "size": 383004460,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Science-Discovery-Setup-1.1.24-x64.exe",
+          "digest": "sha256:3c678c16c33be75edd86fcb49e5fae88acdafe052223a186ed9c219b7031b8b0"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.24-x64.exe.blockmap",
+          "size": 398907,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/Duanyan-Science-Discovery-Setup-1.1.24-x64.exe.blockmap",
+          "digest": "sha256:f4f5376e300027b86e782a93f879f425c6933f42dd12114017c79a22f21ff958"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 592,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/latest-linux.yml",
+          "digest": "sha256:c3662e8ba5316d109d91feccabeebc41c65deb8411e645a04f41a44fb87f0bda"
+        },
+        {
+          "name": "latest.yml",
+          "size": 390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/latest.yml",
+          "digest": "sha256:535ddfa7b50afa831afb6d7d3edade984b191395b842ee2ba358ae55b94ce894"
+        },
+        {
+          "name": "pi-runtime-linux-x86_64-1.1.15.tar.gz",
+          "size": 33643643,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/pi-runtime-linux-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:4699c13ad37c38dcb5982fd753044b382fa4e09af1a1322d8b755aa517a88589"
+        },
+        {
+          "name": "pi-runtime-windows-x86_64-1.1.15.tar.gz",
+          "size": 29058600,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/pi-runtime-windows-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:b49cd55666e6aac17fcefed0b280b3d00d7e36124ee0117aae030ec424d8411a"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 84746,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.24/release-notes.json",
+          "digest": "sha256:87111364ddf89ff842c00259ff7d8b5ece5e3ca26d6f4598a02f76894a867359"
+        }
+      ]
+    },
     {
       "tag_name": "v1.1.23",
       "name": "端砚· Science Discovery 1.1.23",
@@ -972,99 +1111,6 @@
           "name": "tools-darwin-arm64.tar.gz",
           "size": 9426285,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.10/tools-darwin-arm64.tar.gz",
-          "digest": "sha256:949af9543c1932fe94a42e72ec4011af6910b5cc7a4ace1197f01584881fd510"
-        }
-      ]
-    },
-    {
-      "tag_name": "v1.1.9",
-      "name": "端砚· Science Discovery 1.1.9（macOS / Windows / Linux x64）",
-      "published_at": "2026-10-19T00:20:44Z",
-      "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.9",
-      "body": "这一版让对话能吃图，Office 预览不再整份上传；也修掉了 Windows 上打开科学包、自主实验台要等六秒的卡顿。模型与服务商设置重新排过，一眼看得出当前用的是哪一个。\n\n**图片**\n\n- 附图可交给支持视觉的模型（每轮最多 8 张）\n- 你发的图显示在自己的消息里，重开任务还在\n- 回答里的图片产物直接在对话中展开\n\n**模型**\n\n- 本机 Codex 变成服务商之一，凭证是本机登录\n- 它不再被标成「缺 Key」，只分已登录与未登录\n- 每个服务商下面配自己的模型\n- 输入框旁先选服务商，再选它下面的模型\n\n**页面**\n\n- 打开科学包、自主实验台不再各等六秒\n- 反馈管理可筛选、分页并下载诊断包\n- 项目可以置顶，也能从列表移除\n- 任务与消息的时间显示到日期和分钟\n\n**预览**\n\n- Word、PowerPoint、Excel 由本机直接读取\n- 演示文稿先出目录，翻到哪页取哪页\n- 超过 64 MB 的文件也能打开\n\n**协作**\n\n- 切换 Agent 会带上此前的完整对话\n- Claude Code 可在输入框旁选择模型\n- 连接 A3S OS 会打开系统浏览器，并走本机代理\n- Pi 可直接选用，不必再另装运行资源\n\n**修复**\n\n- 窗口较窄时，也能从菜单或输入框正常打开设置与关于\n- 上游用 JSON 报错时只显示其中可读的原因\n- 需要代理的机器上，本机 Codex 不再卡在模型请求\n- ChatGPT 订阅登录不再固定成账号不支持的模型\n\ndmg：macOS（Apple 芯片）安装包；zip：macOS 应用内更新载荷；Setup：Windows 安装版；Portable：Windows 便携版；AppImage：Linux 便携应用；deb：Debian/Ubuntu 安装包。\n\nWindows 不包含 Linux/Mac 原生育种工具。\n",
-      "draft": false,
-      "prerelease": false,
-      "assets": [
-        {
-          "name": "agent-runtime-darwin-arm64.tar.gz",
-          "size": 87789490,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/agent-runtime-darwin-arm64.tar.gz",
-          "digest": "sha256:873dfef3f1e5c00d6b98c5a9fc238d95b2e849d512934079a775ed7c129c0f1e"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.9-arm64.dmg",
-          "size": 551034672,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Breeding-Research-1.1.9-arm64.dmg",
-          "digest": "sha256:0fc9e1d67a03d72f90aec0ef4be538c78f5db1fe46c809425b43bc0ed06eb100"
-        },
-        {
-          "name": "Duanyan-Breeding-Research-1.1.9-arm64.zip",
-          "size": 457843963,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Breeding-Research-1.1.9-arm64.zip",
-          "digest": "sha256:1c322e22248aae90c47e9404ca418d697f1ee511071f010d4eda32d017b33bc3"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.9-amd64.deb",
-          "size": 543443892,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-1.1.9-amd64.deb",
-          "digest": "sha256:618b8a0688bd2d195dec62bcd62c116a6d6d4aea3f3624a96541972d2f0adabb",
-          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.9-amd64.deb"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-1.1.9-x86_64.AppImage",
-          "size": 712070131,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-1.1.9-x86_64.AppImage",
-          "digest": "sha256:cf5a8192003b4c0de09f9e869eae06b0db155ac26711d2a527bae5c5f6caa848",
-          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.9-x86_64.AppImage"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.9-x64.exe",
-          "size": 626668378,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Portable-1.1.9-x64.exe",
-          "digest": "sha256:bad1fde9a40dfe60e8508bc64befbfbd64713b7d17a2debaed4ceca8ac5d1bea",
-          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.9-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.9-x64.exe",
-          "size": 626872907,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Setup-1.1.9-x64.exe",
-          "digest": "sha256:5e19b1001b72adaea84735dfef15008c241a45e11219977960bc0eeb458ec658",
-          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.9-x64.exe"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Setup-1.1.9-x64.exe.blockmap",
-          "size": 651466,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/Duanyan-Science-Discovery-Setup-1.1.9-x64.exe.blockmap",
-          "digest": "sha256:e82481523e772de23f860cbeb44f15cf56746e176abf6a87aac49599c18618f2"
-        },
-        {
-          "name": "latest-linux.yml",
-          "size": 588,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/latest-linux.yml",
-          "digest": "sha256:a1fdf913f856ebc671e04f2a748c2f479e482d86f1052e14df6f5d0bd98937e0"
-        },
-        {
-          "name": "latest-mac.yml",
-          "size": 379,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/latest-mac.yml",
-          "digest": "sha256:56ca324fedb5f26410657f6df40fbdc1b7b54a57a599f9cca4df2e72d47ddeb8"
-        },
-        {
-          "name": "latest.yml",
-          "size": 387,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/latest.yml",
-          "digest": "sha256:ad1304694f5469175c4c5b272cce4512d276dea343d5f19c129e7ec97d170439"
-        },
-        {
-          "name": "release-notes.json",
-          "size": 58777,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/release-notes.json",
-          "digest": "sha256:fd1be95f94d89cdf8a522a0ae11c77190e1f5c93907a7fb7d918bfe06acfbba5"
-        },
-        {
-          "name": "tools-darwin-arm64.tar.gz",
-          "size": 9426285,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.9/tools-darwin-arm64.tar.gz",
           "digest": "sha256:949af9543c1932fe94a42e72ec4011af6910b5cc7a4ace1197f01584881fd510"
         }
       ]
