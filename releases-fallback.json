@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-11T16:01:11.683Z",
+  "generated_at": "2026-11-11T16:16:45.034Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
       "tag_name": "v1.1.25",
-      "name": "端砚· Science Discovery 1.1.25（Windows / Linux x64）",
+      "name": "端砚· Science Discovery 1.1.25（macOS / Windows / Linux）",
       "published_at": "2026-11-11T09:31:58Z",
       "html_url": "https://github.com/A3S-Lab/duanyan-releases/releases/tag/v1.1.25",
       "body": "新增深色模式和十套主题；生物育种改为按需组合分析，GWAS 大幅提速；长时间分析可转到后台运行，结束后自动提醒。\n\n**外观**\n\n- 支持深色模式，可跟随系统\n- 十套主题预设，强调色、背景、字体可自定义\n- 主题可复制成代码，分享给别人导入\n\n**长时间分析**\n\n- 跑几小时的分析可转到后台，结束后自动提醒并解读结果\n- 持续有进展的长任务不再因总时长被中断\n- GWAS 预计耗时过长时先列出方案，等你决定\n\n**性能**\n\n- GWAS 大幅优化：3000 头 × 3 万位点从 227 秒 → 约 70 秒\n- HDX 肽段搜索内存大幅优化：约 450 MB → 10 MB\n\n**生物育种**\n\n- 不再走固定流水线，按数据和目标组合分析步骤\n- 自动识别表头里的性状、固定效应、随机效应和系谱列\n- 任意体重口径的日龄、背膘、眼肌都能评估\n- 系谱可选，只有基因型时用基因组关系矩阵评估\n- 质控新增 HWE 过滤，给了系谱时核对亲子关系\n- 不再默认按猪，牛、羊、鸡等按物种识别染色体\n- 选择指数与选配的权重、阈值都可调整\n\n**修复**\n\n- 修复 Windows 上停止 Pi 任务后可能一直显示运行中的问题\n- Windows 子任务不再默认依赖不可用的容器工具\n- dsh 工具桥缺失或无执行权限时显示具体原因\n- 修复在线人数较多时提示「登录状态暂时无法确认」\n- HDX 差异分析不再把多个电荷态算作独立重复\n- 修复 ROH 分析每次都失败、GWAS 偶发整步失败\n- 更新失败时显示具体原因\n- 打开任务失败后可以重新打开\n\nSetup：Windows 安装版；Portable：Windows 便携版；AppImage：Linux 便携应用；deb：Debian/Ubuntu 安装包。\n\nPython 和 Java 随包提供，Codex、Pi 和育种工具按需下载；科学依赖安装保留证书校验。",
@@ -106,19 +106,22 @@
           "name": "Duanyan-Science-Discovery-1.1.25-x86_64.AppImage",
           "size": 612309375,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/Duanyan-Science-Discovery-1.1.25-x86_64.AppImage",
-          "digest": "sha256:ad9b5dd74c118f239331f143e89ec8e2f76db2ca4f477838b52b7ee7c78f00cc"
+          "digest": "sha256:ad9b5dd74c118f239331f143e89ec8e2f76db2ca4f477838b52b7ee7c78f00cc",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.25-x86_64.AppImage"
         },
         {
           "name": "Duanyan-Science-Discovery-Portable-1.1.25-x64.exe",
           "size": 382613248,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/Duanyan-Science-Discovery-Portable-1.1.25-x64.exe",
-          "digest": "sha256:96e4a55d5ed0a14195c07d8b49bd04ed9877e4ec40ee45ff33ca74b54b61455e"
+          "digest": "sha256:96e4a55d5ed0a14195c07d8b49bd04ed9877e4ec40ee45ff33ca74b54b61455e",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Portable-1.1.25-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.25-x64.exe",
           "size": 383070530,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/Duanyan-Science-Discovery-Setup-1.1.25-x64.exe",
-          "digest": "sha256:f247bc9c56744273f1684f4e3e3766c5552424744cbe22c2df6164249a733a27"
+          "digest": "sha256:f247bc9c56744273f1684f4e3e3766c5552424744cbe22c2df6164249a733a27",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.25-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.25-x64.exe.blockmap",
