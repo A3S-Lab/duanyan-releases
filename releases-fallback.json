@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T09:52:45.262Z",
+  "generated_at": "2026-11-11T10:02:55.881Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -27,13 +27,20 @@
           "name": "Duanyan-Science-Discovery-1.1.25-arm64.dmg",
           "size": 581790808,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/Duanyan-Science-Discovery-1.1.25-arm64.dmg",
-          "digest": "sha256:422f7a3bf05942f00117f90a37f1e756b779eb80bda6d93fc10745b848149f7b"
+          "digest": "sha256:422f7a3bf05942f00117f90a37f1e756b779eb80bda6d93fc10745b848149f7b",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.25-arm64.dmg"
         },
         {
           "name": "tools-darwin-arm64.tar.gz",
           "size": 9426285,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/tools-darwin-arm64.tar.gz",
           "digest": "sha256:949af9543c1932fe94a42e72ec4011af6910b5cc7a4ace1197f01584881fd510"
+        },
+        {
+          "name": "agent-runtime-darwin-arm64.tar.gz",
+          "size": 123063107,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/agent-runtime-darwin-arm64.tar.gz",
+          "digest": "sha256:2eecfa31514401f05ba0e67cfabced796245696bbe685fd81b196411b0d48fa2"
         }
       ]
     },
