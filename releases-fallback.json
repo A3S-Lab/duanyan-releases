@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T16:00:16.755Z",
+  "generated_at": "2026-11-11T16:00:38.993Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -149,6 +149,12 @@
           "size": 51440726,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/aster-runtime-linux-x86_64-9.1.8.tar.gz",
           "digest": "sha256:80fc13618065ec9ec91a79557d3dbfeee6ae8a8bc4b2ae4d5d25274b0d735a8c"
+        },
+        {
+          "name": "claude-runtime-linux-x86_64-2.1.318.tar.gz",
+          "size": 154919823,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/claude-runtime-linux-x86_64-2.1.318.tar.gz",
+          "digest": "sha256:6a9f4a3d847d0a9849abc53fe77259e210f480ecc7edb9313f7348d8435400ff"
         }
       ]
     },
