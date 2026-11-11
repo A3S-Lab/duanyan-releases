@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T15:54:50.095Z",
+  "generated_at": "2026-11-11T15:55:16.325Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -11,12 +11,6 @@
       "draft": false,
       "prerelease": false,
       "assets": [
-        {
-          "name": "release-notes.json",
-          "size": 87161,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/release-notes.json",
-          "digest": "sha256:72b98786cbbf13b0c2b87dc97eb8f1d3775b5f2837991a08a6ea48bfa3f312da"
-        },
         {
           "name": "Duanyan-Science-Discovery-1.1.25-arm64.zip",
           "size": 425133186,
@@ -107,6 +101,18 @@
           "size": 156534612,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/claude-runtime-windows-x86_64-2.1.318.tar.gz",
           "digest": "sha256:f44f7c18e61cead529a07e9cff43774f78fed4372b297d6d43fa486a7dc70067"
+        },
+        {
+          "name": "dsh-runtime-windows-x86_64-0.2.2-rc.1.tar.gz",
+          "size": 110687074,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/dsh-runtime-windows-x86_64-0.2.2-rc.1.tar.gz",
+          "digest": "sha256:8c61441431fcdb99555676b4a02382e01959f9ff068955336aae12f390beb6cb"
+        },
+        {
+          "name": "release-notes.json",
+          "size": 87661,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/release-notes.json",
+          "digest": "sha256:c0f04e8a69465dd76f5a46c69038609ae3ab191f6bdf4d756febe44c74b3d562"
         }
       ]
     },
