@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T17:10:43.921Z",
+  "generated_at": "2026-11-11T17:11:57.986Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -52,13 +52,8 @@
           "name": "Duanyan-Online-Setup-1.1.25.exe",
           "size": 41798,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/Duanyan-Online-Setup-1.1.25.exe",
-          "digest": "sha256:bbb99f0faf2120240cc9a2400ba66b7675aa33b51a4f58c1a7286b6ff7d34b4e"
-        },
-        {
-          "name": "Duanyan-Science-Discovery-Portable-1.1.25-x64.exe",
-          "size": 382613248,
-          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/Duanyan-Science-Discovery-Portable-1.1.25-x64.exe",
-          "digest": "sha256:96e4a55d5ed0a14195c07d8b49bd04ed9877e4ec40ee45ff33ca74b54b61455e"
+          "digest": "sha256:bbb99f0faf2120240cc9a2400ba66b7675aa33b51a4f58c1a7286b6ff7d34b4e",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Online-Setup-1.1.25.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.25-x64.exe.blockmap",
@@ -112,8 +107,7 @@
           "name": "Duanyan-Science-Discovery-1.1.25-x86_64.AppImage",
           "size": 612309375,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/Duanyan-Science-Discovery-1.1.25-x86_64.AppImage",
-          "digest": "sha256:ad9b5dd74c118f239331f143e89ec8e2f76db2ca4f477838b52b7ee7c78f00cc",
-          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.25-x86_64.AppImage"
+          "digest": "sha256:ad9b5dd74c118f239331f143e89ec8e2f76db2ca4f477838b52b7ee7c78f00cc"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.25-amd64.deb",
@@ -168,6 +162,13 @@
           "size": 592,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/latest-linux.yml",
           "digest": "sha256:e7b25808b8382f6ead95001693566c650934afb4e81dc86ce5c757ba2791426b"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.25-x64.exe",
+          "size": 381671772,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.25/Duanyan-Science-Discovery-Setup-1.1.25-x64.exe",
+          "digest": "sha256:bd6e31c0da1e26c95730a148021f98f077c792ffc54f65b6e594dde51a6c2682",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.25-x64.exe"
         }
       ]
     },
