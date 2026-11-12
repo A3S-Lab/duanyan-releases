@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T15:36:23.393Z",
+  "generated_at": "2026-11-12T15:37:17.958Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -131,6 +131,24 @@
           "size": 125251661,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/breeding-tools-linux-x86_64-1.1.15.tar.gz",
           "digest": "sha256:795983410771e0e8eca6af83d03dbca5ad3f072c8cbfb8333f1064fa25afac82"
+        },
+        {
+          "name": "codex-runtime-linux-x86_64-1.1.15.tar.gz",
+          "size": 161191025,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/codex-runtime-linux-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:377e72121f7688f6542cf9e736c8af70cc11844b9bb57dfbb626c055565da7c1"
+        },
+        {
+          "name": "pi-runtime-linux-x86_64-1.1.15.tar.gz",
+          "size": 33643643,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/pi-runtime-linux-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:4699c13ad37c38dcb5982fd753044b382fa4e09af1a1322d8b755aa517a88589"
+        },
+        {
+          "name": "aster-runtime-linux-x86_64-9.1.8.tar.gz",
+          "size": 51440726,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/aster-runtime-linux-x86_64-9.1.8.tar.gz",
+          "digest": "sha256:80fc13618065ec9ec91a79557d3dbfeee6ae8a8bc4b2ae4d5d25274b0d735a8c"
         }
       ]
     },
