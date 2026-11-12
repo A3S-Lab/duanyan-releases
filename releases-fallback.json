@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T15:46:02.087Z",
+  "generated_at": "2026-11-12T17:17:06.849Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -81,7 +81,8 @@
           "name": "Duanyan-Online-Setup-1.1.26.exe",
           "size": 41794,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Online-Setup-1.1.26.exe",
-          "digest": "sha256:0b34ffc851635aff6ae9169a338e270c40977029feebc6615e33fddbc60568a3"
+          "digest": "sha256:0b34ffc851635aff6ae9169a338e270c40977029feebc6615e33fddbc60568a3",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Online-Setup-1.1.26.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.26-amd64.deb",
@@ -107,7 +108,8 @@
           "name": "Duanyan-Science-Discovery-1.1.26-x86_64.AppImage",
           "size": 616077264,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-1.1.26-x86_64.AppImage",
-          "digest": "sha256:850441d02647d76fcf1751bfc9caa6f7d595600b04081be0a10fde5321ff85fd"
+          "digest": "sha256:850441d02647d76fcf1751bfc9caa6f7d595600b04081be0a10fde5321ff85fd",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.26-x86_64.AppImage"
         },
         {
           "name": "Duanyan-Science-Discovery-Portable-1.1.26-x64.exe",
@@ -120,7 +122,8 @@
           "name": "Duanyan-Science-Discovery-Setup-1.1.26-x64.exe",
           "size": 386805759,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-Setup-1.1.26-x64.exe",
-          "digest": "sha256:30c9c2f52cd30f4a5ebae43391f1a13c88cc64112b88cac4773f421656c2a8a8"
+          "digest": "sha256:30c9c2f52cd30f4a5ebae43391f1a13c88cc64112b88cac4773f421656c2a8a8",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-Setup-1.1.26-x64.exe"
         },
         {
           "name": "Duanyan-Science-Discovery-Setup-1.1.26-x64.exe.blockmap",
