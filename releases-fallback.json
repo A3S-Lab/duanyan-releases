@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:59:06.315Z",
+  "generated_at": "2026-11-12T08:03:50.116Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -22,6 +22,19 @@
           "size": 428990635,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-1.1.26-arm64.zip",
           "digest": "sha256:0d80a99fd0b8f1e87f10daf6800ca3edf020c0b007b97a3df66faa472d038449"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.26-arm64.dmg",
+          "size": 585555250,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-1.1.26-arm64.dmg",
+          "digest": "sha256:758d6fc5334df5b62b6e62e7aa7b9c97f14103863102292a9efb56309ea99b46",
+          "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.26-arm64.dmg"
+        },
+        {
+          "name": "tools-darwin-arm64.tar.gz",
+          "size": 9426285,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/tools-darwin-arm64.tar.gz",
+          "digest": "sha256:949af9543c1932fe94a42e72ec4011af6910b5cc7a4ace1197f01584881fd510"
         }
       ]
     },
