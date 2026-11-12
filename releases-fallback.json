@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T15:28:55.803Z",
+  "generated_at": "2026-11-12T15:30:12.077Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -65,6 +65,18 @@
           "size": 386805759,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-Setup-1.1.26-x64.exe",
           "digest": "sha256:30c9c2f52cd30f4a5ebae43391f1a13c88cc64112b88cac4773f421656c2a8a8"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Portable-1.1.26-x64.exe",
+          "size": 386348469,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-Portable-1.1.26-x64.exe",
+          "digest": "sha256:f328172f27c3bbcb126cfb938ff953a46aabd55b997c71d1a1844cf533af886f"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-Setup-1.1.26-x64.exe.blockmap",
+          "size": 403860,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-Setup-1.1.26-x64.exe.blockmap",
+          "digest": "sha256:bcbd803b993ac55a561f421d2d19d8fb8fb0079d87029c8fcb4bbced7faea912"
         }
       ]
     },
