@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T15:32:33.046Z",
+  "generated_at": "2026-11-12T15:34:21.630Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -113,6 +113,12 @@
           "size": 110687074,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/dsh-runtime-windows-x86_64-0.2.2-rc.1.tar.gz",
           "digest": "sha256:8c61441431fcdb99555676b4a02382e01959f9ff068955336aae12f390beb6cb"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.26-x86_64.AppImage",
+          "size": 616077264,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-1.1.26-x86_64.AppImage",
+          "digest": "sha256:850441d02647d76fcf1751bfc9caa6f7d595600b04081be0a10fde5321ff85fd"
         }
       ]
     },
