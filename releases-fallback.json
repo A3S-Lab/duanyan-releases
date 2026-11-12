@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:57:36.756Z",
+  "generated_at": "2026-11-12T07:59:06.315Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -16,6 +16,12 @@
           "size": 86631,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/release-notes.json",
           "digest": "sha256:56933abfc26241972266e22036c03df0bffb2ce6d409ef49874165254a3175af"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.26-arm64.zip",
+          "size": 428990635,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.26/Duanyan-Science-Discovery-1.1.26-arm64.zip",
+          "digest": "sha256:0d80a99fd0b8f1e87f10daf6800ca3edf020c0b007b97a3df66faa472d038449"
         }
       ]
     },
