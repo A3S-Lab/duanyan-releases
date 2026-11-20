@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T06:49:43.071Z",
+  "generated_at": "2026-11-20T06:50:22.194Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -77,6 +77,12 @@
           "size": 407826,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.29/Duanyan-Science-Discovery-Setup-1.1.29-x64.exe.blockmap",
           "digest": "sha256:46f4f409a4fab780b02660064e752f55169fca9a67d663781fe55fa744c50161"
+        },
+        {
+          "name": "breeding-tools-windows-x86_64-1.1.15.tar.gz",
+          "size": 106162724,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.29/breeding-tools-windows-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:f7b801b5cc719f6e9389d23c5408db1554e312fd89c3dd6292f2b9539cf6b67b"
         }
       ]
     },
