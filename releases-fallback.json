@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T06:11:43.853Z",
+  "generated_at": "2026-11-20T06:12:06.084Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -41,6 +41,12 @@
           "size": 9426285,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.29/tools-darwin-arm64.tar.gz",
           "digest": "sha256:949af9543c1932fe94a42e72ec4011af6910b5cc7a4ace1197f01584881fd510"
+        },
+        {
+          "name": "runtime-libs-darwin-arm64.tar.gz",
+          "size": 46726390,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.29/runtime-libs-darwin-arm64.tar.gz",
+          "digest": "sha256:b9fccb3a67b561f5b3771d80fdfc5cccd50c80f5e5dd8539b7b2de9c8f67cd4d"
         }
       ]
     },
