@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T05:08:30.200Z",
+  "generated_at": "2026-11-20T05:08:52.593Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -110,6 +110,12 @@
           "size": 156534612,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.28/claude-runtime-windows-x86_64-2.1.318.tar.gz",
           "digest": "sha256:f44f7c18e61cead529a07e9cff43774f78fed4372b297d6d43fa486a7dc70067"
+        },
+        {
+          "name": "dsh-runtime-windows-x86_64-0.2.2-rc.1.tar.gz",
+          "size": 110687074,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.28/dsh-runtime-windows-x86_64-0.2.2-rc.1.tar.gz",
+          "digest": "sha256:8c61441431fcdb99555676b4a02382e01959f9ff068955336aae12f390beb6cb"
         }
       ]
     },
