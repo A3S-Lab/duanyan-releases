@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T17:53:22.312Z",
+  "generated_at": "2026-11-21T17:53:45.995Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -93,6 +93,12 @@
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.30/Duanyan-Science-Discovery-1.1.30-amd64.deb",
           "digest": "sha256:f9afd5c34035b6309549e5c1847609362e7f3b10064710168d67328b959718ee",
           "center_url": "https://a3s-lab.discovery.intern-ai.org.cn/apps/science-discovery/api/v1/updates/Duanyan-Science-Discovery-1.1.30-amd64.deb"
+        },
+        {
+          "name": "breeding-tools-linux-x86_64-1.1.15.tar.gz",
+          "size": 125251661,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.30/breeding-tools-linux-x86_64-1.1.15.tar.gz",
+          "digest": "sha256:795983410771e0e8eca6af83d03dbca5ad3f072c8cbfb8333f1064fa25afac82"
         }
       ]
     },
