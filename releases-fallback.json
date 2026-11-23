@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T10:09:38.555Z",
+  "generated_at": "2026-11-23T10:10:13.731Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -46,6 +46,12 @@
           "size": 41794,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.31/Duanyan-Online-Setup-1.1.31.exe",
           "digest": "sha256:11c7ff6a69588295433e56d7f87ed048442fcb4bef3c66b9af0db4f8b178a7af"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.31-x86_64.AppImage",
+          "size": 622987294,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.31/Duanyan-Science-Discovery-1.1.31-x86_64.AppImage",
+          "digest": "sha256:104e2d809aeb126b69ea40fc2be51ef92b3021ec49aa49648d69278b538060e1"
         },
         {
           "name": "Duanyan-Science-Discovery-1.1.31-amd64.deb",
