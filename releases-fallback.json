@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T07:38:03.393Z",
+  "generated_at": "2026-11-23T07:41:36.569Z",
   "source": "https://api.github.com/repos/A3S-Lab/duanyan-releases/releases?per_page=12",
   "releases": [
     {
@@ -100,6 +100,12 @@
           "size": 390,
           "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.30/latest.yml",
           "digest": "sha256:d8d50fd564f4c4cabba1a9ed1cf2908a6197aa6b97d999629f011df27c3dfbf8"
+        },
+        {
+          "name": "Duanyan-Science-Discovery-1.1.30-amd64.deb",
+          "size": 479436888,
+          "browser_download_url": "https://github.com/A3S-Lab/duanyan-releases/releases/download/v1.1.30/Duanyan-Science-Discovery-1.1.30-amd64.deb",
+          "digest": "sha256:6f10040a9bff68e0a5d10591485aa760314bfe33b8254e7482da686f4d3219c4"
         },
         {
           "name": "latest-linux.yml",
